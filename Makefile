@@ -5,7 +5,7 @@
 ## Login   <lina@epitech.net>
 ## 
 ## Started on  Mon Apr 11 10:17:10 2016 lina
-## Last update Mon Apr 11 11:14:36 2016 querat_g
+## Last update Mon Apr 11 11:18:14 2016 querat_g
 ##
 
 CYAN		= "\e[1;36m"
@@ -31,11 +31,11 @@ OBJS		= $(SRCS:.cpp=.o)
 all:		$(NAME)
 
 $(NAME):	$(OBJS)
-		@`which echo` -e $(YELLOW)"now linking "$@$(WHITE)
+		@`which echo` -e $(YELLOW)"[LINKING] "$@$(WHITE)
 		@$(CXX) -o $(NAME) $(CXXFLAGS) $(OBJS)
 
 .cpp.o:
-		@`which echo` -e $(CYAN)$@$(WHITE)
+		@`which echo` -e $(CYAN)"[COMPILE] "$@$(WHITE)
 		@$(CXX) -c -o $@ $(CFLAGS) $<
 
 clean:
