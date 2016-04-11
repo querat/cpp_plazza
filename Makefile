@@ -5,32 +5,47 @@
 ## Login   <lina@epitech.net>
 ## 
 ## Started on  Mon Apr 11 10:17:10 2016 lina
-## Last update Mon Apr 11 10:17:10 2016 lina
+## Last update Mon Apr 11 11:14:36 2016 querat_g
 ##
 
-RM	= rm -f
+CYAN		= "\e[1;36m"
+PURPLE		= "\e[1;35m"
+BLUE		= "\e[1;34m"
+YELLOW		= "\e[1;33m"
+GREEN		= "\e[1;32m"
+RED		= "\e[1;31m"
+WHITE		= "\e[0m"
 
-CC	= clang++
+RM		= rm -f
 
-NAME	= plazza
+CXX		= clang++-3.5
+
+NAME		= plazza
 
 CXXFLAGS	= -W -Wall -Wextra -std=c++11 -stdlib=libstdc++ -I./include
 
-SRCS	= ./src/main.cpp
+SRCS		= ./src/main.cpp
 
-OBJS	= $(SRCS:.cpp=.o)
+OBJS		= $(SRCS:.cpp=.o)
 
-all:	$(NAME)
+all:		$(NAME)
 
 $(NAME):	$(OBJS)
-	$(CC) -o $(NAME) $(CXXFLAGS) $(OBJS)
+		@`which echo` -e $(YELLOW)"now linking "$@$(WHITE)
+		@$(CXX) -o $(NAME) $(CXXFLAGS) $(OBJS)
+
+.cpp.o:
+		@`which echo` -e $(CYAN)$@$(WHITE)
+		@$(CXX) -c -o $@ $(CFLAGS) $<
 
 clean:
-	$(RM) $(OBJS)
+		@`which echo` -e $(RED)"[RM] "$(OBJS)$(WHITE)
+		@$(RM) $(OBJS)
 
-fclean: clean
-	$(RM) $(OBJS)
+fclean:		clean
+		@`which echo` -e $(RED)"[RM] "$(NAME)$(WHITE)
+		@$(RM) $(NAME)
 
-re: fclean all
+re:		fclean all
 
-.PHONY: all clean fclean re
+.PHONY:		all clean fclean re .cpp.o
