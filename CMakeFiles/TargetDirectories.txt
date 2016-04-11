@@ -1,3 +1,0 @@
-/home/lina/rendu/B4/C++/cpp_plazza/CMakeFiles/edit_cache.dir
-/home/lina/rendu/B4/C++/cpp_plazza/CMakeFiles/rebuild_cache.dir
-/home/lina/rendu/B4/C++/cpp_plazza/CMakeFiles/cpp_plazza.dir
