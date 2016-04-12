@@ -1,0 +1,1 @@
+clang++-3.5 -stdlib=libc++ -std=c++11 test_regex.cpp
