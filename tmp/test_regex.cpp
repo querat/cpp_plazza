@@ -6,7 +6,7 @@ int	main(void)
 {
   std::string input;
 
-  std::regex	integer("(\\+|-)?[[:digit:]]+");
+  std::regex	integer("(\\+|-)?[[0-9]]+");
   while (true)
     {
       std::cout << "Give me an integer !" << std::endl;
