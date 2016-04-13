@@ -11,6 +11,9 @@ int     main(int ac, char **av)
   int		child_pid = 0;
 
 
+  if (ac < 2)
+    return (1);
+
   child_pid = fork();
   if (child_pid == -1)
     {
@@ -20,11 +23,11 @@ int     main(int ac, char **av)
   if (child_pid) // parent
     {
 
-      pipe.write("Allah ahkbar !");
+      pipe.writeTo(av[1]);
     }
   else
     {
-      std::string a = pipe.read();
+      std::string a = pipe.readFrom();
       std::cout << a << std::endl;
     }
   return (0);

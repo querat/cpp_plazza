@@ -5,7 +5,7 @@
 // Login   <querat_g@epitech.net>
 //
 // Started on  Tue Apr 12 17:53:29 2016 querat_g
-// Last update Wed Apr 13 16:32:38 2016 querat_g
+// Last update Wed Apr 13 17:24:41 2016 querat_g
 //
 
 #ifndef NAMEDPIPE_HH_
@@ -13,6 +13,7 @@
 
 // C
 # include <cstdio>
+# include <cstring> // strerror
 
 // SysUnix
 # include <unistd.h>
@@ -26,6 +27,8 @@
 # include <fstream>
 # include <sstream>
 
+# define IS_VALID_FD(fd) ((fd != (-1)))
+
 class	NamedPipe
 {
  public:
@@ -34,18 +37,20 @@ class	NamedPipe
 
  private:
   std::string const	_name;
-  std::ifstream		_ifstream;
-  std::ofstream		_ofstream;
+  char const *          _C_name;
+
+  int                   _fdin;
+  int                   _fdout;
 
   bool			_open();
   bool			_close();
 
 public:
-  std::ifstream &	getReadingEnd();
-  std::ofstream &	getWritingEnd();
+  int           	getReadingEnd();
+  int           	getWritingEnd();
 
-  void			write(std::string const & data);
-  std::string		read();
+  void			writeTo(std::string const & data);
+  std::string		readFrom();
 };
 
 #endif // NAMEDPIPE_HH_
