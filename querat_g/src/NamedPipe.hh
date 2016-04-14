@@ -5,7 +5,7 @@
 // Login   <querat_g@epitech.net>
 //
 // Started on  Tue Apr 12 17:53:29 2016 querat_g
-// Last update Wed Apr 13 17:24:41 2016 querat_g
+// Last update Thu Apr 14 09:26:26 2016 querat_g
 //
 
 #ifndef NAMEDPIPE_HH_
@@ -21,6 +21,8 @@
 # include <error.h>
 # include <sys/stat.h>
 # include <sys/types.h>
+# include <sys/select.h>
+# include <sys/time.h>
 
 // C++
 # include <iostream>
@@ -46,6 +48,11 @@ class	NamedPipe
   bool			_close();
 
 public:
+  bool                  tryCreatePipe();
+
+  bool                  openReadingEnd();
+  bool                  openWritingEnd();
+
   int           	getReadingEnd();
   int           	getWritingEnd();
 
