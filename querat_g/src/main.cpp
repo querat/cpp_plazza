@@ -5,13 +5,14 @@
 // Login   <querat_g@epitech.net>
 //
 // Started on  Wed Apr 13 22:43:06 2016 querat_g
-// Last update Thu Apr 14 10:59:31 2016 querat_g
+// Last update Sun Apr 17 20:25:48 2016 querat_g
 //
 
 #include <sys/wait.h>
 
 #include <iostream>
 #include "NamedPipe.hh"
+#include "Parser.hh"
 
 int     elFork(char **av)
 {
@@ -27,12 +28,13 @@ int     elFork(char **av)
   if (child_pid) // parent
     {
       std::string a = pipe.readFrom();
+      a = pipe.readFrom();
       std::cout << "reading " << a << std::endl;
+      wait(0);
     }
   else
     {
       pipe.writeTo(av[1]);
-      wait(0);
     }
 
   return (true);
@@ -40,9 +42,23 @@ int     elFork(char **av)
 
 int     main(int ac, char **av)
 {
+  Parser cmd;
+  t_ActionStack actionStack;
+
   if (ac < 2)
     return (1);
 
-  elFork(av);
+  // elFork(av);
+  cmd.parse(av[1], actionStack);
+
+  for (t_ActionStack::iterator it = actionStack.begin();it != actionStack.end();++it)
+    {
+      std::cout << "file "     << it->first
+                << " action: " << it->second
+                << std::endl;
+
+
+    }
+
   return (0);
 }

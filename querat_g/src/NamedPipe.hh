@@ -5,7 +5,7 @@
 // Login   <querat_g@epitech.net>
 //
 // Started on  Tue Apr 12 17:53:29 2016 querat_g
-// Last update Thu Apr 14 09:26:26 2016 querat_g
+// Last update Thu Apr 14 15:26:21 2016 querat_g
 //
 
 #ifndef NAMEDPIPE_HH_
@@ -46,15 +46,11 @@ class	NamedPipe
 
   bool			_open();
   bool			_close();
+  bool                  _openReadingEnd();
+  bool                  _openWritingEnd();
+  bool                  _tryCreatePipe();
 
 public:
-  bool                  tryCreatePipe();
-
-  bool                  openReadingEnd();
-  bool                  openWritingEnd();
-
-  int           	getReadingEnd();
-  int           	getWritingEnd();
 
   void			writeTo(std::string const & data);
   std::string		readFrom();

@@ -5,7 +5,7 @@
 // Login   <querat_g@epitech.net>
 //
 // Started on  Tue Apr 12 17:46:41 2016 querat_g
-// Last update Thu Apr 14 10:58:55 2016 querat_g
+// Last update Thu Apr 14 15:26:32 2016 querat_g
 //
 
 #include "NamedPipe.hh"
@@ -16,7 +16,7 @@ NamedPipe::NamedPipe(std::string const & name)
   , _fdin(-1)
   , _fdout(-1)
 {
-  this->tryCreatePipe();
+  this->_tryCreatePipe();
   // this->_open();
 }
 
@@ -27,7 +27,7 @@ NamedPipe::~NamedPipe()
 }
 
 bool
-NamedPipe::tryCreatePipe()
+NamedPipe::_tryCreatePipe()
 {
   // If the named pipe exists we can use it directly
   if (!(access(this->_C_name, F_OK)))
@@ -44,16 +44,16 @@ NamedPipe::tryCreatePipe()
 
 bool
 NamedPipe::_open() {
-  this->openWritingEnd();
-  this->openReadingEnd();
+  this->_openWritingEnd();
+  this->_openReadingEnd();
   return ((IS_VALID_FD(this->_fdout)) &&
           (IS_VALID_FD(this->_fdin )) );
 }
 
 bool
-NamedPipe::openWritingEnd()
+NamedPipe::_openWritingEnd()
 {
-  this->tryCreatePipe();
+  this->_tryCreatePipe();
   if (!(IS_VALID_FD(this->_fdout))) // Input side of the pipe
   {
     this->_fdout = open(this->_C_name, O_WRONLY); //  | O_NONBLOCK
@@ -65,9 +65,9 @@ NamedPipe::openWritingEnd()
 }
 
 bool
-NamedPipe::openReadingEnd()
+NamedPipe::_openReadingEnd()
 {
-  this->tryCreatePipe();
+  this->_tryCreatePipe();
   if (!(IS_VALID_FD(this->_fdin))) // Input side of the pipe
     {
       this->_fdin = open(this->_C_name, O_RDONLY); //  | O_NONBLOCK
@@ -92,20 +92,9 @@ NamedPipe::_close() {
   return (true);
 }
 
-int
-NamedPipe::getWritingEnd() {
-  this->_open();
-  return (this->_fdout);
-}
-int
-NamedPipe::getReadingEnd() {
-  this->_open();
-  return (this->_fdin);
-}
-
 void
 NamedPipe::writeTo(std::string const & data) {
-  this->openWritingEnd();
+  this->_openWritingEnd();
 
   std::cout <<  "writing " << data << std::endl;
 
@@ -121,7 +110,7 @@ NamedPipe::readFrom()
   std::string   str("");
   char          buffer[RF_BUFSIZE + 1];
 
-  this->openReadingEnd();
+  this->_openReadingEnd();
 
   while ((read(this->_fdin, buffer, RF_BUFSIZE)) > 0)
     str += buffer;
