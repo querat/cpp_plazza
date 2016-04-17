@@ -5,7 +5,7 @@
 // Login   <querat_g@epitech.net>
 //
 // Started on  Sun Apr 17 14:24:34 2016 querat_g
-// Last update Sun Apr 17 20:27:24 2016 querat_g
+// Last update Sun Apr 17 20:42:27 2016 querat_g
 //
 
 #include "Parser.hh"
@@ -104,22 +104,26 @@ Parser::_parseActionsLine(std::string const &line, t_ActionStack &target)
 
   // count the Action tokens such as EMAIL, IP or PHONE
   nbActions = this->_countActions();
-  if (nbActions != 1)
+  if (nbActions != 1) // if there is less or more than one, this is an error
     return (_invalidActionsNumberErrorHandler(nbActions, line));
 
-  // get, then remove the command type
+  // get, then remove the command type from the command line
   type = this->_getCommandType();
   if (type == Plazza::Action::Type::UNDEFINED) // that can't happen, but hey
     throw(std::runtime_error("Parser::_parseActionsLine: UNDEFINED Action"));
-  _tokList.erase(std::remove_if(_tokList.begin(), _tokList.end(), Plazza::isAnAction), _tokList.end());
+  // remove_if puts the stuff at the end
+  t_StringList::iterator it = std::remove_if(_tokList.begin(), _tokList.end(),
+                                             Plazza::isAnAction);
+  // then, we need to erase manually from the iterator to the end
+  _tokList.erase(it, _tokList.end());
 
-  if (_tokList.empty())
-    {
-      std::cerr << "No file path in Command \"" << line << "\"" << std::endl;
-      return (false);
-    }
+  // if there is no token left, it means there were no file path in the command
+  if (_tokList.empty()) {
+    std::cerr << "No file path in Command \"" << line << "\"" << std::endl;
+    return (false);
+  }
 
-  // push every command into the command stack reference
+  // push every command into the targeted command stack reference
   for (t_StringList::iterator it = _tokList.begin(); it != _tokList.end(); ++it)
     target.push_back(std::make_pair(std::string(*it), type));
 
@@ -135,10 +139,7 @@ Parser::parse(std::string const &str, t_ActionStack &target)
     return (false);
 
   for (t_StringList::iterator it = _cutList.begin(); it != _cutList.end(); ++it)
-    {
-      if (!_parseActionsLine((*it), target))
-        return (false);
-    }
+    _parseActionsLine((*it), target);
   _cutList.clear();
   return (true);
 }
