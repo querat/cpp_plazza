@@ -5,7 +5,7 @@
 // Login   <querat_g@epitech.net>
 //
 // Started on  Sun Apr 17 16:11:56 2016 querat_g
-// Last update Sun Apr 17 19:00:45 2016 querat_g
+// Last update Mon Apr 18 10:46:03 2016 querat_g
 //
 
 #include "Plazza.hh"
@@ -15,17 +15,17 @@ namespace Plazza
   namespace Action
   {
     t_StringToActionMap const   String({
-      std::make_pair("EMAIL", Plazza::Action::Type::EMAIL),
-      std::make_pair("PHONE", Plazza::Action::Type::PHONE),
-      std::make_pair("IP",    Plazza::Action::Type::IP   )
+      std::make_pair("EMAIL_ADDRESS", Plazza::Action::Type::EMAIL_ADDRESS),
+      std::make_pair("PHONE_NUMBER",  Plazza::Action::Type::PHONE_NUMBER ),
+      std::make_pair("IP_ADDRESS",    Plazza::Action::Type::IP_ADDRESS   )
     }); // !String
   }    // !Plazza::Action
 
   t_ActionToRegexMap const      Regex({
     // TODO: write the true matching regexes instead of thoses debug ones
-    std::make_pair(Plazza::Action::Type::EMAIL, std::regex("EMAIL")),
-    std::make_pair(Plazza::Action::Type::IP,    std::regex("IP"   )),
-    std::make_pair(Plazza::Action::Type::PHONE, std::regex("PHONE"))
+    std::make_pair(Plazza::Action::Type::EMAIL_ADDRESS, std::regex("EMAIL")),
+    std::make_pair(Plazza::Action::Type::IP_ADDRESS,    std::regex("IP"   )),
+    std::make_pair(Plazza::Action::Type::PHONE_NUMBER,  std::regex("PHONE"))
   }); // !Plazza::Regex
 }    // !Plazza
 

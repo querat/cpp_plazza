@@ -5,7 +5,7 @@
 // Login   <querat_g@epitech.net>
 //
 // Started on  Sun Apr 17 14:29:00 2016 querat_g
-// Last update Sun Apr 17 20:26:41 2016 querat_g
+// Last update Mon Apr 18 10:45:15 2016 querat_g
 //
 
 #ifndef PLAZZA_HH
@@ -33,9 +33,9 @@ namespace Plazza
     enum Type
       {
         UNDEFINED = 0,
-        EMAIL,
-        PHONE,
-        IP
+        EMAIL_ADDRESS,
+        PHONE_NUMBER,
+        IP_ADDRESS
       };
   }
 
