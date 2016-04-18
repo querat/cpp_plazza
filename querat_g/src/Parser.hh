@@ -5,7 +5,7 @@
 // Login   <querat_g@epitech.net>
 //
 // Started on  Sun Apr 17 14:21:53 2016 querat_g
-// Last update Sun Apr 17 18:32:00 2016 querat_g
+// Last update Mon Apr 18 13:41:57 2016 querat_g
 //
 
 #ifndef PARSER_HH
@@ -23,9 +23,8 @@
 
 # include <algorithm>
 
-# include "Plazza.hh"
+# include "PlazzaNameSpace.hh"
 
-typedef std::list<std::string>  t_StringList;
 typedef std::list<std::string>  t_StringList;
 
 class Parser
@@ -49,8 +48,6 @@ private:
 
 public:
   bool          parse(std::string const & str, t_ActionStack &target);
-
-
 };
 
 #endif  // PARSER_HH

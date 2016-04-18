@@ -5,7 +5,7 @@
 ## Login   <lina@epitech.net>
 ## 
 ## Started on  Mon Apr 11 10:17:10 2016 lina
-## Last update Sun Apr 17 16:23:53 2016 querat_g
+## Last update Mon Apr 18 13:41:07 2016 querat_g
 ##
 
 CYAN		= 	"\e[1;36m"
@@ -31,7 +31,7 @@ CXXFLAGS	+=	-g
 SRCS		= 	src/main.cpp \
 			src/NamedPipe.cpp \
 			src/Parser.cpp \
-			src/Plazza.cpp \
+			src/PlazzaNameSpace.cpp \
 
 OBJS		= 	$(SRCS:.cpp=.o)
 
