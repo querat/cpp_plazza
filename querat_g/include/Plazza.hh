@@ -5,7 +5,7 @@
 // Login   <querat_g@epitech.net>
 //
 // Started on  Sun Apr 17 14:29:00 2016 querat_g
-// Last update Mon Apr 18 10:45:15 2016 querat_g
+// Last update Mon Apr 18 11:17:08 2016 querat_g
 //
 
 #ifndef PLAZZA_HH
@@ -20,7 +20,9 @@
 # define COMMAND_DELIMITERS     ";"
 # define WORDS_DELIMITERS       "\t "
 
-# define COMMAND_REGEX          "(\\s|^)(A-Z)+(\\s|$)"
+# define DEF_EMAIL_REGEX        "reg"
+# define DEF_PHONE_REGEX        "reg"
+# define DEF_IP_REGEX           "reg"
 
 //
 // !! All variables declared here as extern MUST be declared in Plazza.cpp !!
@@ -37,14 +39,20 @@ namespace Plazza
         PHONE_NUMBER,
         IP_ADDRESS
       };
-  }
+  } // !Plazza::Action
 
-  typedef std::map<std::string, Plazza::Action::Type>   t_StringToActionMap;
-  typedef std::map<Plazza::Action::Type, std::regex>    t_ActionToRegexMap;
 
-  extern t_StringToActionMap const      String;
-  extern t_ActionToRegexMap  const      Regex;
-}
+  namespace String {
+    typedef std::map<std::string, Plazza::Action::Type> t_StringToActionMap;
+    extern t_StringToActionMap const                    mapToEnum;
+  } // !Plazza::String
+
+  namespace Regex {
+    typedef std::map<Plazza::Action::Type, std::regex>  t_ActionToRegexMap;
+    extern t_ActionToRegexMap const                     map;
+  } // !Plazza::Regex
+
+} // !Plazza
 
 // Pair that contains a filename and the action to execute on this file
 typedef std::pair<std::string, Plazza::Action::Type>    t_FileActionPair;
