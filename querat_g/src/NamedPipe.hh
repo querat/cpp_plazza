@@ -5,7 +5,7 @@
 // Login   <querat_g@epitech.net>
 //
 // Started on  Tue Apr 12 17:53:29 2016 querat_g
-// Last update Tue Apr 19 09:31:20 2016 querat_g
+// Last update Tue Apr 19 14:13:24 2016 querat_g
 //
 
 #ifndef NAMEDPIPE_HH_
@@ -31,29 +31,29 @@
 
 # define IS_VALID_FD(fd) ((fd != (-1)))
 
-class	NamedPipe
+class    NamedPipe
 {
  public:
   NamedPipe(std::string const & name);
   ~NamedPipe();
 
  private:
-  std::string const	_name;
+  std::string const     _name;
   char const *          _C_name;
 
   int                   _fdin;
   int                   _fdout;
 
-  bool			_open();
-  bool			_close();
+  bool                  _open();
+  bool                  _close();
   bool                  _openReadingEnd();
   bool                  _openWritingEnd();
   bool                  _tryCreatePipe();
 
 public:
 
-  void			writeTo(std::string const & data);
-  std::string		readFrom();
+  void                  writeTo(void const *data, size_t size);
+  bool                  readFrom(void *buffer, size_t size);
 };
 
 #endif // NAMEDPIPE_HH_

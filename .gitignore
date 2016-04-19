@@ -6,3 +6,4 @@ a.out
 *.tmp
 TAGS
 CMakeLists.txt
+fifo*

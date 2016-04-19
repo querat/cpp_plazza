@@ -5,11 +5,12 @@
 // Login   <querat_g@epitech.net>
 //
 // Started on  Sun Apr 17 16:11:56 2016 querat_g
-// Last update Tue Apr 19 09:38:15 2016 querat_g
+// Last update Tue Apr 19 14:41:03 2016 querat_g
 //
 
-#include "Plazza.hh"
 #include "PlazzaNameSpace.hh"
+#include "Plazza.hh"
+#include "SubMain.hh"
 
 # define ERR_NOTANUMBER "plazza: Argument should be a number"
 # define ERR_INVALIDNUM "plazza: Argument should be an unsigned number"
@@ -30,12 +31,9 @@ Plazza::Main::Main(std::string nbThreads)
 Plazza::Main::~Main(){}
 
 bool
-Plazza::Main::fork()
+Plazza::Main::forkPlazza()
 {
   pid_t         pid = -1;
-  NamedPipe     pipe1(Plazza::makeFifoNameFromPid(pid, true));
-  NamedPipe     pipe2(Plazza::makeFifoNameFromPid(pid, true));
-
   pid = fork();
   if (pid == -1)
     {
@@ -43,17 +41,32 @@ Plazza::Main::fork()
       return (false);
     }
 
+  pid_t         tmpPid = pid ? pid : getpid();
+  NamedPipe     *pipe1 = new NamedPipe(Plazza::makeFifoNameFromPid(tmpPid, true));
+  NamedPipe     *pipe2 = new NamedPipe(Plazza::makeFifoNameFromPid(tmpPid, false));
+
   if (pid) // parent
     {
+      this->_childs.insert(std::make_pair(pid, ChildProcess(pid, pipe1, pipe2)));
 
 
-      wait(0);
+      Plazza::Packet::Header head;
+      head.magic = Plazza::Packet::MAGIC;
+      head.size = 0x42;
+
+      std::map<pid_t, ChildProcess>::iterator it = _childs.find(pid);
+      if (it != _childs.end())
+        it->second.sendData(&head, sizeof(Plazza::Packet::Header));
+
+      // wait(0);
     }
   else // child
     {
+      SubMain   *subProcess = new SubMain(getpid(), pipe1, pipe2);
 
+      subProcess->doSomething();
 
-
+      delete (subProcess);
       exit(1);
     }
 

@@ -5,7 +5,7 @@
 // Login   <querat_g@epitech.net>
 //
 // Started on  Wed Apr 13 22:43:06 2016 querat_g
-// Last update Tue Apr 19 09:38:28 2016 querat_g
+// Last update Tue Apr 19 10:25:04 2016 querat_g
 //
 
 #include <stdexcept>
@@ -59,7 +59,7 @@ int     main(int ac, char **av)
     return (1);
   }
 
-  // plazza->fork();
+  plazza->forkPlazza();
 
   return (0);
 }

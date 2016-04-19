@@ -5,7 +5,7 @@
 // Login   <querat_g@epitech.net>
 //
 // Started on  Mon Apr 18 15:01:51 2016 querat_g
-// Last update Tue Apr 19 09:21:37 2016 querat_g
+// Last update Tue Apr 19 11:11:38 2016 querat_g
 //
 
 #ifndef CHILDPROCESS_HH_
@@ -18,16 +18,16 @@
 class ChildProcess
 {
 public:
-  ChildProcess(pid_t pid, NamedPipe &input, NamedPipe &output);
+  ChildProcess(pid_t pid, NamedPipe *pipe1, NamedPipe *pipe2);
   ~ChildProcess();
 
 private:
   pid_t         _pid;
-  NamedPipe &   _input;
-  NamedPipe &   _output;
+  NamedPipe *   _pipe1;
+  NamedPipe *   _pipe2;
 
 public:
-
+  void          sendData(void const *data, size_t size);
 
 };
 

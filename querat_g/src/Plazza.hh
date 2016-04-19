@@ -5,7 +5,7 @@
 // Login   <querat_g@epitech.net>
 //
 // Started on Sun Apr 17 14:29:00 2016 querat_g
-// Last update Tue Apr 19 09:36:57 2016 querat_g
+// Last update Tue Apr 19 10:28:30 2016 querat_g
 //
 
 #ifndef PLAZZA_HH
@@ -35,11 +35,11 @@ namespace Plazza
     ~Main();
 
   private:
-    int                         _nbThreads;
-    std::vector<ChildProcess>   _childs;
+    int                                 _nbThreads;
+    std::map<pid_t, ChildProcess>       _childs;
 
   public:
-    bool                fork();
+    bool                forkPlazza();
   };
 }
 

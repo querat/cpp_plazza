@@ -5,7 +5,7 @@
 // Login   <querat_g@epitech.net>
 //
 // Started on  Tue Apr 12 17:46:41 2016 querat_g
-// Last update Tue Apr 19 09:30:49 2016 querat_g
+// Last update Tue Apr 19 14:13:50 2016 querat_g
 //
 
 #include "NamedPipe.hh"
@@ -92,28 +92,26 @@ NamedPipe::_close() {
 }
 
 void
-NamedPipe::writeTo(std::string const & data) {
+NamedPipe::writeTo(void const *data, size_t size) {
   this->_openWritingEnd();
 
   std::cout <<  "writing " << data << std::endl;
 
-  write(this->_fdout, data.c_str(), (data.size() + 1));
+  write(this->_fdout, data, size);
   this->_close();
 }
 
 #define RF_BUFSIZE      2048
 
-std::string
-NamedPipe::readFrom()
+bool
+NamedPipe::readFrom(void *buffer, size_t requestedReadSize)
 {
-  std::string   str("");
-  char          buffer[RF_BUFSIZE + 1];
+  if (!this->_openReadingEnd())
+    return (false);
 
-  this->_openReadingEnd();
-
-  while ((read(this->_fdin, buffer, RF_BUFSIZE)) > 0)
-    str += buffer;
+  size_t actualReadSize = read(this->_fdin, buffer, requestedReadSize);
 
   this->_close();
-  return (str);
+
+  return (actualReadSize == requestedReadSize);
 }

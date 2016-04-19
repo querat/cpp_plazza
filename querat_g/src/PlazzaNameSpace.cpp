@@ -5,7 +5,7 @@
 // Login   <querat_g@epitech.net>
 //
 // Started on  Sun Apr 17 16:11:56 2016 querat_g
-// Last update Tue Apr 19 09:28:59 2016 querat_g
+// Last update Tue Apr 19 14:26:16 2016 querat_g
 //
 
 #include "PlazzaNameSpace.hh"
@@ -24,7 +24,7 @@ namespace Plazza
           std::make_pair(EMAIL_ADDRESS, Plazza::Action::Type::EMAIL_ADDRESS),
           std::make_pair(PHONE_NUMBER,  Plazza::Action::Type::PHONE_NUMBER ),
           std::make_pair(IP_ADDRESS,    Plazza::Action::Type::IP_ADDRESS   )
-      }); // !toEnum
+      }); // !mapToEnum
     }    // !Plazza::Action::String
   }     // !Plazza::Action
 
@@ -41,7 +41,12 @@ namespace Plazza
         std::make_pair(Plazza::Action::Type::PHONE_NUMBER,  PHONE_NUMBER)
     }); // !Plazza::Regex::map
   }    // !Plazza::Regex
-}     // !Plazza
+
+  namespace Packet
+  {
+    uint32_t const MAGIC = 0xC0FFEE ;
+  } // !Plazza::Packet
+}  // !Plazza
 
 bool
 Plazza::isAnAction(std::string const &action){
