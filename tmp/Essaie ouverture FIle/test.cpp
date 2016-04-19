@@ -3,3 +3,19 @@
 //
 
 #include "test.hh"
+
+OpenFile::OpenFile()
+{
+
+}
+
+
+OpenFile::~OpenFile()
+{
+
+}
+
+void OpenFile::ReadFile()
+{
+
+}

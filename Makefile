@@ -34,6 +34,7 @@ SRCS		= 	src/main.cpp \
 			src/PlazzaNameSpace.cpp \
 			src/Plazza.cpp \
 			src/ChildProcess.cpp \
+			src/dataCollector.cpp
 
 OBJS		= 	$(SRCS:.cpp=.o)
 
