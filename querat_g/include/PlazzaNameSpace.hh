@@ -5,7 +5,7 @@
 // Login   <querat_g@epitech.net>
 //
 // Started on  Sun Apr 17 14:29:00 2016 querat_g
-// Last update Tue Apr 19 14:26:31 2016 querat_g
+// Last update Tue Apr 19 18:21:27 2016 querat_g
 //
 
 #ifndef PLAZZANAMESPACE_HH
@@ -23,6 +23,9 @@
 # include <sys/types.h>
 
 # define PLAZZA_USAGE           "plazza: usage: ./plazza nb_threads"
+# define PLAZZA_MAX_ACTIONS(x)  ((2 * x))
+
+# define FILENAME_SIZE  0x400
 
 # define COMMAND_DELIMITERS     ";"
 # define WORDS_DELIMITERS       "\t "
@@ -51,14 +54,15 @@ namespace Plazza
   namespace String {
     typedef std::map<std::string, Plazza::Action::Type> t_StringToActionMap;
     extern t_StringToActionMap const                    mapToEnum;
+    typedef std::map<Plazza::Action::Type, std::string> t_ActionToStringMap;
+    extern t_ActionToStringMap const                    mapToString;
   } // !Plazza::String
 
   namespace Regex {
     typedef std::map<Plazza::Action::Type, std::regex>  t_ActionToRegexMap;
     extern t_ActionToRegexMap const                     map;
   } // !Plazza::Regex
-
-} // !Plazza
+}  // !Plazza
 
 // Pair that contains a filename and the action to execute on this file
 typedef std::pair<std::string, Plazza::Action::Type>    t_FileActionPair;
@@ -67,8 +71,8 @@ typedef std::deque<t_FileActionPair>                    t_ActionDeque;
 // used by the parser to associate a string to a Plazza::Action::Type
 typedef std::map<std::string, Plazza::Action::Type>     t_StringToTypeMap;
 
-//
-// Plazza::Packet::*
+  //
+ // Plazza::Packet::*
 //
 namespace Plazza
 {
@@ -84,21 +88,27 @@ namespace Plazza
       size_t    size;
     }; // !struct Header
 
-    struct        Raw
+    // All the stuff defined here is meant to
+    namespace Raw
     {
-      char      data[0];
-    }; // !struct Raw
+      struct      Action
+      {
+        Plazza::Action::Type    type;
+        char                    fileName[FILENAME_SIZE];
+      };// !Plazza::Packet::Raw::Action
+    }  // !Plazza::Packet::Raw
   }   // !Plazza::Packet
 }    // !Plazza
 
-//
-// Function Prototypes
+  //
+ // Function Prototypes
 //
 namespace Plazza
 {
   bool                  isAnAction(std::string const &action);
   Plazza::Action::Type  stringToAction(std::string const & str);
   std::string           makeFifoNameFromPid(pid_t pid, bool toMain);
+  void                  printAction(Plazza::Action::Type act, bool toErr = false);
 }
 
 #endif  // PLAZZANAMESPACE_HH

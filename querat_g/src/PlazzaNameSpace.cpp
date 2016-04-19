@@ -5,7 +5,7 @@
 // Login   <querat_g@epitech.net>
 //
 // Started on  Sun Apr 17 16:11:56 2016 querat_g
-// Last update Tue Apr 19 14:26:16 2016 querat_g
+// Last update Tue Apr 19 18:36:51 2016 querat_g
 //
 
 #include "PlazzaNameSpace.hh"
@@ -24,9 +24,15 @@ namespace Plazza
           std::make_pair(EMAIL_ADDRESS, Plazza::Action::Type::EMAIL_ADDRESS),
           std::make_pair(PHONE_NUMBER,  Plazza::Action::Type::PHONE_NUMBER ),
           std::make_pair(IP_ADDRESS,    Plazza::Action::Type::IP_ADDRESS   )
-      }); // !mapToEnum
+      }); // !Plazza::Action::String::mapToEnum
     }    // !Plazza::Action::String
-  }     // !Plazza::Action
+
+    Plazza::String::t_ActionToStringMap const mapToString({
+        std::make_pair(Plazza::Action::Type::EMAIL_ADDRESS, String::EMAIL_ADDRESS),
+        std::make_pair(Plazza::Action::Type::PHONE_NUMBER , String::PHONE_NUMBER ),
+        std::make_pair(Plazza::Action::Type::IP_ADDRESS   , String::IP_ADDRESS   )
+    }); // !Plazza::Action::mapToString
+  }    // !Plazza::Action
 
   namespace Regex
   {
@@ -63,4 +69,13 @@ Plazza::makeFifoNameFromPid(pid_t pid, bool toMain){
   if (toMain)
     return (std::string("fifo_in_pid_") + std::to_string(pid));
   return (std::string("fifo_out_pid_") + std::to_string(pid));
+}
+
+void
+Plazza::printAction(Plazza::Action::Type act, bool toErr)
+{
+  if (toErr)
+    std::cerr << Plazza::Action::mapToString.find(act)->second;
+  else
+    std::cout << Plazza::Action::mapToString.find(act)->second;
 }

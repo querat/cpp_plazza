@@ -5,7 +5,7 @@
 // Login   <querat_g@epitech.net>
 //
 // Started on  Tue Apr 12 17:46:41 2016 querat_g
-// Last update Tue Apr 19 14:13:50 2016 querat_g
+// Last update Tue Apr 19 16:50:51 2016 querat_g
 //
 
 #include "NamedPipe.hh"
@@ -69,7 +69,7 @@ NamedPipe::_openReadingEnd()
   this->_tryCreatePipe();
   if (!(IS_VALID_FD(this->_fdin))) // Input side of the pipe
     {
-      this->_fdin = open(this->_C_name, O_RDONLY); //  | O_NONBLOCK
+      this->_fdin = open(this->_C_name, O_RDONLY);
       if (this->_fdin == -1)
         std::cerr << "NamedPipe::open(): _fdin: "
                   << strerror(errno) << std::endl;
@@ -85,9 +85,6 @@ NamedPipe::_close() {
     close(this->_fdout);
   this->_fdin = (-1);
   this->_fdout = (-1);
-
-  unlink(this->_C_name);
-
   return (true);
 }
 
@@ -98,10 +95,7 @@ NamedPipe::writeTo(void const *data, size_t size) {
   std::cout <<  "writing " << data << std::endl;
 
   write(this->_fdout, data, size);
-  this->_close();
 }
-
-#define RF_BUFSIZE      2048
 
 bool
 NamedPipe::readFrom(void *buffer, size_t requestedReadSize)
@@ -110,8 +104,6 @@ NamedPipe::readFrom(void *buffer, size_t requestedReadSize)
     return (false);
 
   size_t actualReadSize = read(this->_fdin, buffer, requestedReadSize);
-
-  this->_close();
 
   return (actualReadSize == requestedReadSize);
 }
