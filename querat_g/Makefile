@@ -5,7 +5,7 @@
 ## Login   <lina@epitech.net>
 ## 
 ## Started on  Mon Apr 11 10:17:10 2016 lina
-## Last update Mon Apr 18 13:41:07 2016 querat_g
+## Last update Tue Apr 19 09:23:28 2016 querat_g
 ##
 
 CYAN		= 	"\e[1;36m"
@@ -32,6 +32,8 @@ SRCS		= 	src/main.cpp \
 			src/NamedPipe.cpp \
 			src/Parser.cpp \
 			src/PlazzaNameSpace.cpp \
+			src/Plazza.cpp \
+			src/ChildProcess.cpp \
 
 OBJS		= 	$(SRCS:.cpp=.o)
 
