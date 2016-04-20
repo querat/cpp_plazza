@@ -5,7 +5,7 @@
 // Login   <querat_g@epitech.net>
 //
 // Started on  Mon Apr 18 15:01:51 2016 querat_g
-// Last update Wed Apr 20 10:26:44 2016 querat_g
+// Last update Wed Apr 20 12:35:48 2016 querat_g
 //
 
 #ifndef CHILDPROCESS_HH_
@@ -24,11 +24,12 @@ public:
   ~ChildProcess();
 
 private:
-  pid_t         _pid;
-  NamedPipe *   _pipe1; // from main to child ...
-  NamedPipe *   _pipe2; // ... And the other way around
-  uint32_t      _nbCurrentActions;
-  uint32_t      _maxActions;
+  pid_t                         _pid;
+  NamedPipe *                   _pipe1; // from main to child ...
+  NamedPipe *                   _pipe2; // ... And the other way around
+  uint32_t                      _nbCurrentActions;
+  uint32_t                      _maxActions;
+  std::stack<std::string>       _answerStack;
 
 private:
 
@@ -36,6 +37,8 @@ public:
   void          sendData(void const *data, size_t size);
   bool          sendAction(t_FileActionPair const & fileActionPair);
   void          sendSignal(int sig) const;
+  bool          receiveAnswer();
+  void          popPrintAnswers();
 };
 
 #endif // !PROCESS_HH_

@@ -5,7 +5,7 @@
 // Login   <querat_g@epitech.net>
 //
 // Started on  Tue Apr 12 17:46:41 2016 querat_g
-// Last update Wed Apr 20 10:43:47 2016 querat_g
+// Last update Wed Apr 20 14:54:08 2016 querat_g
 //
 
 #include "NamedPipe.hh"
@@ -69,7 +69,7 @@ NamedPipe::_openReadingEnd()
   this->_tryCreatePipe();
   if (!(IS_VALID_FD(this->_fdin))) // Input side of the pipe
     {
-      this->_fdin = open(this->_C_name, O_RDONLY);
+      this->_fdin = open(this->_C_name, O_RDONLY); // | O_NONBLOCK
       if (this->_fdin == -1)
         std::cerr << "NamedPipe::open(): _fdin: "
                   << strerror(errno) << std::endl;
@@ -91,9 +91,6 @@ NamedPipe::_close() {
 void
 NamedPipe::writeTo(void const *data, size_t size) {
   this->_openWritingEnd();
-
-  std::cout <<  "writing " << data << std::endl;
-
   write(this->_fdout, data, size);
 }
 

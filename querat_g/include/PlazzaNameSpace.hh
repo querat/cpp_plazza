@@ -5,7 +5,7 @@
 // Login   <querat_g@epitech.net>
 //
 // Started on  Sun Apr 17 14:29:00 2016 querat_g
-// Last update Wed Apr 20 10:01:39 2016 querat_g
+// Last update Wed Apr 20 15:35:08 2016 querat_g
 //
 
 #ifndef PLAZZANAMESPACE_HH
@@ -22,10 +22,14 @@
 
 # include <sys/types.h>
 
+# define DEF_MAGIC              0xC0FFEE
+
 # define PLAZZA_USAGE           "plazza: usage: ./plazza nb_threads"
 # define PLAZZA_MAX_ACTIONS(x)  ((2 * x))
 
-# define FILENAME_SIZE  0x400
+# define CERR(...)                std::cerr << __VA_ARGS__ << std::endl;
+
+# define FILENAME_SIZE          0x400
 
 # define COMMAND_DELIMITERS     ";"
 # define WORDS_DELIMITERS       "\t "
@@ -96,12 +100,17 @@ namespace Plazza
         Plazza::Action::Type    type;
         char                    fileName[FILENAME_SIZE];
       };// !Plazza::Packet::Raw::Action
+      // Sent from the child to the main process
+      struct      Answer : public Plazza::Packet::Header
+      {
+        char                    data[0];
+      };// !Plazza::Packet::Raw::Answer
     }  // !Plazza::Packet::Raw
   }   // !Plazza::Packet
 }    // !Plazza
 
   //
- // Function Prototypes
+ // Functions Prototypes
 //
 namespace Plazza
 {

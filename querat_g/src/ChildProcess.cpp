@@ -5,7 +5,7 @@
 // Login   <querat_g@epitech.net>
 //
 // Started on  Mon Apr 18 15:04:35 2016 querat_g
-// Last update Wed Apr 20 10:26:48 2016 querat_g
+// Last update Wed Apr 20 16:22:35 2016 querat_g
 //
 
 #include "ChildProcess.hh"
@@ -24,22 +24,6 @@ ChildProcess::~ChildProcess(){
   // std::cerr << "ChildProcess " << std::to_string(_pid) << "deleted" << std::endl;
 }
 
-void
-ChildProcess::sendData(void const *data, size_t size)
-{
-  Plazza::Packet::Header        head;
-
-  // pas de constructeur dans le header ...
-  head.magic = Plazza::Packet::MAGIC;
-  head.size = size;
-
-  // on envoie le header dans le pipe
-  _pipe1->writeTo(&head, sizeof(Plazza::Packet::Header));
-
-  // Puis les données brutes
-  _pipe1->writeTo(data, size);
-}
-
 bool
 ChildProcess::sendAction(t_FileActionPair const & fileActionPair)
 {
@@ -55,4 +39,45 @@ void
 ChildProcess::sendSignal(int sig) const
 {
   kill(this->_pid, sig);
+}
+
+bool
+ChildProcess::receiveAnswer()
+{
+  Plazza::Packet::Header        head;
+  char                          *raw = nullptr;
+
+  std::memset(&head, '\0', sizeof(head));
+
+  if (!_pipe2->readFrom(&head, sizeof(head))){
+    std::cerr << "Couldn't read answer header" << std::endl;
+    return (false);
+  }
+
+  if (head.magic != Plazza::Packet::MAGIC) {
+    std::cerr << "bad answer header magic" << std::endl;
+    return (false);
+  }
+
+  raw = new char[head.size];
+  if (!_pipe2->readFrom(raw, head.size)) {
+    CERR("Couldn't read raw answer data");
+    return (false);
+  }
+
+  _answerStack.push(std::string(raw));
+
+  delete []raw;
+
+  return (true);
+}
+
+void
+ChildProcess::popPrintAnswers()
+{
+  while (!_answerStack.empty())
+    {
+      std::cout << _answerStack.top() << std::endl;
+      _answerStack.pop();
+    }
 }

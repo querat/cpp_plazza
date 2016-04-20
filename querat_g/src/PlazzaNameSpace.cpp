@@ -5,7 +5,7 @@
 // Login   <querat_g@epitech.net>
 //
 // Started on  Sun Apr 17 16:11:56 2016 querat_g
-// Last update Wed Apr 20 10:03:50 2016 querat_g
+// Last update Wed Apr 20 14:22:53 2016 querat_g
 //
 
 #include "PlazzaNameSpace.hh"
@@ -50,7 +50,7 @@ namespace Plazza
 
   namespace Packet
   {
-    uint32_t const MAGIC = 0xC0FFEE ;
+    uint32_t const MAGIC = DEF_MAGIC ;
   } // !Plazza::Packet
 }  // !Plazza
 

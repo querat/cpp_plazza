@@ -5,7 +5,7 @@
 // Login   <querat_g@epitech.net>
 //
 // Started on  Tue Apr 19 09:50:04 2016 querat_g
-// Last update Tue Apr 19 18:25:30 2016 querat_g
+// Last update Wed Apr 20 16:21:56 2016 querat_g
 //
 
 #ifndef SUBMAIN_HH
@@ -36,10 +36,9 @@ namespace Plazza
     std::mutex          _actionMutex;
 
   public:
-    void                testReceive(void);
-    void *              receiveData(void);
     bool                receiveAction(void);
     void                printActionsToDo(void) const;
+    bool                sendSolvedAction(std::string const & solved);
   };
 }
 

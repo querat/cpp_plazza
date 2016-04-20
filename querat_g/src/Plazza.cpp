@@ -5,7 +5,7 @@
 // Login   <querat_g@epitech.net>
 //
 // Started on  Sun Apr 17 16:11:56 2016 querat_g
-// Last update Wed Apr 20 10:41:33 2016 querat_g
+// Last update Wed Apr 20 16:04:02 2016 querat_g
 //
 
 #include "PlazzaNameSpace.hh"
@@ -58,14 +58,22 @@ Plazza::Main::forkPlazza()
       std::map<pid_t, ChildProcess>::iterator it = _childs.find(pid);
       if (it != _childs.end()){
         it->second.sendAction(std::make_pair("lol.txt", Plazza::Action::Type::EMAIL_ADDRESS));
+        it->second.receiveAnswer();
+        it->second.receiveAnswer();
+        it->second.receiveAnswer();
+        it->second.popPrintAnswers();
       }
-      // wait(0);
+      wait(0);
     }
   else // child
     {
       SubMain   *subProcess = new SubMain(getpid(), pipe1, pipe2);
       subProcess->receiveAction();
       subProcess->printActionsToDo();
+
+      subProcess->sendSolvedAction("test 1");
+      subProcess->sendSolvedAction("plop plop");
+      subProcess->sendSolvedAction("message 3");
 
       delete (subProcess);
       exit(1);

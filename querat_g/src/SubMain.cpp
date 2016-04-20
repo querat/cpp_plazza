@@ -5,7 +5,7 @@
 // Login   <querat_g@epitech.net>
 //
 // Started on  Tue Apr 19 09:58:24 2016 querat_g
-// Last update Wed Apr 20 10:45:07 2016 querat_g
+// Last update Wed Apr 20 16:21:51 2016 querat_g
 //
 
 #include "SubMain.hh"
@@ -23,69 +23,6 @@ Plazza::SubMain::~SubMain()
   delete (_pipe1);
   delete (_pipe2);
   // std::cerr << "SubMain " << _pid << "deleted" << std::endl;
-}
-
-void *
-Plazza::SubMain::receiveData()
-{
-  Plazza::Packet::Header  header;
-
-  std::cerr << _pid << "Waiting for packet header ..." << std::endl;
-
-  if (!this->_pipe1->readFrom(&header, sizeof(Plazza::Packet::Header)))
-    {
-      std::cerr << "invalid header read() size" << std::endl;
-      return (nullptr);
-    }
-
-  std::cerr << "I got the packet header !" << std::endl;
-  std::cerr << "magic : " << std::hex << header.magic << std::endl;
-  std::cerr << "size : " << std::hex << header.size << std::endl;
-
-  char *dataBuffer = new char[header.size];
-
-  if (!this->_pipe1->readFrom(dataBuffer, header.size))
-    {
-      std::cerr << "Could not read Plazza::Packet's raw data" << std::endl;
-      delete (dataBuffer);
-      return (nullptr);
-    }
-
-  return (dataBuffer);
-}
-
-void
-Plazza::SubMain::testReceive()
-{
-  Plazza::Packet::Header  header;
-
-  std::cerr << _pid << "Waiting for packet header ..." << std::endl;
-
-  if (!this->_pipe1->readFrom(&header, sizeof(Plazza::Packet::Header)))
-    {
-      std::cerr << "invalid header read size" << std::endl;
-      return ;
-    }
-
-  if (header.magic != Plazza::Packet::MAGIC)
-    {
-      std::cerr << "invalid Plazza::Packet::MAGIC code" << std::endl;
-      return ;
-    }
-
-  std::cerr << "I got the packet header !" << std::endl;
-  std::cerr << "magic : " << std::hex << header.magic << std::endl;
-  std::cerr << "size : " << std::hex << header.size << std::endl;
-
-  char *dataBuffer = new char[header.size];
-
-  if (!this->_pipe1->readFrom(dataBuffer, header.size))
-    {
-      std::cerr << "Could not read" << std::endl;
-      return ;
-    }
-  std::cerr << "I got the packet" << std::endl;
-  delete (dataBuffer);
 }
 
 bool
@@ -117,4 +54,18 @@ Plazza::SubMain::printActionsToDo() const
       std::cout << it->second << " " << it->first  << std::endl;
       ++it;
     }
+}
+
+bool
+Plazza::SubMain::sendSolvedAction(std::string const & str)
+{
+  Plazza::Packet::Header        head;
+
+  head.magic = Plazza::Packet::MAGIC;
+  head.size = str.size() + 1;
+
+  _pipe2->writeTo(&head, sizeof(head));
+  _pipe2->writeTo(str.c_str(), str.size() + 1);
+
+  return (true);
 }
