@@ -5,7 +5,7 @@
 // Login   <querat_g@epitech.net>
 //
 // Started on  Tue Apr 12 17:53:29 2016 querat_g
-// Last update Tue Apr 19 14:13:24 2016 querat_g
+// Last update Wed Apr 20 10:38:38 2016 querat_g
 //
 
 #ifndef NAMEDPIPE_HH_
@@ -28,6 +28,8 @@
 # include <iostream>
 # include <fstream>
 # include <sstream>
+
+# include "PlazzaNameSpace.hh"
 
 # define IS_VALID_FD(fd) ((fd != (-1)))
 
@@ -54,6 +56,11 @@ public:
 
   void                  writeTo(void const *data, size_t size);
   bool                  readFrom(void *buffer, size_t size);
+
 };
+
+NamedPipe &             operator<<(NamedPipe &dis, t_FileActionPair const & pair);
+NamedPipe &             operator>>(NamedPipe &dis, t_FileActionPair & pair);
+NamedPipe &             operator>>(NamedPipe &dis, Plazza::Packet::Raw::Action & act);
 
 #endif // NAMEDPIPE_HH_

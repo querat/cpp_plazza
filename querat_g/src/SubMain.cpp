@@ -5,7 +5,7 @@
 // Login   <querat_g@epitech.net>
 //
 // Started on  Tue Apr 19 09:58:24 2016 querat_g
-// Last update Tue Apr 19 18:26:56 2016 querat_g
+// Last update Wed Apr 20 10:45:07 2016 querat_g
 //
 
 #include "SubMain.hh"
@@ -92,24 +92,15 @@ bool
 Plazza::SubMain::receiveAction()
 {
   std::lock_guard<std::mutex>(this->_actionMutex);
-  Plazza::Packet::Header        header;
   Plazza::Packet::Raw::Action   action;
 
-  std::cerr << _pid << "Waiting for packet header ..." << std::endl;
+  (*_pipe1) >> action;
 
-  if (!this->_pipe1->readFrom(&header, sizeof(Plazza::Packet::Header))) {
-    std::cerr << "invalid header read size" << std::endl;
-    return (false);
-  }
-  if (header.magic != Plazza::Packet::MAGIC) {
-    std::cerr << "invalid Plazza::Packet::MAGIC code" << std::endl;
-    return (false);
-  }
-
-  if (!this->_pipe1->readFrom(&action, sizeof(action))) {
-    std::cerr << "invalid Plazza::Packet::Raw::Action read size" << std::endl;
-    return (false);
-  }
+  if (action.magic != Plazza::Packet::MAGIC)
+    {
+      std::cerr << _pid << " could not get action from _pipe1" << std::endl;
+      return (false);
+    }
 
   this->_actionsToDo.push_back(std::make_pair(action.fileName, action.type));
 
@@ -123,8 +114,7 @@ Plazza::SubMain::printActionsToDo() const
 
   while (it != _actionsToDo.end())
     {
-      Plazza::printAction(it->second);
-      std::cout << " " << it->first  << std::endl;
+      std::cout << it->second << " " << it->first  << std::endl;
       ++it;
     }
 }

@@ -5,7 +5,7 @@
 // Login   <querat_g@epitech.net>
 //
 // Started on  Sun Apr 17 16:11:56 2016 querat_g
-// Last update Tue Apr 19 18:36:51 2016 querat_g
+// Last update Wed Apr 20 10:03:50 2016 querat_g
 //
 
 #include "PlazzaNameSpace.hh"
@@ -27,7 +27,7 @@ namespace Plazza
       }); // !Plazza::Action::String::mapToEnum
     }    // !Plazza::Action::String
 
-    Plazza::String::t_ActionToStringMap const mapToString({
+    Plazza::Action::t_ActionToStringMap const mapToString({
         std::make_pair(Plazza::Action::Type::EMAIL_ADDRESS, String::EMAIL_ADDRESS),
         std::make_pair(Plazza::Action::Type::PHONE_NUMBER , String::PHONE_NUMBER ),
         std::make_pair(Plazza::Action::Type::IP_ADDRESS   , String::IP_ADDRESS   )
@@ -72,10 +72,17 @@ Plazza::makeFifoNameFromPid(pid_t pid, bool toMain){
 }
 
 void
-Plazza::printAction(Plazza::Action::Type act, bool toErr)
+Plazza::printAction(Plazza::Action::Type act, bool toErr /* = 0*/)
 {
   if (toErr)
     std::cerr << Plazza::Action::mapToString.find(act)->second;
   else
     std::cout << Plazza::Action::mapToString.find(act)->second;
+}
+
+std::ostream &
+operator<<(std::ostream &os, Plazza::Action::Type act)
+{
+  Plazza::printAction(act);
+  return (os);
 }

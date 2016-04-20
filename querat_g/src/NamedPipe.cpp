@@ -5,7 +5,7 @@
 // Login   <querat_g@epitech.net>
 //
 // Started on  Tue Apr 12 17:46:41 2016 querat_g
-// Last update Tue Apr 19 16:50:51 2016 querat_g
+// Last update Wed Apr 20 10:43:47 2016 querat_g
 //
 
 #include "NamedPipe.hh"
@@ -106,4 +106,62 @@ NamedPipe::readFrom(void *buffer, size_t requestedReadSize)
   size_t actualReadSize = read(this->_fdin, buffer, requestedReadSize);
 
   return (actualReadSize == requestedReadSize);
+}
+
+NamedPipe &
+operator<<(NamedPipe &dis, t_FileActionPair const & fileActionPair)
+{
+  Plazza::Packet::Raw::Action   act;
+
+  // Fill the Header first ...
+  act.magic = Plazza::Packet::MAGIC;
+  act.size = sizeof(act);
+  // ... Then the raw data
+  act.type = fileActionPair.second;
+  std::strncpy(act.fileName, fileActionPair.first.c_str(), FILENAME_SIZE);
+  act.fileName[FILENAME_SIZE - 1] = '\0'; // better safe than sorry
+
+  // Finally, write it into the named pipe
+  dis.writeTo(&act, sizeof(act));
+
+  return (dis);
+}
+
+NamedPipe &
+operator>>(NamedPipe &dis, t_FileActionPair & pair)
+{
+  Plazza::Packet::Raw::Action action;
+
+  memset(&action, 0, sizeof(action));
+
+  if (!dis.readFrom(&action, sizeof(action))) {
+    return (dis);
+  }
+
+  if (action.magic != Plazza::Packet::MAGIC) {
+    return (dis);
+  }
+  pair.first = action.fileName;
+  pair.second = action.type;
+
+  return (dis);
+}
+
+
+NamedPipe &
+operator>>(NamedPipe &dis, Plazza::Packet::Raw::Action & action)
+{
+  std::memset(&action, 0, sizeof(action));
+
+  if (!dis.readFrom(&action, sizeof(action))) {
+    std::memset(&action, 0, sizeof(action));
+    return (dis);
+  }
+
+  if (action.magic != Plazza::Packet::MAGIC) {
+    std::memset(&action, 0, sizeof(action));
+    return (dis);
+  }
+
+  return (dis);
 }

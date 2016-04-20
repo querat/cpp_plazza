@@ -5,7 +5,7 @@
 // Login   <querat_g@epitech.net>
 //
 // Started on  Sun Apr 17 14:29:00 2016 querat_g
-// Last update Tue Apr 19 18:21:27 2016 querat_g
+// Last update Wed Apr 20 10:01:39 2016 querat_g
 //
 
 #ifndef PLAZZANAMESPACE_HH
@@ -49,13 +49,13 @@ namespace Plazza
         PHONE_NUMBER,
         IP_ADDRESS
       };
+    typedef std::map<Plazza::Action::Type, std::string> t_ActionToStringMap;
+    extern t_ActionToStringMap const                    mapToString;
   } // !Plazza::Action
 
   namespace String {
     typedef std::map<std::string, Plazza::Action::Type> t_StringToActionMap;
     extern t_StringToActionMap const                    mapToEnum;
-    typedef std::map<Plazza::Action::Type, std::string> t_ActionToStringMap;
-    extern t_ActionToStringMap const                    mapToString;
   } // !Plazza::String
 
   namespace Regex {
@@ -91,7 +91,7 @@ namespace Plazza
     // All the stuff defined here is meant to
     namespace Raw
     {
-      struct      Action
+      struct      Action : public Plazza::Packet::Header
       {
         Plazza::Action::Type    type;
         char                    fileName[FILENAME_SIZE];
@@ -110,5 +110,7 @@ namespace Plazza
   std::string           makeFifoNameFromPid(pid_t pid, bool toMain);
   void                  printAction(Plazza::Action::Type act, bool toErr = false);
 }
+
+std::ostream &          operator<<(std::ostream &os, Plazza::Action::Type act);
 
 #endif  // PLAZZANAMESPACE_HH

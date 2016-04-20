@@ -5,13 +5,15 @@
 // Login   <querat_g@epitech.net>
 //
 // Started on  Mon Apr 18 15:01:51 2016 querat_g
-// Last update Tue Apr 19 17:29:41 2016 querat_g
+// Last update Wed Apr 20 10:26:44 2016 querat_g
 //
 
 #ifndef CHILDPROCESS_HH_
 # define CHILDPROCESS_HH_
 
+# include <signal.h>
 # include <sys/types.h>
+
 # include "PlazzaNameSpace.hh"
 # include "NamedPipe.hh"
 
@@ -23,15 +25,17 @@ public:
 
 private:
   pid_t         _pid;
-  NamedPipe *   _pipe1;
-  NamedPipe *   _pipe2;
+  NamedPipe *   _pipe1; // from main to child ...
+  NamedPipe *   _pipe2; // ... And the other way around
   uint32_t      _nbCurrentActions;
   uint32_t      _maxActions;
 
+private:
+
 public:
   void          sendData(void const *data, size_t size);
-  bool          sendAction(t_FileActionPair fileActionPair);
-
+  bool          sendAction(t_FileActionPair const & fileActionPair);
+  void          sendSignal(int sig) const;
 };
 
 #endif // !PROCESS_HH_

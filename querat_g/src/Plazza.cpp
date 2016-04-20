@@ -5,7 +5,7 @@
 // Login   <querat_g@epitech.net>
 //
 // Started on  Sun Apr 17 16:11:56 2016 querat_g
-// Last update Tue Apr 19 18:29:37 2016 querat_g
+// Last update Wed Apr 20 10:41:33 2016 querat_g
 //
 
 #include "PlazzaNameSpace.hh"
@@ -58,10 +58,6 @@ Plazza::Main::forkPlazza()
       std::map<pid_t, ChildProcess>::iterator it = _childs.find(pid);
       if (it != _childs.end()){
         it->second.sendAction(std::make_pair("lol.txt", Plazza::Action::Type::EMAIL_ADDRESS));
-        it->second.sendAction(std::make_pair("lol.txt", Plazza::Action::Type::EMAIL_ADDRESS));
-        it->second.sendAction(std::make_pair("lol.txt", Plazza::Action::Type::EMAIL_ADDRESS));
-        it->second.sendAction(std::make_pair("lol.txt", Plazza::Action::Type::EMAIL_ADDRESS));
-        it->second.sendAction(std::make_pair("lol.txt", Plazza::Action::Type::EMAIL_ADDRESS));
       }
       // wait(0);
     }
@@ -69,12 +65,7 @@ Plazza::Main::forkPlazza()
     {
       SubMain   *subProcess = new SubMain(getpid(), pipe1, pipe2);
       subProcess->receiveAction();
-      subProcess->receiveAction();
-      subProcess->receiveAction();
-      subProcess->receiveAction();
-      subProcess->receiveAction();
       subProcess->printActionsToDo();
-      // subProcess._ac
 
       delete (subProcess);
       exit(1);

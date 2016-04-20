@@ -5,7 +5,7 @@
 // Login   <querat_g@epitech.net>
 //
 // Started on  Mon Apr 18 15:04:35 2016 querat_g
-// Last update Tue Apr 19 17:42:16 2016 querat_g
+// Last update Wed Apr 20 10:26:48 2016 querat_g
 //
 
 #include "ChildProcess.hh"
@@ -41,20 +41,18 @@ ChildProcess::sendData(void const *data, size_t size)
 }
 
 bool
-ChildProcess::sendAction(t_FileActionPair fileActionPair)
+ChildProcess::sendAction(t_FileActionPair const & fileActionPair)
 {
   if (_nbCurrentActions >= _maxActions)
     return (false);
 
-  // Fill a raw packet data
-  Plazza::Packet::Raw::Action   act;
-  act.type = fileActionPair.second;
-  std::strncpy(act.fileName, fileActionPair.first.c_str(), FILENAME_SIZE);
-  act.fileName[FILENAME_SIZE - 1] = '\0'; // better safe than sorry
-
-  // then write it into the named pipe towards the subProcess
-  this->sendData(&act, sizeof(act));
-  // sendData will take care of adding a proper header before sending act
+  (*_pipe1) << fileActionPair;
 
   return (true);
+}
+
+void
+ChildProcess::sendSignal(int sig) const
+{
+  kill(this->_pid, sig);
 }
