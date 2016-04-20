@@ -10,7 +10,6 @@
 
 #include <fstream>
 #include <iostream>
-#include <unistd.h>
 #include "dataCollector.hh"
 
 dataCollector::dataCollector(t_FileActionPair &file_info, std::regex reg)
@@ -39,20 +38,18 @@ dataCollector::~dataCollector() {}
 std::string   dataCollector::caesarUnCipher(const std::string &to_uncipher, const unsigned short key)
 {
   std::string   ret;
-  int		len = to_uncipher.size();
 
-  for (int i = 0; i < len; i++)
-    ret.push_back(to_uncipher[i] - key);
+  for (unsigned long i = 0; i < to_uncipher.length(); i++)
+    ret.push_back(static_cast<char>(to_uncipher[i] - key));
   return (ret);
 }
 
 std::string   dataCollector::xorUnCipher(const std::string &to_uncipher, const unsigned short key)
 {
   std::string   ret;
-  int		len = to_uncipher.size();
 
-  for (int i = 0; i < len; i++)
-    ret.push_back(to_uncipher[i] ^ key);
+  for (unsigned long i = 0; i < to_uncipher.length(); i++)
+    ret.push_back(static_cast<char>(to_uncipher[i] ^ key));
   return (ret);
 }
 
@@ -60,13 +57,19 @@ std::string   dataCollector::caesarBruteForce(const std::string &to_uncipher)
 {
   std::string	tmp;
   std::smatch	checker;
+  const std::sregex_token_iterator End;
 
-  for (unsigned short key = 0; key < 256; key++)
+  for (unsigned short key = 1; key < 255; key++)
     {
       tmp = caesarUnCipher(to_uncipher, key);
-      std::regex_search(tmp, checker, _reg);
-      if (checker[0].str().length() > 0)
-	_processed_data += checker[0].str();
+      if (std::regex_search(tmp, checker, _reg))
+      {
+        for (std::sregex_token_iterator it(tmp.begin(), tmp.end(), _reg); it != End; ++it)
+        {
+          _processed_data += *it;
+          _processed_data.push_back('\n');
+        }
+      }
     }
   return _processed_data;
 }
@@ -75,13 +78,19 @@ std::string   dataCollector::xorBruteForce(const std::string &to_uncipher)
 {
   std::string	tmp;
   std::smatch	checker;
+  const std::sregex_token_iterator End;
 
-  for (unsigned short key = 0; key < 0xFFFF; key++)
+  for (unsigned short key = 1; key < 0xFF; key++)
     {
       tmp = xorUnCipher(to_uncipher, key);
-      std::regex_search(tmp, checker, _reg);
-      if (checker[0].str().length() > 0)
-	_processed_data += checker[0].str();
+      if (std::regex_search(tmp, checker, _reg))
+      {
+        for (std::sregex_token_iterator it(tmp.begin(), tmp.end(), _reg); it != End; ++it)
+        {
+          _processed_data += *it;
+          _processed_data.push_back('\n');
+        }
+      }
     }
   return _processed_data;
 }

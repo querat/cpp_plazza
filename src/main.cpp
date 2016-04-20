@@ -47,8 +47,8 @@ int     main(int ac, char **av)
 {
   Plazza::Main  *plazza = nullptr;
   t_FileActionPair      fileInfo;
-  std::regex            regex_phone(DEF_EMAIL_REGEX);
-  fileInfo = std::make_pair("/home/lina/rendu/B4/C++/cpp_plazza/index.html", Plazza::Action::Type::PHONE_NUMBER);
+  std::regex            regex_phone(DEF_PHONE_REGEX);
+  fileInfo = std::make_pair("/home/lina/rendu/B4/C++/cpp_plazza/ciphered2", Plazza::Action::Type::PHONE_NUMBER);
   dataCollector         data(fileInfo, regex_phone);
 
   std::cout << data.extract_data();
