@@ -5,7 +5,7 @@
 // Login   <querat_g@epitech.net>
 //
 // Started on  Tue Apr 12 17:46:41 2016 querat_g
-// Last update Thu Apr 21 11:11:47 2016 querat_g
+// Last update Thu Apr 21 11:55:25 2016 querat_g
 //
 
 #include "NamedPipe.hh"
@@ -185,27 +185,10 @@ NamedPipe::isReadyToRead()
     .revents = 0
   };
 
-  int           flags = fcntl(_fdin, F_GETFL);
-  if (flags < 0) {
-    CERR("fuck fcntl getfl on fd " << _fdin);
-    return (false);
-  }
-
-  if ((fcntl(_fdin, F_SETFL, flags | O_NONBLOCK))) {
-    CERR("fcntl SETFL failed 1");
-    return (false);
-  }
-
   if ((ret = poll(&poll_, 1, Plazza::POLL_TIMEOUT)) < 0) {
     CERR(getpid() << " could not poll() !");
     return (false);
   }
-
-  if ((fcntl(_fdin, F_SETFL, flags))) {
-    CERR("fcntl SETFL failed 2");
-    return (false);
-  }
-
 
   return ((ret && (poll_.revents & POLLFLAGS)) ? true : false);
 }
