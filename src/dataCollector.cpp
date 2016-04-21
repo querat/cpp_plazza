@@ -5,7 +5,7 @@
 // Login   <schmou@epitech.net>
 // 
 // Started on  Mon Apr 18 14:00:01 2016 schmou_a
-// Last update Thu Apr 21 15:50:43 2016 schmou_a
+// Last update Thu Apr 21 16:34:19 2016 schmou_a
 //
 
 #include <sstream>
@@ -52,10 +52,13 @@ bool		dataCollector::heuristics_ok(const std::string &to_uncipher, const unsigne
 
   for (; i <= 100 && i < len; i++)
     {
-      if (isprint(to_uncipher[i] ^ key))
+      if (isprint(to_uncipher[i] ^ (key >> 8)))
 	  nb_printable_chars++;
+      if (isprint(to_uncipher[i + 1] ^ key))
+	nb_printable_chars++;
+      i++;
     }
-  return nb_printable_chars >= i - 5;
+  return nb_printable_chars >= i;
 }
 
 std::string   dataCollector::xorUnCipher(const std::string &to_uncipher, const unsigned short key)
@@ -65,7 +68,11 @@ std::string   dataCollector::xorUnCipher(const std::string &to_uncipher, const u
   if (!heuristics_ok(to_uncipher, key))
     return "";
   for (unsigned long i = 0; i < to_uncipher.length(); i++)
-    ret.push_back(static_cast<char>(to_uncipher[i] ^ key));
+    {
+      ret.push_back(static_cast<char>(to_uncipher[i] ^ (key >> 8)));
+      ret.push_back(static_cast<char>(to_uncipher[i + 1] ^ key));
+      i++;
+    }
   return (ret);
 }
 
@@ -75,7 +82,7 @@ std::string   dataCollector::xorBruteForce(const std::string &to_uncipher)
   std::smatch	checker;
   const std::sregex_token_iterator End;
 
-  for (unsigned short key = 1; key < 0xFFU; key++)
+  for (unsigned short key = 1; key < 0xFFFFU; key++)
     {
       tmp = xorUnCipher(to_uncipher, key);
       if (std::regex_search(tmp, checker, _reg))
