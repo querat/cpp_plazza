@@ -5,7 +5,7 @@
 // Login   <querat_g@epitech.net>
 //
 // Started on  Tue Apr 12 17:46:41 2016 querat_g
-// Last update Wed Apr 20 14:54:08 2016 querat_g
+// Last update Thu Apr 21 11:11:47 2016 querat_g
 //
 
 #include "NamedPipe.hh"
@@ -23,6 +23,7 @@ NamedPipe::~NamedPipe()
 {
   this->_close();
   unlink(this->_C_name);
+  CERR("NamedPipe deleted");
 }
 
 bool
@@ -43,14 +44,14 @@ NamedPipe::_tryCreatePipe()
 
 bool
 NamedPipe::_open() {
-  this->_openWritingEnd();
-  this->_openReadingEnd();
+  this->openWritingEnd();
+  this->openReadingEnd();
   return ((IS_VALID_FD(this->_fdout)) &&
           (IS_VALID_FD(this->_fdin )) );
 }
 
 bool
-NamedPipe::_openWritingEnd()
+NamedPipe::openWritingEnd()
 {
   this->_tryCreatePipe();
   if (!(IS_VALID_FD(this->_fdout))) // Input side of the pipe
@@ -64,12 +65,12 @@ NamedPipe::_openWritingEnd()
 }
 
 bool
-NamedPipe::_openReadingEnd()
+NamedPipe::openReadingEnd()
 {
   this->_tryCreatePipe();
   if (!(IS_VALID_FD(this->_fdin))) // Input side of the pipe
     {
-      this->_fdin = open(this->_C_name, O_RDONLY); // | O_NONBLOCK
+      this->_fdin = open(this->_C_name, O_RDWR); // | O_NONBLOCK
       if (this->_fdin == -1)
         std::cerr << "NamedPipe::open(): _fdin: "
                   << strerror(errno) << std::endl;
@@ -90,19 +91,28 @@ NamedPipe::_close() {
 
 void
 NamedPipe::writeTo(void const *data, size_t size) {
-  this->_openWritingEnd();
+  this->openWritingEnd();
   write(this->_fdout, data, size);
+
 }
 
 bool
 NamedPipe::readFrom(void *buffer, size_t requestedReadSize)
 {
-  if (!this->_openReadingEnd())
+  if (!this->openReadingEnd())
     return (false);
 
   size_t actualReadSize = read(this->_fdin, buffer, requestedReadSize);
-
   return (actualReadSize == requestedReadSize);
+}
+
+int
+NamedPipe::getFdIn() const {
+  return (_fdin);
+}
+int
+NamedPipe::getFdOut() const {
+  return (_fdin);
 }
 
 NamedPipe &
@@ -161,4 +171,67 @@ operator>>(NamedPipe &dis, Plazza::Packet::Raw::Action & action)
   }
 
   return (dis);
+}
+
+bool
+NamedPipe::isReadyToRead()
+{
+#define POLLFLAGS (POLLIN)
+  this->openReadingEnd();
+  int   ret = 0;
+  struct pollfd poll_ = {
+    .fd      = this->_fdin,
+    .events  = POLLFLAGS,
+    .revents = 0
+  };
+
+  int           flags = fcntl(_fdin, F_GETFL);
+  if (flags < 0) {
+    CERR("fuck fcntl getfl on fd " << _fdin);
+    return (false);
+  }
+
+  if ((fcntl(_fdin, F_SETFL, flags | O_NONBLOCK))) {
+    CERR("fcntl SETFL failed 1");
+    return (false);
+  }
+
+  if ((ret = poll(&poll_, 1, Plazza::POLL_TIMEOUT)) < 0) {
+    CERR(getpid() << " could not poll() !");
+    return (false);
+  }
+
+  if ((fcntl(_fdin, F_SETFL, flags))) {
+    CERR("fcntl SETFL failed 2");
+    return (false);
+  }
+
+
+  return ((ret && (poll_.revents & POLLFLAGS)) ? true : false);
+}
+
+int
+NamedPipe::_readASync(void *buffer, size_t size)
+{
+
+  int           total = 0;
+  off_t         offset = 0;
+  int           flags = fcntl(_fdin, F_GETFL, 0);
+
+  if (!buffer)
+    return (-1);
+
+  if ((fcntl(_fdin, F_SETFL, flags | O_NONBLOCK))) {
+    CERR("fcntl SETFL failed");
+    return (-1);
+  }
+
+  // while ((read(_fdin, buffer, size)) != -1) {
+
+
+  // }
+
+
+
+  return (total);
 }

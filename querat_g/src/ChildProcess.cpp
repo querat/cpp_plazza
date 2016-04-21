@@ -5,7 +5,7 @@
 // Login   <querat_g@epitech.net>
 //
 // Started on  Mon Apr 18 15:04:35 2016 querat_g
-// Last update Wed Apr 20 16:22:35 2016 querat_g
+// Last update Wed Apr 20 18:06:56 2016 querat_g
 //
 
 #include "ChildProcess.hh"
@@ -30,7 +30,10 @@ ChildProcess::sendAction(t_FileActionPair const & fileActionPair)
   if (_nbCurrentActions >= _maxActions)
     return (false);
 
+  CERR("sending stuff ...");
   (*_pipe1) << fileActionPair;
+  ++this->_nbCurrentActions;
+  CERR("... sent stuff");
 
   return (true);
 }
@@ -69,7 +72,19 @@ ChildProcess::receiveAnswer()
 
   delete []raw;
 
+  --this->_nbCurrentActions;
+
   return (true);
+}
+
+bool
+ChildProcess::reachedMaxCharge() const {
+  return (_nbCurrentActions >= _maxActions);
+}
+
+bool
+ChildProcess::isBusy() const {
+  return (_nbCurrentActions > 0);
 }
 
 void
@@ -80,4 +95,9 @@ ChildProcess::popPrintAnswers()
       std::cout << _answerStack.top() << std::endl;
       _answerStack.pop();
     }
+}
+
+pid_t
+ChildProcess::getPid() const {
+  return (_pid);
 }

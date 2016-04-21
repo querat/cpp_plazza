@@ -5,13 +5,15 @@
 // Login   <querat_g@epitech.net>
 //
 // Started on  Sun Apr 17 16:11:56 2016 querat_g
-// Last update Wed Apr 20 14:22:53 2016 querat_g
+// Last update Thu Apr 21 11:09:00 2016 querat_g
 //
 
 #include "PlazzaNameSpace.hh"
 
 namespace Plazza
 {
+  const int POLL_TIMEOUT = DEF_POLL_TIMEOUT;
+
   namespace Action
   {
     namespace String

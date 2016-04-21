@@ -5,7 +5,7 @@
 // Login   <querat_g@epitech.net>
 //
 // Started on  Sun Apr 17 16:11:56 2016 querat_g
-// Last update Wed Apr 20 16:04:02 2016 querat_g
+// Last update Thu Apr 21 10:49:22 2016 querat_g
 //
 
 #include "PlazzaNameSpace.hh"
@@ -47,36 +47,21 @@ Plazza::Main::forkPlazza()
 
   if (pid) // parent
     {
+      // on insère le child dans la map de pid__t
       this->_childs.insert(std::make_pair(pid, ChildProcess(pid, pipe1, pipe2, _nbThreads)));
 
-      char packet[] = "Je suis un paquet !";
 
-      Plazza::Packet::Header head;
-      head.magic = Plazza::Packet::MAGIC;
-      head.size = sizeof(packet);
+      _childs.find(pid)->second.sendAction(std::make_pair("lol", Plazza::Action::EMAIL_ADDRESS));
 
-      std::map<pid_t, ChildProcess>::iterator it = _childs.find(pid);
-      if (it != _childs.end()){
-        it->second.sendAction(std::make_pair("lol.txt", Plazza::Action::Type::EMAIL_ADDRESS));
-        it->second.receiveAnswer();
-        it->second.receiveAnswer();
-        it->second.receiveAnswer();
-        it->second.popPrintAnswers();
-      }
-      wait(0);
     }
   else // child
     {
       SubMain   *subProcess = new SubMain(getpid(), pipe1, pipe2);
-      subProcess->receiveAction();
-      subProcess->printActionsToDo();
 
-      subProcess->sendSolvedAction("test 1");
-      subProcess->sendSolvedAction("plop plop");
-      subProcess->sendSolvedAction("message 3");
+      subProcess->mainLoop();
 
       delete (subProcess);
-      exit(1);
+      exit(0);
     }
 
   return (true);

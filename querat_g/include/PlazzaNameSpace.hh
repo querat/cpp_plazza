@@ -5,7 +5,7 @@
 // Login   <querat_g@epitech.net>
 //
 // Started on  Sun Apr 17 14:29:00 2016 querat_g
-// Last update Wed Apr 20 15:35:08 2016 querat_g
+// Last update Thu Apr 21 11:09:30 2016 querat_g
 //
 
 #ifndef PLAZZANAMESPACE_HH
@@ -28,6 +28,7 @@
 # define PLAZZA_MAX_ACTIONS(x)  ((2 * x))
 
 # define CERR(...)                std::cerr << __VA_ARGS__ << std::endl;
+# define COUT(...)                std::cout << __VA_ARGS__ << std::endl;
 
 # define FILENAME_SIZE          0x400
 
@@ -38,12 +39,16 @@
 # define DEF_PHONE_REGEX        "reg"
 # define DEF_IP_REGEX           "reg"
 
+# define DEF_POLL_TIMEOUT       1000
+
 //
 // !! All variables declared here as extern MUST be declared in Plazza.cpp !!
 //
 
 namespace Plazza
 {
+  extern const int      POLL_TIMEOUT;
+
   namespace Action
   {
     enum Type

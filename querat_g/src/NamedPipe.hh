@@ -5,7 +5,7 @@
 // Login   <querat_g@epitech.net>
 //
 // Started on  Tue Apr 12 17:53:29 2016 querat_g
-// Last update Wed Apr 20 10:38:38 2016 querat_g
+// Last update Thu Apr 21 11:02:52 2016 querat_g
 //
 
 #ifndef NAMEDPIPE_HH_
@@ -23,6 +23,7 @@
 # include <sys/types.h>
 # include <sys/select.h>
 # include <sys/time.h>
+# include <poll.h>
 
 // C++
 # include <iostream>
@@ -35,11 +36,11 @@
 
 class    NamedPipe
 {
- public:
+public:                // Ctor Dtor
   NamedPipe(std::string const & name);
   ~NamedPipe();
 
- private:
+private:               // Attributes
   std::string const     _name;
   char const *          _C_name;
 
@@ -48,14 +49,23 @@ class    NamedPipe
 
   bool                  _open();
   bool                  _close();
-  bool                  _openReadingEnd();
-  bool                  _openWritingEnd();
   bool                  _tryCreatePipe();
 
-public:
+private:                // Private member functions
+  int                   _readASync(void *buffer, size_t size);
 
+public:                 // I/O operations
+  bool                  openWritingEnd();
+  bool                  openReadingEnd();
   void                  writeTo(void const *data, size_t size);
   bool                  readFrom(void *buffer, size_t size);
+
+public:                 // GetSet
+  int                   getFdIn() const;
+  int                   getFdOut() const;
+
+public:                 // Bool
+  bool                  isReadyToRead();
 
 };
 

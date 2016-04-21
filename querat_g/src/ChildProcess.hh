@@ -5,7 +5,7 @@
 // Login   <querat_g@epitech.net>
 //
 // Started on  Mon Apr 18 15:01:51 2016 querat_g
-// Last update Wed Apr 20 12:35:48 2016 querat_g
+// Last update Wed Apr 20 17:31:32 2016 querat_g
 //
 
 #ifndef CHILDPROCESS_HH_
@@ -33,12 +33,18 @@ private:
 
 private:
 
-public:
+public:         // I/O operations
   void          sendData(void const *data, size_t size);
   bool          sendAction(t_FileActionPair const & fileActionPair);
   void          sendSignal(int sig) const;
-  bool          receiveAnswer();
   void          popPrintAnswers();
+  bool          receiveAnswer();
+
+public:         //
+  bool          isBusy() const;
+  bool          reachedMaxCharge() const;
+
+  pid_t         getPid() const;
 };
 
 #endif // !PROCESS_HH_

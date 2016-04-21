@@ -5,13 +5,14 @@
 // Login   <querat_g@epitech.net>
 //
 // Started on  Tue Apr 19 09:58:24 2016 querat_g
-// Last update Wed Apr 20 16:21:51 2016 querat_g
+// Last update Thu Apr 21 11:12:03 2016 querat_g
 //
 
 #include "SubMain.hh"
 
 Plazza::SubMain::SubMain(pid_t pid, NamedPipe *pipe1, NamedPipe *pipe2)
   : _pid(pid)
+  , _shouldExit(false)
   , _pipe1(pipe1)
   , _pipe2(pipe2)
 {
@@ -66,6 +67,30 @@ Plazza::SubMain::sendSolvedAction(std::string const & str)
 
   _pipe2->writeTo(&head, sizeof(head));
   _pipe2->writeTo(str.c_str(), str.size() + 1);
+
+  return (true);
+}
+
+bool
+Plazza::SubMain::mainLoop()
+{
+  _pipe1->openReadingEnd();
+  // _pipe2->openWritingEnd();
+
+  while (!this->_shouldExit)
+    {
+      if (_pipe1->isReadyToRead())
+        {
+          CERR("shit's ready to read yo !");
+          receiveAction();
+        }
+      else
+        {
+          // receiveAction();
+          CERR("nothing here !");
+        }
+      COUT("abc");
+    }
 
   return (true);
 }
