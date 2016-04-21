@@ -8,6 +8,7 @@
 // Last update Thu Apr 21 15:50:43 2016 schmou_a
 //
 
+#include <sstream>
 #include <fstream>
 #include <iostream>
 #include "dataCollector.hh"
@@ -27,10 +28,7 @@ dataCollector::dataCollector(t_FileActionPair &file_info, std::regex reg)
       file.close();
     }
   else
-  {
-    std::cerr << "Error code:" << strerror(errno);
-    _processed_data.assign("Error while constructing the data collector.");
-  }
+    _processed_data.assign("Error while constructing the data collector. (No such file or directory)");
 }
 
 dataCollector::~dataCollector() {}
@@ -48,17 +46,16 @@ std::string   dataCollector::caesarUnCipher(const std::string &to_uncipher, cons
 
 bool		dataCollector::heuristics_ok(const std::string &to_uncipher, const unsigned short key)
 {
-  int		len = to_uncipher.length();
-  int		nb_printable_chars = 0;
+  unsigned long       len = to_uncipher.length();
+  unsigned long       nb_printable_chars = 0;
+  unsigned long       i = 0;
 
-  for (int i = 0; i < 100 && i < len; i++)
+  for (; i <= 100 && i < len; i++)
     {
       if (isprint(to_uncipher[i] ^ key))
-	nb_printable_chars++;
+	  nb_printable_chars++;
     }
-  if (nb_printable_chars < 95)
-    return (false);
-  return(true);
+  return nb_printable_chars >= i - 5;
 }
 
 std::string   dataCollector::xorUnCipher(const std::string &to_uncipher, const unsigned short key)
@@ -78,7 +75,7 @@ std::string   dataCollector::xorBruteForce(const std::string &to_uncipher)
   std::smatch	checker;
   const std::sregex_token_iterator End;
 
-  for (unsigned short key = 1; key < 0xFFFFU; key++)
+  for (unsigned short key = 1; key < 0xFFU; key++)
     {
       tmp = xorUnCipher(to_uncipher, key);
       if (std::regex_search(tmp, checker, _reg))
