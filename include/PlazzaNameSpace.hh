@@ -24,7 +24,7 @@
 # define COMMAND_DELIMITERS     ";"
 # define WORDS_DELIMITERS       "\t "
 
-# define DEF_EMAIL_REGEX        "[a-zA-Z0-9_.-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}"
+# define DEF_EMAIL_REGEX        "[a-z0-9_.-]+@[a-z0-9.-]+\\.[a-z]{2,}"
 # define DEF_PHONE_REGEX        "(0[1-9][[:space:]]?)([[:digit:]]{2}[[:space:]]?){4}"
 # define DEF_IP_REGEX           "(?:(?:0|1[\\d]{0,2}|2(?:[0-4]\\d?|5[0-5]?|[6-9])?|[3-9]\\d?)\\.){3}(?:0|1[\\d]{0,2}|2(?:[0-4]\\d?|5[0-5]?|[6-9])?|[3-9]\\d?)"
 

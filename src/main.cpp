@@ -55,7 +55,8 @@ int     main(int ac, char **av)
       return (1);
     }
 
-  try {
+  try
+  {
     plazza = new Plazza::Main(av[1]);
   }
   catch (std::invalid_argument const & exception) {
