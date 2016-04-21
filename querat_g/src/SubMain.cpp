@@ -5,7 +5,7 @@
 // Login   <querat_g@epitech.net>
 //
 // Started on  Tue Apr 19 09:58:24 2016 querat_g
-// Last update Thu Apr 21 11:12:03 2016 querat_g
+// Last update Thu Apr 21 11:44:12 2016 querat_g
 //
 
 #include "SubMain.hh"
@@ -32,7 +32,9 @@ Plazza::SubMain::receiveAction()
   std::lock_guard<std::mutex>(this->_actionMutex);
   Plazza::Packet::Raw::Action   action;
 
+  CERR("receiving action...")
   (*_pipe1) >> action;
+  CERR("... Ok")
 
   if (action.magic != Plazza::Packet::MAGIC)
     {
@@ -87,9 +89,9 @@ Plazza::SubMain::mainLoop()
       else
         {
           // receiveAction();
+          printActionsToDo();
           CERR("nothing here !");
         }
-      COUT("abc");
     }
 
   return (true);

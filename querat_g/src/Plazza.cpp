@@ -5,7 +5,7 @@
 // Login   <querat_g@epitech.net>
 //
 // Started on  Sun Apr 17 16:11:56 2016 querat_g
-// Last update Thu Apr 21 10:49:22 2016 querat_g
+// Last update Thu Apr 21 11:42:39 2016 querat_g
 //
 
 #include "PlazzaNameSpace.hh"
@@ -50,8 +50,22 @@ Plazza::Main::forkPlazza()
       // on insère le child dans la map de pid__t
       this->_childs.insert(std::make_pair(pid, ChildProcess(pid, pipe1, pipe2, _nbThreads)));
 
+      _childs.find(pid)->second.sendAction(std::make_pair("lol", Plazza::Action::EMAIL_ADDRESS));
+
+      sleep(1);
+      _childs.find(pid)->second.sendAction(std::make_pair("lol", Plazza::Action::EMAIL_ADDRESS));
+
+      sleep(1);
+      _childs.find(pid)->second.sendAction(std::make_pair("lol", Plazza::Action::EMAIL_ADDRESS));
+
+      sleep(1);
+      _childs.find(pid)->second.sendAction(std::make_pair("lol", Plazza::Action::EMAIL_ADDRESS));
+
+      sleep(1);
+      _childs.find(pid)->second.sendAction(std::make_pair("lol", Plazza::Action::EMAIL_ADDRESS));
 
       _childs.find(pid)->second.sendAction(std::make_pair("lol", Plazza::Action::EMAIL_ADDRESS));
+      wait(0);
 
     }
   else // child

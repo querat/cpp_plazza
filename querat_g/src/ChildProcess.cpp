@@ -5,7 +5,7 @@
 // Login   <querat_g@epitech.net>
 //
 // Started on  Mon Apr 18 15:04:35 2016 querat_g
-// Last update Wed Apr 20 18:06:56 2016 querat_g
+// Last update Thu Apr 21 11:57:20 2016 querat_g
 //
 
 #include "ChildProcess.hh"
@@ -27,8 +27,10 @@ ChildProcess::~ChildProcess(){
 bool
 ChildProcess::sendAction(t_FileActionPair const & fileActionPair)
 {
-  if (_nbCurrentActions >= _maxActions)
+  if (_nbCurrentActions >= _maxActions) {
+    CERR(_pid << " reached max actions, canceling sendAction()");
     return (false);
+  }
 
   CERR("sending stuff ...");
   (*_pipe1) << fileActionPair;
