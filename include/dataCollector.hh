@@ -32,7 +32,6 @@ public:
   std::string	xorBruteForce(const std::string &to_uncipher);
 
 private:
-
   std::string  	_raw_data;
   std::string  	_processed_data;
   std::regex	_reg;

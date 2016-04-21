@@ -9,12 +9,8 @@
 //
 
 #include <stdexcept>
-
-#include <sys/wait.h>
-
 #include <iostream>
 #include "Plazza.hh"
-#include "PlazzaNameSpace.hh"
 #include "dataCollector.hh"
 
 // int     elFork(char **av)
@@ -47,7 +43,7 @@ int     main(int ac, char **av)
 {
   Plazza::Main  *plazza = nullptr;
   t_FileActionPair      fileInfo;
-  std::regex            regex_phone(DEF_PHONE_REGEX);
+  std::regex            regex_phone(DEF_EMAIL_REGEX);
   fileInfo = std::make_pair("/home/lina/rendu/B4/C++/cpp_plazza/ciphered2", Plazza::Action::Type::PHONE_NUMBER);
   dataCollector         data(fileInfo, regex_phone);
 

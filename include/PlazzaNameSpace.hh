@@ -24,9 +24,9 @@
 # define COMMAND_DELIMITERS     ";"
 # define WORDS_DELIMITERS       "\t "
 
-# define DEF_EMAIL_REGEX        "[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}"
-# define DEF_PHONE_REGEX        "(0[1-9][[:space:]]?)([0-9]{2}[[:space:]]?){4}"
-# define DEF_IP_REGEX           "(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])"
+# define DEF_EMAIL_REGEX        "[a-zA-Z0-9_.-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}"
+# define DEF_PHONE_REGEX        "(0[1-9][[:space:]]?)([[:digit:]]{2}[[:space:]]?){4}"
+# define DEF_IP_REGEX           "(?:(?:0|1[\\d]{0,2}|2(?:[0-4]\\d?|5[0-5]?|[6-9])?|[3-9]\\d?)\\.){3}(?:0|1[\\d]{0,2}|2(?:[0-4]\\d?|5[0-5]?|[6-9])?|[3-9]\\d?)"
 
 //
 // !! All variables declared here as extern MUST be declared in Plazza.cpp !!

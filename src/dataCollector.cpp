@@ -39,6 +39,8 @@ std::string   dataCollector::caesarUnCipher(const std::string &to_uncipher, cons
 {
   std::string   ret;
 
+  if (!isprint(to_uncipher[0] - key))
+    return "";
   for (unsigned long i = 0; i < to_uncipher.length(); i++)
     ret.push_back(static_cast<char>(to_uncipher[i] - key));
   return (ret);
@@ -48,6 +50,8 @@ std::string   dataCollector::xorUnCipher(const std::string &to_uncipher, const u
 {
   std::string   ret;
 
+  if (!isprint(to_uncipher[0] ^ key))
+    return "";
   for (unsigned long i = 0; i < to_uncipher.length(); i++)
     ret.push_back(static_cast<char>(to_uncipher[i] ^ key));
   return (ret);
@@ -80,7 +84,7 @@ std::string   dataCollector::xorBruteForce(const std::string &to_uncipher)
   std::smatch	checker;
   const std::sregex_token_iterator End;
 
-  for (unsigned short key = 1; key < 0xFF; key++)
+  for (unsigned short key = 1; key < 0xFFU; key++)
     {
       tmp = xorUnCipher(to_uncipher, key);
       if (std::regex_search(tmp, checker, _reg))
