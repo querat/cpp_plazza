@@ -5,7 +5,7 @@
 // Login   <schmou@epitech.net>
 // 
 // Started on  Mon Apr 18 14:00:21 2016 schmou_a
-// Last update Thu Apr 21 15:49:07 2016 schmou_a
+// Last update Fri Apr 22 13:19:33 2016 schmou_a
 //
 
 #ifndef DATACOLLECTOR_HH_
@@ -33,6 +33,8 @@ public:
 
   bool		heuristics_ok(const std::string &to_uncipher, const unsigned short key);
 private:
+
+  int		my_isprint(char c);
   std::string  	_raw_data;
   std::string  	_processed_data;
   std::regex	_reg;

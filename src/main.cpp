@@ -5,7 +5,7 @@
 // Login   <querat_g@epitech.net>
 //
 // Started on  Wed Apr 13 22:43:06 2016 querat_g
-// Last update Thu Apr 21 17:58:11 2016 schmou_a
+// Last update Fri Apr 22 09:51:17 2016 schmou_a
 //
 
 #include <stdexcept>
@@ -44,7 +44,7 @@ int     main(int ac, char **av)
   Plazza::Main  *plazza = nullptr;
   t_FileActionPair      fileInfo;
   std::regex            regex_phone(DEF_EMAIL_REGEX);
-  fileInfo = std::make_pair("/home/schmou/cpp/cpp_plazza/FichierTests/ciphered_1_caesar_phone_mail", Plazza::Action::Type::PHONE_NUMBER);
+  fileInfo = std::make_pair("/home/schmou/cpp/cpp_plazza/FichierTests/lol2", Plazza::Action::Type::PHONE_NUMBER);
   dataCollector         data(fileInfo, regex_phone);
 
   std::cout << data.extract_data();
