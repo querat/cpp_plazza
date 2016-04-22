@@ -31,9 +31,10 @@ public:
   std::string	caesarBruteForce(const std::string &to_uncipher);
   std::string	xorBruteForce(const std::string &to_uncipher);
 
-  bool		heuristics_ok(const std::string &to_uncipher, const unsigned short key);
 private:
 
+    bool		heuristicsXor(const std::string &to_uncipher, const unsigned short key);
+    bool		heuristicsCaesar(const std::string &to_uncipher, const unsigned short key);
   int		my_isprint(char c);
   std::string  	_raw_data;
   std::string  	_processed_data;

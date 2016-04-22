@@ -33,29 +33,43 @@ dataCollector::dataCollector(t_FileActionPair &file_info, std::regex reg)
 
 dataCollector::~dataCollector() {}
 
+int		dataCollector::my_isprint(char c)
+{
+  return (isprint(c) || c == '\n' || c == '\t' || c == '\a' ||
+          c == '\v' || c == '\r');
+}
+
 std::string   dataCollector::caesarUnCipher(const std::string &to_uncipher, const unsigned short key)
 {
   std::string   ret;
 
-  if (!isascii(to_uncipher[0] - key))
+  if (!heuristicsCaesar(to_uncipher, key))
     return "";
   for (unsigned long i = 0; i < to_uncipher.length(); i++)
     ret.push_back(static_cast<char>(to_uncipher[i] - key));
   return (ret);
 }
 
-int		dataCollector::my_isprint(char c)
-{
-  return (isprint(c) || c == '\n' || c == '\t' || c == '\a' ||
-	  c == '\v' || c == '\r');
-}
-
-bool		dataCollector::heuristics_ok(const std::string &to_uncipher, const unsigned short key)
+bool		dataCollector::heuristicsCaesar(const std::string &to_uncipher, const unsigned short key)
 {
   unsigned long       len = to_uncipher.length();
   unsigned long       nb_printable_chars = 0;
   unsigned long       i = 0;
-  char		      strong = key >> 8;
+
+  for (; i <= 100 && i < len; i++)
+  {
+    if (my_isprint((char) (to_uncipher[i] - key)))
+      nb_printable_chars++;
+  }
+  return nb_printable_chars >= i;
+}
+
+bool		dataCollector::heuristicsXor(const std::string &to_uncipher, const unsigned short key)
+{
+  unsigned long       len = to_uncipher.length();
+  unsigned long       nb_printable_chars = 0;
+  unsigned long       i = 0;
+  char		          strong = key >> 8;
 
   for (; i <= 100 && i < len; i++)
     {
@@ -72,7 +86,7 @@ std::string   dataCollector::xorUnCipher(const std::string &to_uncipher, const u
 {
   std::string   ret;
 
-  if (!heuristics_ok(to_uncipher, key))
+  if (!heuristicsXor(to_uncipher, key))
     return "";
   for (unsigned long i = 0; i < to_uncipher.length(); i++)
     {

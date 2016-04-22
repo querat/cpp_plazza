@@ -58,7 +58,9 @@ int	main(int ac, char **av)
   else if (!strcmp(av[2], "caesar"))
     {
       for (int i = 0; i < len; i++)
-	buff[i] += key;
+      {
+        buff[i] += key;
+      }
     }
   else
     return (disp_usage());
