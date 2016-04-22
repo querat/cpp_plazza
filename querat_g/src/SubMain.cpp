@@ -5,7 +5,7 @@
 // Login   <querat_g@epitech.net>
 //
 // Started on  Tue Apr 19 09:58:24 2016 querat_g
-// Last update Fri Apr 22 14:19:03 2016 querat_g
+// Last update Fri Apr 22 16:57:35 2016 querat_g
 //
 
 #include "SubMain.hh"
@@ -25,7 +25,7 @@ Plazza::SubMain::~SubMain()
 {
   delete (_pipe1);
   delete (_pipe2);
-  CERR("Plazza::SubMain::~SubMain(): no tasks for 5 seconds, exiting");
+  DEBUG(_pid << " Plazza::SubMain::~SubMain(): no tasks for 5 seconds, exiting");
 }
 
 bool
@@ -33,9 +33,9 @@ Plazza::SubMain::receiveAction()
 {
   Plazza::Packet::Raw::Action   action;
 
-  CERR("receiving action...");
+  DEBUG("receiving action...");
   (*_pipe1) >> action;
-  CERR("... Ok");
+  DEBUG("... Ok");
 
   if (action.magic != Plazza::Packet::MAGIC) {
     std::cerr << _pid << " could not get action from _pipe1" << std::endl;
@@ -67,10 +67,10 @@ Plazza::SubMain::sendSolvedAction(std::string const & str)
   head.magic = Plazza::Packet::MAGIC;
   head.size = str.size() + 1;
 
-  CERR("sending answer back to Main process ...");
+  DEBUG("sending answer back to Main process ...");
   _pipe2->writeTo(&head, sizeof(head));
   _pipe2->writeTo(str.c_str(), str.size() + 1);
-  CERR("Answer sent !");
+  DEBUG("Answer sent !");
 
   sleep(2);
 
@@ -89,7 +89,7 @@ Plazza::SubMain::_incrementTimeSinceLastEvent() {
 
 void
 Plazza::SubMain::_resetTimeSinceLastEvent() {
-  CERR("resetting clock()");
+  DEBUG("resetting clock()");
   _timeSinceLastEvent = 0;
 }
 
@@ -109,7 +109,7 @@ Plazza::SubMain::mainLoop()
     {
       if (_pipe1->isReadyToRead())
         {
-          CERR("shit's ready to read yo !");
+          DEBUG("shit's ready to read yo !");
           receiveAction();
         }
       if (!_actionsToDo.empty())
@@ -130,7 +130,7 @@ Plazza::SubMain::processAction()
   // the deque is supposed to be thread safe
   t_FileActionPair      &action = _actionsToDo.front();
 
-  CERR("_action being done: " << action.first << " & " << action.second);
+  DEBUG("_action being done: " << action.first << " & " << action.second);
 
   std::string TODO("this is an answer from pid ");
   sendSolvedAction(TODO);

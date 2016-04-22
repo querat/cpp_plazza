@@ -5,7 +5,7 @@
 // Login   <querat_g@epitech.net>
 //
 // Started on  Sun Apr 17 16:11:56 2016 querat_g
-// Last update Fri Apr 22 16:00:06 2016 querat_g
+// Last update Fri Apr 22 17:11:11 2016 querat_g
 //
 
 #include "PlazzaNameSpace.hh"
@@ -18,14 +18,14 @@ void            sigHandler(int sig) {
   (void)sig;
   if (g_plazza) {
     DEBUG("^C caught");
-    g_plazza->killProcesses();
+    g_plazza->setForcedExitState();
   }
 }
-
 
 Plazza::Main::Main(std::string nbThreads)
   : _nbThreads(1)
   , _stdinIsClosed(false)
+  , _forcedExit(false)
 {
   std::regex    isNum("^\\-?[0-9]+$");
 
@@ -38,6 +38,7 @@ Plazza::Main::Main(std::string nbThreads)
 
   g_plazza = this;
   signal(SIGINT, sigHandler);
+  signal(SIGTERM, sigHandler);
 }
 
 Plazza::Main::~Main(){}
@@ -57,22 +58,22 @@ Plazza::Main::_forkPlazza()
   NamedPipe     *pipe1 = new NamedPipe(Plazza::makeFifoNameFromPid(tmpPid, true));
   NamedPipe     *pipe2 = new NamedPipe(Plazza::makeFifoNameFromPid(tmpPid, false));
 
-  if (pid) // parent
-    {
-
-      this->_childs.insert(std::make_pair(pid, ChildProcess(pid, pipe1, pipe2, _nbThreads)));
-    }
-  else // child
-    {
-      SubMain   *subProcess = new SubMain(getpid(), pipe1, pipe2);
-
-      subProcess->mainLoop();
-
-      delete (subProcess);
-      _Exit(0);
-    }
+  if (pid) { // parent
+    this->_childs.insert(std::make_pair(pid, ChildProcess(pid, pipe1, pipe2, _nbThreads)));
+  }
+  else { // child
+    SubMain   *subProcess = new SubMain(getpid(), pipe1, pipe2);
+    subProcess->mainLoop();
+    delete (subProcess);
+    _Exit(0);
+  }
 
   return (true);
+}
+
+void
+Plazza::Main::setForcedExitState() {
+  _forcedExit = true;
 }
 
 void
@@ -93,7 +94,11 @@ Plazza::Main::killProcesses()
   t_ChildrenMapIt       it = _childs.begin();
 
   while (it != _childs.end()) {
-    kill(SIGSEGV, it->second.getPid());
+    DEBUG("killing child " << it->first);
+    if ((kill(it->first, SIGKILL)) == -1) {
+      CERR(RED "Kill failed " << it->first << " : " << strerror(errno) <<  WHITE);
+    }
+    waitpid(it->first, nullptr, WNOHANG);
     it = _childs.erase(it);
   }
 }
@@ -101,7 +106,8 @@ Plazza::Main::killProcesses()
 bool
 Plazza::Main::_shouldExit() const
 {
-  if (!this->isBusy() && this->_stdinIsClosed)
+  if ((!this->isBusy() && this->_stdinIsClosed) ||
+      (this->_forcedExit))
     return (true);
   return (false);
 }
