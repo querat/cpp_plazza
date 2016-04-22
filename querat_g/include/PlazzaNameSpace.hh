@@ -5,7 +5,7 @@
 // Login   <querat_g@epitech.net>
 //
 // Started on  Sun Apr 17 14:29:00 2016 querat_g
-// Last update Thu Apr 21 11:09:30 2016 querat_g
+// Last update Fri Apr 22 14:21:04 2016 querat_g
 //
 
 #ifndef PLAZZANAMESPACE_HH
@@ -15,20 +15,44 @@
 # include <iomanip>
 
 # include <regex>
+
+# include <deque>
 # include <map>
 # include <list>
 
 # include <exception>
 
+# include <poll.h>
 # include <sys/types.h>
+# include <time.h>
+
+/*
+** Colors
+*/
+# define RED		"\033[1;31m"
+# define GREEN		"\033[1;32m"
+# define YELLOW		"\033[1;33m"
+# define BROWN		"\033[0;33m"
+# define BLUE		"\033[1;34m"
+# define PINK		"\033[1;35m"
+# define CYAN		"\033[1;36m"
+# define WHITE		"\033[0m"
+# define WWHITE		"\033[1;0m"
 
 # define DEF_MAGIC              0xC0FFEE
 
 # define PLAZZA_USAGE           "plazza: usage: ./plazza nb_threads"
 # define PLAZZA_MAX_ACTIONS(x)  ((2 * x))
 
-# define CERR(...)                std::cerr << __VA_ARGS__ << std::endl;
-# define COUT(...)                std::cout << __VA_ARGS__ << std::endl;
+// Defined by the Makefile rule debug
+# ifndef _DEBUG_
+#  define DEBUG(...)                {}
+# else
+#  define DEBUG(...)                std::cerr << __VA_ARGS__ << std::endl;
+# endif
+
+#  define COUT(...)                std::cout << __VA_ARGS__ << std::endl;
+#  define CERR(...)                std::cout << __VA_ARGS__ << std::endl;
 
 # define FILENAME_SIZE          0x400
 
@@ -39,7 +63,8 @@
 # define DEF_PHONE_REGEX        "reg"
 # define DEF_IP_REGEX           "reg"
 
-# define DEF_POLL_TIMEOUT       1000
+# define DEF_POLL_TIMEOUT       10
+# define EOF_CHAR               4
 
 //
 // !! All variables declared here as extern MUST be declared in Plazza.cpp !!
@@ -123,7 +148,10 @@ namespace Plazza
   Plazza::Action::Type  stringToAction(std::string const & str);
   std::string           makeFifoNameFromPid(pid_t pid, bool toMain);
   void                  printAction(Plazza::Action::Type act, bool toErr = false);
+  bool                  pollFd(int fd);
 }
+
+typedef std::deque<std::string> t_AnswerDeque;
 
 std::ostream &          operator<<(std::ostream &os, Plazza::Action::Type act);
 

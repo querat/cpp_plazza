@@ -5,7 +5,7 @@
 // Login   <querat_g@epitech.net>
 //
 // Started on  Sun Apr 17 16:11:56 2016 querat_g
-// Last update Thu Apr 21 11:09:00 2016 querat_g
+// Last update Fri Apr 22 13:11:44 2016 querat_g
 //
 
 #include "PlazzaNameSpace.hh"
@@ -57,29 +57,47 @@ namespace Plazza
 }  // !Plazza
 
 bool
-Plazza::isAnAction(std::string const &action){
+Plazza::isAnAction(std::string const &action) {
   return (Plazza::Action::String::mapToEnum.count(action) ? true : false);
 }
 
 Plazza::Action::Type
-Plazza::stringToAction(std::string const & str){
+Plazza::stringToAction(std::string const & str) {
   return ((Plazza::Action::String::mapToEnum.find(str))->second);
 }
 
 std::string
-Plazza::makeFifoNameFromPid(pid_t pid, bool toMain){
+Plazza::makeFifoNameFromPid(pid_t pid, bool toMain) {
   if (toMain)
     return (std::string("fifo_in_pid_") + std::to_string(pid));
   return (std::string("fifo_out_pid_") + std::to_string(pid));
 }
 
 void
-Plazza::printAction(Plazza::Action::Type act, bool toErr /* = 0*/)
-{
+Plazza::printAction(Plazza::Action::Type act, bool toErr /* = 0*/) {
   if (toErr)
     std::cerr << Plazza::Action::mapToString.find(act)->second;
   else
     std::cout << Plazza::Action::mapToString.find(act)->second;
+}
+
+bool
+Plazza::pollFd(int fd) {
+
+  struct pollfd myPoll =
+    {
+      .fd               = fd,
+      .events           = POLLIN,
+      .revents          = 0
+    };
+  int           status = 0;
+
+  if ((status = poll(&myPoll, 1, 0)) < 0) {
+    CERR("poll() failed on fd " << fd << ": " << strerror(errno));
+    return (false);
+  }
+
+  return ((status && (myPoll.revents & POLLIN)) ? true : false);
 }
 
 std::ostream &

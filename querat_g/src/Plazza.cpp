@@ -5,18 +5,27 @@
 // Login   <querat_g@epitech.net>
 //
 // Started on  Sun Apr 17 16:11:56 2016 querat_g
-// Last update Thu Apr 21 11:42:39 2016 querat_g
+// Last update Fri Apr 22 16:00:06 2016 querat_g
 //
 
 #include "PlazzaNameSpace.hh"
 #include "Plazza.hh"
 #include "SubMain.hh"
 
-# define ERR_NOTANUMBER "plazza: Argument should be a number"
-# define ERR_INVALIDNUM "plazza: Argument should be an unsigned number"
+static Plazza::Main     *g_plazza = nullptr;
+
+void            sigHandler(int sig) {
+  (void)sig;
+  if (g_plazza) {
+    DEBUG("^C caught");
+    g_plazza->killProcesses();
+  }
+}
+
 
 Plazza::Main::Main(std::string nbThreads)
   : _nbThreads(1)
+  , _stdinIsClosed(false)
 {
   std::regex    isNum("^\\-?[0-9]+$");
 
@@ -26,12 +35,15 @@ Plazza::Main::Main(std::string nbThreads)
   this->_nbThreads = std::atoi(nbThreads.c_str());
   if (this->_nbThreads <= 0)
     throw (std::invalid_argument(ERR_INVALIDNUM));
+
+  g_plazza = this;
+  signal(SIGINT, sigHandler);
 }
 
 Plazza::Main::~Main(){}
 
 bool
-Plazza::Main::forkPlazza()
+Plazza::Main::_forkPlazza()
 {
   pid_t         pid = -1;
   pid = fork();
@@ -47,26 +59,8 @@ Plazza::Main::forkPlazza()
 
   if (pid) // parent
     {
-      // on insère le child dans la map de pid__t
+
       this->_childs.insert(std::make_pair(pid, ChildProcess(pid, pipe1, pipe2, _nbThreads)));
-
-      _childs.find(pid)->second.sendAction(std::make_pair("lol", Plazza::Action::EMAIL_ADDRESS));
-
-      sleep(1);
-      _childs.find(pid)->second.sendAction(std::make_pair("lol", Plazza::Action::EMAIL_ADDRESS));
-
-      sleep(1);
-      _childs.find(pid)->second.sendAction(std::make_pair("lol", Plazza::Action::EMAIL_ADDRESS));
-
-      sleep(1);
-      _childs.find(pid)->second.sendAction(std::make_pair("lol", Plazza::Action::EMAIL_ADDRESS));
-
-      sleep(1);
-      _childs.find(pid)->second.sendAction(std::make_pair("lol", Plazza::Action::EMAIL_ADDRESS));
-
-      _childs.find(pid)->second.sendAction(std::make_pair("lol", Plazza::Action::EMAIL_ADDRESS));
-      wait(0);
-
     }
   else // child
     {
@@ -75,8 +69,165 @@ Plazza::Main::forkPlazza()
       subProcess->mainLoop();
 
       delete (subProcess);
-      exit(0);
+      _Exit(0);
     }
 
   return (true);
+}
+
+void
+Plazza::Main::printActionsQueue() const {
+  t_ActionDeque::const_iterator it = _actionQueue.begin();
+
+  CERR("now printing actions to std::cerr ----------");
+  while (it != _actionQueue.end()) {
+    CERR(it->first << " :: " << it->second);
+    ++it;
+  }
+  CERR("! print ------------------------------------");
+}
+
+void
+Plazza::Main::killProcesses()
+{
+  t_ChildrenMapIt       it = _childs.begin();
+
+  while (it != _childs.end()) {
+    kill(SIGSEGV, it->second.getPid());
+    it = _childs.erase(it);
+  }
+}
+
+bool
+Plazza::Main::_shouldExit() const
+{
+  if (!this->isBusy() && this->_stdinIsClosed)
+    return (true);
+  return (false);
+}
+
+void
+Plazza::Main::_readStdin() {
+  std::getline(std::cin, _stdinString);
+}
+
+bool
+Plazza::Main::isBusy() const {
+  t_ChildrenMap::const_iterator it = _childs.begin();
+
+  while (it != _childs.end()) {
+    if (it->second.isBusy())
+      return (true);
+    ++it;
+  }
+
+  return (false);
+}
+
+t_ChildrenMapIt
+Plazza::Main::_firstAvailableProcess() {
+  t_ChildrenMapIt       it = _childs.begin();
+
+  while (it != _childs.end()) {
+    if (!it->second.reachedMaxCharge() && it->second.isAlive()) {
+      return (it);
+    }
+    ++it;
+  }
+  return (it);
+}
+
+void
+Plazza::Main::_pollAndGetAnswers() {
+  t_ChildrenMapIt it = _childs.begin();
+
+  while (it != _childs.end()) {
+    if (it->second.hasAnswerReady()) {
+      DEBUG("pollAndGetAnswers OK");
+      it->second.receiveAnswer(_answers);
+    }
+    ++it;
+  }
+}
+
+void
+Plazza::Main::_dumpAnswers() {
+
+  if (_answers.empty()){
+    return ;
+  }
+
+  COUT("ANSWER " << _answers.front() << " !ANSWER");
+
+  _answers.pop_front();
+}
+
+void
+Plazza::Main::_cleanDeadChildren() { // #Auschwitz
+  t_ChildrenMapIt       it = _childs.begin();
+
+  if (_childs.empty())
+    return ;
+
+  while (it != _childs.end()) {
+    if (!(it->second.isAlive())) {
+      DEBUG(RED "child " << it->second.getPid() << "died" WHITE);
+      it = _childs.erase(it);
+    }
+    else
+      ++it;
+  }
+}
+
+int
+Plazza::Main::mainLoop()
+{
+  Parser        cmd;
+
+  CERR("Welcome ! enter a command plz.");
+
+  while (!this->_shouldExit())
+    {
+      // Call uncle adolf
+      this->_cleanDeadChildren();
+
+      // Poll, read STDIN and parse its content into actions
+      if ((!std::cin.eof()) && pollFd(STDIN_FILENO)) {
+        DEBUG("Plazza::Main reading from stdin");
+        _readStdin();
+        cmd.parse(this->_stdinString, this->_actionQueue);
+      }
+
+      // ^D detection
+      if (std::cin.eof() && !_stdinIsClosed) {
+        _stdinIsClosed = true;
+        CERR(YELLOW "Stdin Closed, now waiting for completion of commands ..." WHITE);
+      }
+
+      // Dispatch and send eventual commands to children
+      if (!_actionQueue.empty()) {
+
+        // get the first process with available task space
+        t_ChildrenMapIt it;
+        if ((it = this->_firstAvailableProcess()) != _childs.end()) {
+          DEBUG("Available process found : " << it->second.getPid());
+
+          it->second.sendAction(_actionQueue.front());
+          _actionQueue.pop_front();
+        }
+
+        else { // or fork the process
+          DEBUG(CYAN "No available process found : forking ..." WHITE);
+          _forkPlazza();
+          DEBUG("... Done !");
+        } // !if (!_actionQueue.empty())
+
+      }
+
+      // get and dump the answers from the subProcesses
+      _pollAndGetAnswers();
+      _dumpAnswers();
+    }
+
+  return (0);
 }

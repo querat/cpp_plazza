@@ -5,7 +5,7 @@
 // Login   <querat_g@epitech.net>
 //
 // Started on  Tue Apr 12 17:46:41 2016 querat_g
-// Last update Thu Apr 21 11:55:25 2016 querat_g
+// Last update Fri Apr 22 15:35:30 2016 querat_g
 //
 
 #include "NamedPipe.hh"
@@ -23,7 +23,6 @@ NamedPipe::~NamedPipe()
 {
   this->_close();
   unlink(this->_C_name);
-  CERR("NamedPipe deleted");
 }
 
 bool
@@ -36,7 +35,7 @@ NamedPipe::_tryCreatePipe()
   // Else we have to create it
   if ((mknod(this->_C_name, S_IFIFO | 0666, 0)) == -1)
     {
-      std::cerr << "named pipe creation failed" << std::endl;
+      CERR("named pipe creation failed");
       return (false);
     }
   return (true);
@@ -93,7 +92,6 @@ void
 NamedPipe::writeTo(void const *data, size_t size) {
   this->openWritingEnd();
   write(this->_fdout, data, size);
-
 }
 
 bool
@@ -151,6 +149,8 @@ operator>>(NamedPipe &dis, t_FileActionPair & pair)
   pair.first = action.fileName;
   pair.second = action.type;
 
+  DEBUG("op>> " << pair.first << " "<< pair.second);
+
   return (dis);
 }
 
@@ -177,6 +177,7 @@ bool
 NamedPipe::isReadyToRead()
 {
 #define POLLFLAGS (POLLIN)
+
   this->openReadingEnd();
   int   ret = 0;
   struct pollfd poll_ = {
@@ -198,7 +199,6 @@ NamedPipe::_readASync(void *buffer, size_t size)
 {
 
   int           total = 0;
-  off_t         offset = 0;
   int           flags = fcntl(_fdin, F_GETFL, 0);
 
   if (!buffer)
@@ -208,13 +208,5 @@ NamedPipe::_readASync(void *buffer, size_t size)
     CERR("fcntl SETFL failed");
     return (-1);
   }
-
-  // while ((read(_fdin, buffer, size)) != -1) {
-
-
-  // }
-
-
-
   return (total);
 }

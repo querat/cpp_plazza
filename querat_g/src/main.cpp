@@ -5,7 +5,7 @@
 // Login   <querat_g@epitech.net>
 //
 // Started on  Wed Apr 13 22:43:06 2016 querat_g
-// Last update Wed Apr 20 18:05:53 2016 querat_g
+// Last update Fri Apr 22 13:16:31 2016 querat_g
 //
 
 #include <stdexcept>
@@ -14,32 +14,6 @@
 
 #include <iostream>
 #include "Plazza.hh"
-
-// int     elFork(char **av)
-// {
-//   NamedPipe	pipe("myFifo");
-//   int		child_pid = 0;
-
-//   child_pid = fork();
-//   if (child_pid == -1)
-//     {
-//       std::cerr << "fork has ded" << std::endl;
-//       return (1);
-//     }
-//   if (child_pid) // parent
-//     {
-//       std::string a = pipe.readFrom();
-//       a = pipe.readFrom();
-//       std::cout << "reading " << a << std::endl;
-//       wait(0);
-//     }
-//   else
-//     {
-//       pipe.writeTo(av[1]);
-//     }
-
-//   return (true);
-// }
 
 int     main(int ac, char **av)
 {
@@ -59,8 +33,11 @@ int     main(int ac, char **av)
     return (1);
   }
 
-  plazza->forkPlazza();
+  // plazza->forkPlazza();
 
-  // plazza->killProcesses();
-  return (0);
+  int   exitStatus = plazza->mainLoop();
+
+  plazza->killProcesses();
+
+  return (exitStatus);
 }

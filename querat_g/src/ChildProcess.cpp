@@ -5,7 +5,7 @@
 // Login   <querat_g@epitech.net>
 //
 // Started on  Mon Apr 18 15:04:35 2016 querat_g
-// Last update Thu Apr 21 11:57:20 2016 querat_g
+// Last update Fri Apr 22 15:53:10 2016 querat_g
 //
 
 #include "ChildProcess.hh"
@@ -27,40 +27,39 @@ ChildProcess::~ChildProcess(){
 bool
 ChildProcess::sendAction(t_FileActionPair const & fileActionPair)
 {
-  if (_nbCurrentActions >= _maxActions) {
+  if (this->reachedMaxCharge()) {
     CERR(_pid << " reached max actions, canceling sendAction()");
     return (false);
   }
 
-  CERR("sending stuff ...");
+  DEBUG("sending stuff ...");
   (*_pipe1) << fileActionPair;
   ++this->_nbCurrentActions;
-  CERR("... sent stuff");
+  DEBUG("... sent stuff");
 
   return (true);
 }
 
-void
-ChildProcess::sendSignal(int sig) const
-{
-  kill(this->_pid, sig);
+bool
+ChildProcess::hasAnswerReady() {
+  return (_pipe2->isReadyToRead());
 }
 
 bool
-ChildProcess::receiveAnswer()
+ChildProcess::receiveAnswer(std::deque<std::string> &answerStack)
 {
   Plazza::Packet::Header        head;
   char                          *raw = nullptr;
 
   std::memset(&head, '\0', sizeof(head));
 
-  if (!_pipe2->readFrom(&head, sizeof(head))){
-    std::cerr << "Couldn't read answer header" << std::endl;
+  if (!_pipe2->readFrom(&head, sizeof(head))) {
+    CERR("Couldn't read answer header");
     return (false);
   }
 
   if (head.magic != Plazza::Packet::MAGIC) {
-    std::cerr << "bad answer header magic" << std::endl;
+    CERR("bad answer header magic");
     return (false);
   }
 
@@ -70,7 +69,7 @@ ChildProcess::receiveAnswer()
     return (false);
   }
 
-  _answerStack.push(std::string(raw));
+  answerStack.push_back(std::string(raw));
 
   delete []raw;
 
@@ -94,12 +93,27 @@ ChildProcess::popPrintAnswers()
 {
   while (!_answerStack.empty())
     {
-      std::cout << _answerStack.top() << std::endl;
-      _answerStack.pop();
+      std::cout << _answerStack.front() << std::endl;
+      _answerStack.pop_front();
     }
 }
 
 pid_t
 ChildProcess::getPid() const {
   return (_pid);
+}
+
+int
+ChildProcess::sendSignal(int sig) const {
+  return (kill(this->_pid, sig));
+}
+
+bool
+ChildProcess::isAlive() const {
+   // Necessary, otherwise the process will be a zombie, and
+  // kill() will still consider it alive !
+  waitpid(this->_pid, nullptr, WNOHANG);
+
+  // no signal sent, 0 just ckecks for the existence of _pid
+  return (((kill(this->_pid, 0)) == 0));
 }

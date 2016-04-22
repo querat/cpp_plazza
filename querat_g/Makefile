@@ -5,7 +5,7 @@
 ## Login   <lina@epitech.net>
 ## 
 ## Started on  Mon Apr 11 10:17:10 2016 lina
-## Last update Wed Apr 20 16:51:07 2016 querat_g
+## Last update Fri Apr 22 14:12:23 2016 querat_g
 ##
 
 CYAN		= 	"\e[1;36m"
@@ -35,6 +35,7 @@ SRCS		= 	src/main.cpp \
 			src/Plazza.cpp \
 			src/ChildProcess.cpp \
 			src/SubMain.cpp \
+			src/SafeDeque.cpp \
 
 OBJS		= 	$(SRCS:.cpp=.o)
 
@@ -58,5 +59,11 @@ fclean:			clean
 			@$(RM) $(NAME)
 
 re:			fclean all
+
+debug:			CXXFLAGS += -D_DEBUG_=1
+debug:			$(NAME)
+
+debugre:		CXXFLAGS += -D_DEBUG_=1
+debugre:		re
 
 .PHONY:			all clean fclean re .cpp.o

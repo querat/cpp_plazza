@@ -5,11 +5,14 @@
 // Login   <querat_g@epitech.net>
 //
 // Started on Sun Apr 17 14:29:00 2016 querat_g
-// Last update Wed Apr 20 17:51:31 2016 querat_g
+// Last update Fri Apr 22 15:26:31 2016 querat_g
 //
 
 #ifndef PLAZZA_HH
 # define PLAZZA_HH
+
+# define ERR_NOTANUMBER "plazza: Argument should be a number"
+# define ERR_INVALIDNUM "plazza: Argument should be an unsigned number"
 
 // std::*
 # include <iostream>
@@ -23,10 +26,14 @@
 // sysUnix
 # include <sys/wait.h>
 # include <poll.h>
+# include <signal.h>
 
 # include "PlazzaNameSpace.hh"
 # include "ChildProcess.hh"
 # include "Parser.hh"
+
+typedef         std::map<pid_t, ChildProcess>   t_ChildrenMap;
+typedef         t_ChildrenMap::iterator         t_ChildrenMapIt;
 
 namespace Plazza
 {
@@ -38,13 +45,37 @@ namespace Plazza
 
   private:
     int                                 _nbThreads;
-    std::map<pid_t, ChildProcess>       _childs;
+    t_ChildrenMap                       _childs;
     t_ActionDeque                       _actionQueue;
-    Parser                              _cmd;
+    t_AnswerDeque                       _answers;
 
-  public:
-    bool                forkPlazza();
+    std::string                         _stdinString;
+
+    bool                                _stdinIsClosed;
+
+
+  private:              // Boolean Operations
+    bool                _shouldExit() const;
+
+  private:              // I/O operations
+    void                _readStdin();
+    void                _dumpAnswers();
+
+  private:              // misc
+    t_ChildrenMapIt     _firstAvailableProcess();
+    bool                _forkPlazza();
+    void                _pollAndGetAnswers();
+    void                _cleanDeadChildren();
+
+  public:               // Boolean operations
+    bool                isBusy() const;
+
+  public:               // I/O Operations
+    void                printActionsQueue() const;
+
+  public:               // misc
     void                killProcesses();
+    int                 mainLoop();
   };
 }
 

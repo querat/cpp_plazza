@@ -5,7 +5,7 @@
 // Login   <querat_g@epitech.net>
 //
 // Started on  Tue Apr 19 09:50:04 2016 querat_g
-// Last update Wed Apr 20 16:58:24 2016 querat_g
+// Last update Fri Apr 22 11:13:49 2016 querat_g
 //
 
 #ifndef SUBMAIN_HH
@@ -22,6 +22,7 @@
 
 # include "PlazzaNameSpace.hh"
 # include "NamedPipe.hh"
+# include "SafeDeque.hpp"
 
 namespace Plazza
 {
@@ -33,11 +34,21 @@ namespace Plazza
 
   private:
     pid_t               _pid;
-    bool                _shouldExit;
     NamedPipe *         _pipe1;
     NamedPipe *         _pipe2;
-    t_ActionDeque       _actionsToDo;
-    std::mutex          _actionMutex;
+    std::mutex          _mutex;
+    SafeDeque<std::pair<std::string, Plazza::Action::Type>> _actionsToDo;
+    // t_ActionDeque _actionsToDo;
+
+    clock_t             _clock;
+    double              _timeSinceLastEvent;
+
+  private:              // Internal clock and exit status
+    void                _incrementTimeSinceLastEvent();
+    void                _resetTimeSinceLastEvent();
+
+  private:              // Boolean operations
+    bool                _shouldExit() const;
 
   public:               // I/O operations
     bool                receiveAction(void);
@@ -46,6 +57,7 @@ namespace Plazza
 
   public:
     bool                mainLoop();
+    bool                processAction();
   };
 }
 
