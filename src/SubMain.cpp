@@ -5,7 +5,7 @@
 // Login   <querat_g@epitech.net>
 //
 // Started on  Tue Apr 19 09:58:24 2016 querat_g
-// Last update Sat Apr 23 14:15:31 2016 querat_g
+// Last update Sat Apr 23 15:50:23 2016 querat_g
 //
 
 #include "SubMain.hh"
@@ -113,8 +113,8 @@ Plazza::SubMain::mainLoop()
           DEBUG("shit's ready to read yo !");
           receiveAction();
         }
-      if (!_actionsToDo.empty())
-        processAction();
+      // if (!_actionsToDo.empty())
+      //   processAction();
 
       _incrementTimeSinceLastEvent();
     }

@@ -5,42 +5,56 @@
 // Login   <querat_g@epitech.net>
 //
 // Started on  Sat Apr 23 09:54:29 2016 querat_g
-// Last update Sat Apr 23 14:14:32 2016 querat_g
+// Last update Sat Apr 23 15:56:48 2016 querat_g
 //
 
 #include "ThreadPool.hh"
 
-std::mutex      mutmut;
-
-void            printLol() {
-  mutmut.lock();
-  CERR("thread callBack()");
-  mutmut.unlock();
+void            printLol(std::mutex &mutex) {
 }
 
-void            threadCallback()
+void            ThreadPool::_threadCallBack()
 {
-  while (1) {
-    printLol();
+  static int    id = 0;
+
+  ++id;
+  CERR(id << " starting");
+  while (_isAlive) {
+    _mutex.lock();
+
+    if (_actionDeque.empty()){
+      _mutex.unlock();
+      continue;
+    }
+
+    t_FileActionPair    act = _actionDeque.front();
+
+    CERR("thread #" << id << "treating " << act.first);
+
+    _actionDeque.pop_front();
+    CERR(id << " looped");
+    _mutex.unlock();
   }
+  CERR((id - 1) << " has ded");
 }
 
 ThreadPool::ThreadPool(int nbThreads, t_SafeActionDeque &act, t_SafeAnswerDeque &ans)
   : _nbThreads(nbThreads)
   , _actionDeque(act)
   , _answerDeque(ans)
+  , _isAlive(true)
 {
 
   for (int i = 0; i < _nbThreads; i++) {
-    _threads.push_back(std::thread(&threadCallback));
+    _threads.push_back(std::thread([this](){this->_threadCallBack();}));
   }
 
 }
 
 ThreadPool::~ThreadPool()
 {
+  _isAlive = false;
   for (auto it = _threads.begin(); it != _threads.end(); ++it) {
     it->join();
   }
-
 }

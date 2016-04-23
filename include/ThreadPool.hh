@@ -5,7 +5,7 @@
 // Login   <querat_g@epitech.net>
 //
 // Started on  Sat Apr 23 09:53:14 2016 querat_g
-// Last update Sat Apr 23 14:14:41 2016 querat_g
+// Last update Sat Apr 23 15:19:53 2016 querat_g
 //
 
 #ifndef THREADPOOL_HH_
@@ -17,6 +17,8 @@
 # include <condition_variable>
 
 # include "PlazzaNameSpace.hh"
+
+typedef std::condition_variable t_CondVar;
 
 class ThreadPool
 {
@@ -30,8 +32,15 @@ private:
   t_SafeActionDeque &   _actionDeque;
   t_SafeAnswerDeque &   _answerDeque;
 
-public:
+  bool                  _isAlive;
 
+  t_CondVar             _cond;
+  std::mutex            _mutex;
+
+private:
+  void                  _threadCallBack();
+
+public:
 
 };
 

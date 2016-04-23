@@ -5,7 +5,7 @@
 // Login   <querat_g@epitech.net>
 //
 // Started on  Thu Apr 21 14:02:34 2016 querat_g
-// Last update Sat Apr 23 13:19:00 2016 querat_g
+// Last update Sat Apr 23 15:42:16 2016 querat_g
 //
 
 #ifndef SAFEDEQUE_HPP_
@@ -66,6 +66,7 @@ SafeDeque<T>::front() {
   std::lock_guard<std::mutex> lock(_mutex);
   return (_deque.front());
 }
+
 
 template<typename T>
 typename std::deque<T>::const_iterator
