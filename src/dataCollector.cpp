@@ -17,7 +17,9 @@ dataCollector::dataCollector()
 {
 }
 
-dataCollector::~dataCollector() {}
+dataCollector::~dataCollector()
+{
+}
 
 int		dataCollector::my_isprint(char c)
 {
@@ -146,16 +148,16 @@ std::string	dataCollector::extract_data(t_FileActionPair &file_info)
   switch (_to_get)
   {
     case Plazza::Action::EMAIL_ADDRESS:
-      _reg.assign(DEF_EMAIL_REGEX);
+      _reg.assign(Plazza::Regex::map.at(Plazza::Action::Type::EMAIL_ADDRESS));
           break;
     case Plazza::Action::IP_ADDRESS:
-      _reg.assign(DEF_IP_REGEX);
+      _reg.assign(Plazza::Regex::map.at(Plazza::Action::Type::IP_ADDRESS));
           break;
     case Plazza::Action::PHONE_NUMBER:
-      _reg.assign(DEF_PHONE_REGEX);
+      _reg.assign(Plazza::Regex::map.at(Plazza::Action::Type::PHONE_NUMBER));
           break;
     default:
-      _reg.assign("");
+      _reg.assign(Plazza::Regex::map.at(Plazza::Action::Type::UNDEFINED));
           break;
   }
   if (std::regex_search(tmp, checker, _reg))

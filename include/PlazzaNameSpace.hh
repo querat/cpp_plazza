@@ -66,7 +66,6 @@
 # define DEF_IP_REGEX           "(?:(?:0|1[\\d]{0,2}|2(?:[0-4]\\d?|5[0-5]?|[6-9])?|[3-9]\\d?)\\.){3}(?:0|1[\\d]{0,2}|2(?:[0-4]\\d?|5[0-5]?|[6-9])?|[3-9]\\d?)"
 
 # define DEF_POLL_TIMEOUT       10
-# define EOF_CHAR               4
 
 //
 // !! All variables declared here as extern MUST be declared in Plazza.cpp !!
