@@ -5,18 +5,19 @@
 // Login   <querat_g@epitech.net>
 //
 // Started on  Tue Apr 19 09:58:24 2016 querat_g
-// Last update Fri Apr 22 16:57:35 2016 querat_g
+// Last update Sat Apr 23 14:15:31 2016 querat_g
 //
 
 #include "SubMain.hh"
 #include "SafeDeque.hpp"
 
-Plazza::SubMain::SubMain(pid_t pid, NamedPipe *pipe1, NamedPipe *pipe2)
+Plazza::SubMain::SubMain(pid_t pid, NamedPipe *pipe1, NamedPipe *pipe2, int nbThreads)
   : _pid(pid)
   , _pipe1(pipe1)
   , _pipe2(pipe2)
   , _clock(0)
   , _timeSinceLastEvent(0)
+  , _threads(nbThreads, _actionsToDo, _answers)
 {
   // std::cerr << "SubMain " << _pid << "created" << std::endl;
 }

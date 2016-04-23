@@ -5,7 +5,7 @@
 ## Login   <lina@epitech.net>
 ## 
 ## Started on  Mon Apr 11 10:17:10 2016 lina
-## Last update Sat Apr 23 11:07:02 2016 querat_g
+## Last update Sat Apr 23 12:14:23 2016 querat_g
 ##
 
 CYAN		= 	"\e[1;36m"
@@ -26,7 +26,7 @@ CXXFLAGS	=	-W -Wall -Wextra
 CXXFLAGS	+=	-std=c++11 -stdlib=libstdc++
 CXXFLAGS	+=	-I./include
 CXXFLAGS	+=	-I./src
-CXXFLAGS	+=	-g
+CXXFLAGS	+=	-pthread
 
 SRCS		= 	src/main.cpp \
 			src/NamedPipe.cpp \
@@ -62,10 +62,10 @@ fclean:			clean
 
 re:			fclean all
 
-debug:			CXXFLAGS += -D_DEBUG_=1
+debug:			CXXFLAGS += -D_DEBUG_=1 -g
 debug:			$(NAME)
 
-debugre:		CXXFLAGS += -D_DEBUG_=1
+debugre:		CXXFLAGS += -D_DEBUG_=1 -g
 debugre:		re
 
 .PHONY:			all clean fclean re .cpp.o

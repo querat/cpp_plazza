@@ -5,7 +5,7 @@
 // Login   <querat_g@epitech.net>
 //
 // Started on  Sun Apr 17 16:11:56 2016 querat_g
-// Last update Sat Apr 23 09:34:47 2016 querat_g
+// Last update Sat Apr 23 13:39:19 2016 querat_g
 //
 
 #include "PlazzaNameSpace.hh"
@@ -62,7 +62,7 @@ Plazza::Main::_forkPlazza()
     this->_childs.insert(std::make_pair(pid, ChildProcess(pid, pipe1, pipe2, _nbThreads)));
   }
   else { // child
-    SubMain   *subProcess = new SubMain(getpid(), pipe1, pipe2);
+    SubMain   *subProcess = new SubMain(getpid(), pipe1, pipe2, _nbThreads);
     subProcess->mainLoop();
     delete (subProcess);
     _Exit(0);

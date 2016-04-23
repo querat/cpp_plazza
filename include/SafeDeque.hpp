@@ -5,7 +5,7 @@
 // Login   <querat_g@epitech.net>
 //
 // Started on  Thu Apr 21 14:02:34 2016 querat_g
-// Last update Thu Apr 21 15:42:19 2016 querat_g
+// Last update Sat Apr 23 13:19:00 2016 querat_g
 //
 
 #ifndef SAFEDEQUE_HPP_
@@ -42,6 +42,7 @@ SafeDeque<T>::SafeDeque(){}
 
 template<typename T>
 SafeDeque<T>::~SafeDeque() {
+  std::lock_guard<std::mutex> lock(_mutex);
   _deque.clear();
 }
 
@@ -83,6 +84,7 @@ SafeDeque<T>::end() const {
 template<typename T>
 bool
 SafeDeque<T>::empty() const {
+  std::lock_guard<std::mutex> lock(_mutex);
   return (_deque.empty());
 }
 

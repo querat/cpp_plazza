@@ -5,7 +5,7 @@
 // Login   <querat_g@epitech.net>
 //
 // Started on  Tue Apr 19 09:50:04 2016 querat_g
-// Last update Fri Apr 22 11:13:49 2016 querat_g
+// Last update Sat Apr 23 14:12:07 2016 querat_g
 //
 
 #ifndef SUBMAIN_HH
@@ -22,6 +22,7 @@
 
 # include "PlazzaNameSpace.hh"
 # include "NamedPipe.hh"
+# include "ThreadPool.hh"
 # include "SafeDeque.hpp"
 
 namespace Plazza
@@ -29,7 +30,7 @@ namespace Plazza
   class SubMain
   {
   public:
-    SubMain(pid_t pid, NamedPipe *pipe1, NamedPipe *pipe2);
+    SubMain(pid_t pid, NamedPipe *pipe1, NamedPipe *pipe2, int nbThreads);
     ~SubMain();
 
   private:
@@ -37,11 +38,14 @@ namespace Plazza
     NamedPipe *         _pipe1;
     NamedPipe *         _pipe2;
     std::mutex          _mutex;
-    SafeDeque<std::pair<std::string, Plazza::Action::Type>> _actionsToDo;
+    t_SafeActionDeque   _actionsToDo;
+    t_SafeAnswerDeque   _answers;
     // t_ActionDeque _actionsToDo;
 
     clock_t             _clock;
     double              _timeSinceLastEvent;
+
+    ThreadPool          _threads;
 
   private:              // Internal clock and exit status
     void                _incrementTimeSinceLastEvent();
