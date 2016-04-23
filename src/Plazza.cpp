@@ -5,7 +5,7 @@
 // Login   <querat_g@epitech.net>
 //
 // Started on  Sun Apr 17 16:11:56 2016 querat_g
-// Last update Sat Apr 23 13:39:19 2016 querat_g
+// Last update Sat Apr 23 19:05:19 2016 querat_g
 //
 
 #include "PlazzaNameSpace.hh"
@@ -152,13 +152,10 @@ Plazza::Main::_pollAndGetAnswers()
 void
 Plazza::Main::_dumpAnswers()
 {
-
   if (_answers.empty()){
     return ;
   }
-
-  COUT("ANSWER " << _answers.front() << " !ANSWER");
-
+  std::cout << _answers.front();
   _answers.pop_front();
 }
 

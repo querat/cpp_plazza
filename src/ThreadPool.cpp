@@ -5,15 +5,11 @@
 // Login   <querat_g@epitech.net>
 //
 // Started on  Sat Apr 23 09:54:29 2016 querat_g
-// Last update Sat Apr 23 15:56:48 2016 querat_g
+// Last update Sat Apr 23 19:04:54 2016 querat_g
 //
 
 #include "DataCollector.hh"
 #include "ThreadPool.hh"
-
-void            printLol(std::mutex &mutex)
-{
-}
 
 void            ThreadPool::_threadCallBack()
 {
@@ -22,26 +18,25 @@ void            ThreadPool::_threadCallBack()
   t_FileActionPair act = std::make_pair("", Plazza::Action::Type::UNDEFINED);
 
   ++id;
-  CERR(id << " starting");
+  DEBUG(id << " starting");
   while (_isAlive)
   {
     _mutex.lock();
     if (!_actionDeque.empty())
     {
       act = _actionDeque.front();
-      CERR("thread #" << id << "treating " << act.first);
-      CERR("front = " << act.second);
+      DEBUG("thread treating " << act.first);
+      DEBUG("front = " << act.second);
       _actionDeque.pop_front();
     }
     _mutex.unlock();
     if (!act.first.empty())
     {
-      CERR(id << " looped");
       _answerDeque.push_back(dataCollector1.extract_data(act));
       act = std::make_pair("", Plazza::Action::Type::UNDEFINED);
     }
   }
-  CERR((id - 1) << " has ded");
+  DEBUG("has ded");
 }
 
 ThreadPool::ThreadPool(int nbThreads, t_SafeActionDeque &act, t_SafeAnswerDeque &ans)
