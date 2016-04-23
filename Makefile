@@ -45,7 +45,7 @@ all:			$(NAME)
 
 $(NAME):		$(OBJS)
 			@`which echo` -e $(YELLOW)"[LINKING] "$@$(WHITE)
-			@$(CXX) -o $(NAME) $(CXXFLAGS) $(OBJS)
+			@$(CXX) -o $(NAME) $(CXXFLAGS) $(SRCS)
 
 .cpp.o:
 			@`which echo` -e $(CYAN)"[COMPILING] "$@$(WHITE)
