@@ -16,8 +16,6 @@
   <component name="ChangeListManager">
     <list default="true" id="bd6a7a28-8437-4fb2-8b4f-bd56fea3c63c" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/include/PlazzaNameSpace.hh" afterPath="$PROJECT_DIR$/include/PlazzaNameSpace.hh" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/PlazzaNameSpace.cpp" afterPath="$PROJECT_DIR$/src/PlazzaNameSpace.cpp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ThreadPool.cpp" afterPath="$PROJECT_DIR$/src/ThreadPool.cpp" />
     </list>
     <ignored path="cpp_plazza.iws" />
@@ -49,7 +47,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PlazzaNameSpace.cpp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PlazzaNameSpace.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/PlazzaNameSpace.cpp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="144">
@@ -69,11 +67,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ThreadPool.cpp" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ThreadPool.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ThreadPool.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="33" column="22" selection-start-line="33" selection-start-column="22" selection-end-line="33" selection-end-column="22" />
+            <state relative-caret-position="234">
+              <caret line="40" column="64" selection-start-line="40" selection-start-column="64" selection-end-line="40" selection-end-column="64" />
               <folding />
             </state>
           </provider>
@@ -82,7 +80,7 @@
       <file leaf-file-name="SubMain.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/SubMain.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
+            <state relative-caret-position="1368">
               <caret line="77" column="0" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
               <folding />
             </state>
@@ -124,9 +122,9 @@
         <option value="$PROJECT_DIR$/Doxyfile" />
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/src/DataCollector.cpp" />
-        <option value="$PROJECT_DIR$/src/ThreadPool.cpp" />
         <option value="$PROJECT_DIR$/include/PlazzaNameSpace.hh" />
         <option value="$PROJECT_DIR$/src/PlazzaNameSpace.cpp" />
+        <option value="$PROJECT_DIR$/src/ThreadPool.cpp" />
       </list>
     </option>
   </component>
@@ -639,7 +637,14 @@
       <option name="project" value="LOCAL" />
       <updated>1461422613681</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Bientôt a la fin">
+      <created>1461425646451</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1461425646451</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TodoView">
@@ -653,7 +658,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1919" y="0" width="1442" height="900" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15878616" sideWeight="0.49340865" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32976446" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -664,7 +669,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32862645" sideWeight="0.4932957" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32862645" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24982357" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4775353" sideWeight="0.49258998" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4775353" sideWeight="0.49258998" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15878616" sideWeight="0.5065913" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31835687" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -713,7 +718,8 @@
     <MESSAGE value="Regex faite au max pour  un max d'opti" />
     <MESSAGE value="Rajout es regex dans ecxtract data ainsi que de l'open file -&gt; tout fonctionne" />
     <MESSAGE value="lolol" />
-    <option name="LAST_COMMIT_MESSAGE" value="lolol" />
+    <MESSAGE value="Bientôt a la fin" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bientôt a la fin" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1052,26 +1058,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ThreadPool.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="33" column="22" selection-start-line="33" selection-start-column="22" selection-end-line="33" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/include/PlazzaNameSpace.hh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="72" column="34" selection-start-line="72" selection-start-column="34" selection-end-line="72" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/SubMain.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="77" column="0" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1088,6 +1078,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="54" column="18" selection-start-line="54" selection-start-column="18" selection-end-line="54" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SubMain.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1368">
+          <caret line="77" column="0" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ThreadPool.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="40" column="64" selection-start-line="40" selection-start-column="64" selection-end-line="40" selection-end-column="64" />
           <folding />
         </state>
       </provider>

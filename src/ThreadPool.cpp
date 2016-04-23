@@ -19,6 +19,7 @@ void            ThreadPool::_threadCallBack()
 {
   static int    id = 0;
   dataCollector dataCollector1;
+  t_FileActionPair act = std::make_pair("", Plazza::Action::Type::UNDEFINED);
 
   ++id;
   CERR(id << " starting");
@@ -27,15 +28,18 @@ void            ThreadPool::_threadCallBack()
     _mutex.lock();
     if (!_actionDeque.empty())
     {
-     t_FileActionPair act = _actionDeque.front();
+      act = _actionDeque.front();
       CERR("thread #" << id << "treating " << act.first);
       CERR("front = " << act.second);
       _actionDeque.pop_front();
-      _mutex.unlock();
-      CERR(id << " looped");
-      _answerDeque.push_back(dataCollector1.extract_data(act));
     }
     _mutex.unlock();
+    if (!act.first.empty())
+    {
+      CERR(id << " looped");
+      _answerDeque.push_back(dataCollector1.extract_data(act));
+      act = std::make_pair("", Plazza::Action::Type::UNDEFINED);
+    }
   }
   CERR((id - 1) << " has ded");
 }
