@@ -18,7 +18,7 @@ WHITE		= 	"\e[0m"
 
 RM		= 	rm -f
 
-CXX		= 	clang++-3.5
+CXX		= 	clang++
 
 NAME		= 	plazza
 
