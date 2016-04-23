@@ -5,7 +5,7 @@
 // Login   <querat_g@epitech.net>
 //
 // Started on  Tue Apr 19 09:58:24 2016 querat_g
-// Last update Sat Apr 23 17:25:16 2016 querat_g
+// Last update Sat Apr 23 17:57:48 2016 querat_g
 //
 
 #include "SubMain.hh"
@@ -74,7 +74,7 @@ Plazza::SubMain::sendSolvedAction(std::string const & str)
   _pipe2->writeTo(str.c_str(), str.size() + 1);
   DEBUG("Answer sent !");
 
-  sleep(2);
+  // sleep(2);
 
   return (true);
 }
@@ -96,8 +96,8 @@ Plazza::SubMain::_resetTimeSinceLastEvent() {
 bool
 Plazza::SubMain::_shouldExit() const {
   return ((_timeSinceLastEvent > 5.0f) &&
-          (_actionsToDo.empty()));//       &&
-  //(_answersDeque.empty());
+          (_actionsToDo.empty())  &&
+          (_answers.empty()));
 }
 
 bool
@@ -112,8 +112,11 @@ Plazza::SubMain::mainLoop()
           DEBUG("shit's ready to read yo !");
           receiveAction();
         }
-      // if (!_actionsToDo.empty())
-      //   processAction();
+
+      if (!_answers.empty()) {
+        sendSolvedAction(_answers.front());
+        _answers.pop_front();
+      }
 
       _incrementTimeSinceLastEvent();
     }
