@@ -2,16 +2,17 @@
 <module type="CPP_MODULE" version="4">
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
-      <sourceFolder url="file://$MODULE_DIR$/src/dataCollector.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/DataCollector.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/ThreadPool.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/src/NamedPipe.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/SafeDeque.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/PlazzaNameSpace.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/SubMain.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/NamedPipe.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/ChildProcess.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/Plazza.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/Parser.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/include" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/tmp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/querat_g" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/CMakeLists.txt" isTestSource="false" />
     </content>
     <orderEntry type="sourceFolder" forTests="false" />
