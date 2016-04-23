@@ -14,7 +14,8 @@
 
 static Plazza::Main     *g_plazza = nullptr;
 
-void            sigHandler(int sig) {
+void            sigHandler(int sig)
+{
   (void)sig;
   if (g_plazza) {
     DEBUG("^C caught");
@@ -77,18 +78,6 @@ Plazza::Main::setForcedExitState() {
 }
 
 void
-Plazza::Main::printActionsQueue() const {
-  t_ActionDeque::const_iterator it = _actionQueue.begin();
-
-  CERR("now printing actions to std::cerr ----------");
-  while (it != _actionQueue.end()) {
-    CERR(it->first << " :: " << it->second);
-    ++it;
-  }
-  CERR("! print ------------------------------------");
-}
-
-void
 Plazza::Main::killProcesses()
 {
   t_ChildrenMapIt       it = _childs.begin();
@@ -113,12 +102,14 @@ Plazza::Main::_shouldExit() const
 }
 
 void
-Plazza::Main::_readStdin() {
+Plazza::Main::_readStdin()
+{
   std::getline(std::cin, _stdinString);
 }
 
 bool
-Plazza::Main::isBusy() const {
+Plazza::Main::isBusy() const
+{
   t_ChildrenMap::const_iterator it = _childs.begin();
 
   while (it != _childs.end()) {
@@ -131,7 +122,8 @@ Plazza::Main::isBusy() const {
 }
 
 t_ChildrenMapIt
-Plazza::Main::_firstAvailableProcess() {
+Plazza::Main::_firstAvailableProcess()
+{
   t_ChildrenMapIt       it = _childs.begin();
 
   while (it != _childs.end()) {
@@ -144,7 +136,8 @@ Plazza::Main::_firstAvailableProcess() {
 }
 
 void
-Plazza::Main::_pollAndGetAnswers() {
+Plazza::Main::_pollAndGetAnswers()
+{
   t_ChildrenMapIt it = _childs.begin();
 
   while (it != _childs.end()) {
@@ -157,7 +150,8 @@ Plazza::Main::_pollAndGetAnswers() {
 }
 
 void
-Plazza::Main::_dumpAnswers() {
+Plazza::Main::_dumpAnswers()
+{
 
   if (_answers.empty()){
     return ;
@@ -169,7 +163,8 @@ Plazza::Main::_dumpAnswers() {
 }
 
 void
-Plazza::Main::_cleanDeadChildren() { // #Auschwitz
+Plazza::Main::_cleanDeadChildren()
+{ // #Auschwitz
   t_ChildrenMapIt       it = _childs.begin();
 
   if (_childs.empty())

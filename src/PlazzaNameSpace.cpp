@@ -59,7 +59,8 @@ namespace Plazza
 }  // !Plazza
 
 bool
-Plazza::isAnAction(std::string const &action) {
+Plazza::isAnAction(std::string const &action)
+{
   return (Plazza::Action::String::mapToEnum.count(action) ? true : false);
 }
 
@@ -76,7 +77,8 @@ Plazza::makeFifoNameFromPid(pid_t pid, bool toMain) {
 }
 
 void
-Plazza::printAction(Plazza::Action::Type act, bool toErr /* = 0*/) {
+Plazza::printAction(Plazza::Action::Type act, bool toErr /* = 0*/)
+{
   if (toErr)
     std::cerr << Plazza::Action::mapToString.find(act)->second;
   else

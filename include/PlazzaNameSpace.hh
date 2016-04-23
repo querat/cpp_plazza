@@ -152,7 +152,7 @@ namespace Plazza
 //
 namespace Plazza
 {
-  bool                  isAnAction(std::string const &action);
+  bool                  isAnAction(std::string const &action) ;
   Plazza::Action::Type  stringToAction(std::string const & str);
   std::string           makeFifoNameFromPid(pid_t pid, bool toMain);
   void                  printAction(Plazza::Action::Type act, bool toErr = false);

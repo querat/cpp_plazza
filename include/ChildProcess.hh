@@ -50,7 +50,7 @@ public:         // I/O operations
 public:         // Boolean conditions
   bool          isBusy() const;
   bool          reachedMaxCharge() const;
-  bool          hasAnswerReady();
+  bool          hasAnswerReady() const;
   bool          isAlive() const;
 
 public:         // GetSet()

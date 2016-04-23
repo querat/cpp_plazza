@@ -66,8 +66,9 @@ Parser::_countActions() const {
 }
 
 bool
-Parser::_invalidActionsNumberErrorHandler(int nbActions, std::string const & line) {
-  _tokList.clear();
+Parser::_invalidActionsNumberErrorHandler(int nbActions, std::string const & line)
+{
+  _tokList.clear() ;
 
   if (nbActions < 1){
     CERR("Plazza::Parser: No action detected in line \"" << line << "\"");

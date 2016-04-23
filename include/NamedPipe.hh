@@ -47,22 +47,14 @@ private:               // Attributes
   int                   _fdin;
   int                   _fdout;
 
-  bool                  _open();
   bool                  _close();
-  bool                  _tryCreatePipe();
-
-private:                // Private member functions
-  int                   _readASync(void *buffer, size_t size);
+  bool                  _tryCreatePipe() const;
 
 public:                 // I/O operations
   bool                  openWritingEnd();
   bool                  openReadingEnd();
   void                  writeTo(void const *data, size_t size);
   bool                  readFrom(void *buffer, size_t size);
-
-public:                 // GetSet
-  int                   getFdIn() const;
-  int                   getFdOut() const;
 
 public:                 // Bool
   bool                  isReadyToRead();

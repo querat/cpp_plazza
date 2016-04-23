@@ -26,7 +26,7 @@ NamedPipe::~NamedPipe()
 }
 
 bool
-NamedPipe::_tryCreatePipe()
+NamedPipe::_tryCreatePipe() const
 {
   // If the named pipe exists we can use it directly
   if (!(access(this->_C_name, F_OK)))
@@ -39,14 +39,6 @@ NamedPipe::_tryCreatePipe()
       return (false);
     }
   return (true);
-}
-
-bool
-NamedPipe::_open() {
-  this->openWritingEnd();
-  this->openReadingEnd();
-  return ((IS_VALID_FD(this->_fdout)) &&
-          (IS_VALID_FD(this->_fdin )) );
 }
 
 bool
@@ -78,7 +70,8 @@ NamedPipe::openReadingEnd()
 }
 
 bool
-NamedPipe::_close() {
+NamedPipe::_close()
+{
   if (IS_VALID_FD(this->_fdin))
     close(this->_fdin);
   if (IS_VALID_FD(this->_fdout))
@@ -89,7 +82,8 @@ NamedPipe::_close() {
 }
 
 void
-NamedPipe::writeTo(void const *data, size_t size) {
+NamedPipe::writeTo(void const *data, size_t size)
+{
   this->openWritingEnd();
   write(this->_fdout, data, size);
 }
@@ -104,14 +98,6 @@ NamedPipe::readFrom(void *buffer, size_t requestedReadSize)
   return (actualReadSize == requestedReadSize);
 }
 
-int
-NamedPipe::getFdIn() const {
-  return (_fdin);
-}
-int
-NamedPipe::getFdOut() const {
-  return (_fdin);
-}
 
 NamedPipe &
 operator<<(NamedPipe &dis, t_FileActionPair const & fileActionPair)
@@ -192,21 +178,4 @@ NamedPipe::isReadyToRead()
   }
 
   return ((ret && (poll_.revents & POLLFLAGS)) ? true : false);
-}
-
-int
-NamedPipe::_readASync(void *buffer, size_t size)
-{
-
-  int           total = 0;
-  int           flags = fcntl(_fdin, F_GETFL, 0);
-
-  if (!buffer)
-    return (-1);
-
-  if ((fcntl(_fdin, F_SETFL, flags | O_NONBLOCK))) {
-    CERR("fcntl SETFL failed");
-    return (-1);
-  }
-  return (total);
 }

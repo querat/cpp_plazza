@@ -62,19 +62,16 @@ namespace Plazza
 
   private:              // Internal clock and exit status
     void                _incrementTimeSinceLastEvent();
-    void                _resetTimeSinceLastEvent();
 
   private:              // Boolean operations
     bool                _shouldExit() const;
 
   public:               // I/O operations
     bool                receiveAction(void);
-    void                printActionsToDo(void) const;
     bool                sendSolvedAction(std::string const & solved);
 
   public:
     bool                mainLoop();
-    bool                processAction();
   };
 }
 

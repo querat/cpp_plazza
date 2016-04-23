@@ -43,7 +43,7 @@ ChildProcess::sendAction(t_FileActionPair const & fileActionPair)
 }
 
 bool
-ChildProcess::hasAnswerReady() {
+ChildProcess::hasAnswerReady() const {
   return (_pipe2->isReadyToRead());
 }
 

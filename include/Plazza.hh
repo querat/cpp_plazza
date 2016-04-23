@@ -70,9 +70,6 @@ namespace Plazza
   public:               // Boolean operations
     bool                isBusy() const;
 
-  public:               // I/O Operations
-    void                printActionsQueue() const;
-
   public:
     void                setForcedExitState();
 

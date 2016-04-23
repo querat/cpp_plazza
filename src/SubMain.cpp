@@ -49,18 +49,6 @@ Plazza::SubMain::receiveAction()
   return (true);
 }
 
-void
-Plazza::SubMain::printActionsToDo() const
-{
-  t_ActionDeque::const_iterator it = _actionsToDo.begin();
-
-  while (it != _actionsToDo.end())
-    {
-      std::cout << it->second << " " << it->first  << std::endl;
-      ++it;
-    }
-}
-
 bool
 Plazza::SubMain::sendSolvedAction(std::string const & str)
 {
@@ -85,12 +73,6 @@ Plazza::SubMain::_incrementTimeSinceLastEvent() {
 
   _timeSinceLastEvent += (now - _clock);
   _clock = now;
-}
-
-void
-Plazza::SubMain::_resetTimeSinceLastEvent() {
-  DEBUG("resetting clock()");
-  _timeSinceLastEvent = 0;
 }
 
 bool
@@ -121,23 +103,5 @@ Plazza::SubMain::mainLoop()
       _incrementTimeSinceLastEvent();
     }
 
-  return (true);
-}
-
-bool
-Plazza::SubMain::processAction()
-{
-  if (_actionsToDo.empty())
-    return (false);
-  _resetTimeSinceLastEvent();
-  // the deque is supposed to be thread safe
-  t_FileActionPair      &action = _actionsToDo.front();
-
-  DEBUG("_action being done: " << action.first << " & " << action.second);
-
-  std::string TODO("this is an answer from pid ");
-  sendSolvedAction(TODO);
-
-  _actionsToDo.pop_front();
   return (true);
 }
