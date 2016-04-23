@@ -8,6 +8,7 @@
 // Last update Fri Apr 22 13:11:44 2016 querat_g
 //
 
+#include <cstdlib>
 #include "PlazzaNameSpace.hh"
 
 namespace Plazza

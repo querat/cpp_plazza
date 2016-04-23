@@ -23,7 +23,7 @@ CXX		= 	clang++
 NAME		= 	plazza
 
 CXXFLAGS	=	-W -Wall -Wextra 
-CXXFLAGS	+=	-std=c++11 -stdlib=libstdc++
+CXXFLAGS	+=	-std=c++11 -stdlib=libc++
 CXXFLAGS	+=	-I./include
 CXXFLAGS	+=	-I./src
 CXXFLAGS	+=	-pthread
