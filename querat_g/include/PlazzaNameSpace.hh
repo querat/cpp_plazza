@@ -5,7 +5,7 @@
 // Login   <querat_g@epitech.net>
 //
 // Started on  Sun Apr 17 14:29:00 2016 querat_g
-// Last update Fri Apr 22 14:21:04 2016 querat_g
+// Last update Sat Apr 23 09:47:55 2016 querat_g
 //
 
 #ifndef PLAZZANAMESPACE_HH
@@ -29,30 +29,30 @@
 /*
 ** Colors
 */
-# define RED		"\033[1;31m"
-# define GREEN		"\033[1;32m"
-# define YELLOW		"\033[1;33m"
-# define BROWN		"\033[0;33m"
-# define BLUE		"\033[1;34m"
-# define PINK		"\033[1;35m"
-# define CYAN		"\033[1;36m"
-# define WHITE		"\033[0m"
-# define WWHITE		"\033[1;0m"
+# define RED                    "\033[1;31m"
+# define GREEN                  "\033[1;32m"
+# define YELLOW                 "\033[1;33m"
+# define BROWN                  "\033[0;33m"
+# define BLUE                   "\033[1;34m"
+# define PINK                   "\033[1;35m"
+# define CYAN                   "\033[1;36m"
+# define WHITE                  "\033[0m"
+# define WWHITE                 "\033[1;0m"
 
 # define DEF_MAGIC              0xC0FFEE
 
 # define PLAZZA_USAGE           "plazza: usage: ./plazza nb_threads"
 # define PLAZZA_MAX_ACTIONS(x)  ((2 * x))
 
-// Defined by the Makefile rule debug
+// Defined by the Makefile rule debug and debugre
 # ifndef _DEBUG_
-#  define DEBUG(...)                {}
+#  define DEBUG(...)            {}
 # else
-#  define DEBUG(...)                std::cerr << __VA_ARGS__ << std::endl;
+#  define DEBUG(...)            std::cerr << __VA_ARGS__ << std::endl;
 # endif
 
-#  define COUT(...)                std::cout << __VA_ARGS__ << std::endl;
-#  define CERR(...)                std::cout << __VA_ARGS__ << std::endl;
+#  define COUT(...)             std::cout << __VA_ARGS__ << std::endl;
+#  define CERR(...)             std::cout << __VA_ARGS__ << std::endl;
 
 # define FILENAME_SIZE          0x400
 

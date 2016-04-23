@@ -5,7 +5,7 @@
 // Login   <querat_g@epitech.net>
 //
 // Started on  Sun Apr 17 16:11:56 2016 querat_g
-// Last update Fri Apr 22 17:11:11 2016 querat_g
+// Last update Sat Apr 23 09:34:47 2016 querat_g
 //
 
 #include "PlazzaNameSpace.hh"
@@ -207,33 +207,29 @@ Plazza::Main::mainLoop()
       // ^D detection
       if (std::cin.eof() && !_stdinIsClosed) {
         _stdinIsClosed = true;
-        CERR(YELLOW "Stdin Closed, now waiting for completion of commands ..." WHITE);
+        CERR(YELLOW "Stdin Closed, waiting for completion of commands ..." WHITE);
       }
 
       // Dispatch and send eventual commands to children
       if (!_actionQueue.empty()) {
-
-        // get the first process with available task space
+        // get the first process with available task space ...
         t_ChildrenMapIt it;
         if ((it = this->_firstAvailableProcess()) != _childs.end()) {
           DEBUG("Available process found : " << it->second.getPid());
-
           it->second.sendAction(_actionQueue.front());
           _actionQueue.pop_front();
         }
-
-        else { // or fork the process
+        else { // ... Or fork the process
           DEBUG(CYAN "No available process found : forking ..." WHITE);
           _forkPlazza();
           DEBUG("... Done !");
-        } // !if (!_actionQueue.empty())
-
-      }
+        }
+      } // if (!_actionQueue.empty()) {
 
       // get and dump the answers from the subProcesses
       _pollAndGetAnswers();
       _dumpAnswers();
-    }
+    } // !while (!shouldExit())
 
   return (0);
 }

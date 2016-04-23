@@ -1,17 +1,17 @@
 //
 // dataCollector.hh for  in /home/schmou/cpp/cpp_plazza/include
-// 
+//
 // Made by schmou_a
 // Login   <schmou@epitech.net>
-// 
+//
 // Started on  Mon Apr 18 14:00:21 2016 schmou_a
-// Last update Fri Apr 22 16:28:20 2016 schmou_a
+// Last update Sat Apr 23 10:37:07 2016 querat_g
 //
 
 #ifndef DATACOLLECTOR_HH_
 # define DATACOLLECTOR_HH_
 
-#include "../querat_g/include/PlazzaNameSpace.hh"
+#include "PlazzaNameSpace.hh"
 #include <string>
 #include <regex>
 

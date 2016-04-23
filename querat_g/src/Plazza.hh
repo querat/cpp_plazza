@@ -5,7 +5,7 @@
 // Login   <querat_g@epitech.net>
 //
 // Started on Sun Apr 17 14:29:00 2016 querat_g
-// Last update Fri Apr 22 16:31:21 2016 querat_g
+// Last update Fri Apr 22 17:33:02 2016 querat_g
 //
 
 #ifndef PLAZZA_HH
@@ -51,8 +51,8 @@ namespace Plazza
 
     std::string                         _stdinString;
 
-bool                                _stdinIsClosed;
-bool                                _forcedExit;
+    bool                                _stdinIsClosed;
+    bool                                _forcedExit;
 
   private:              // Boolean Operations
     bool                _shouldExit() const;
@@ -73,8 +73,8 @@ bool                                _forcedExit;
   public:               // I/O Operations
     void                printActionsQueue() const;
 
-public:
-void                    setForcedExitState();
+  public:
+    void                setForcedExitState();
 
   public:               // misc
     void                killProcesses();

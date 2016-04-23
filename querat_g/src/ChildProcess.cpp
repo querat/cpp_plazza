@@ -5,7 +5,7 @@
 // Login   <querat_g@epitech.net>
 //
 // Started on  Mon Apr 18 15:04:35 2016 querat_g
-// Last update Fri Apr 22 15:53:10 2016 querat_g
+// Last update Fri Apr 22 22:05:57 2016 querat_g
 //
 
 #include "ChildProcess.hh"
@@ -21,6 +21,8 @@ ChildProcess::ChildProcess(pid_t pid, NamedPipe *pipe1, NamedPipe *pipe2, int nb
 }
 
 ChildProcess::~ChildProcess(){
+  // delete(_pipe1);
+  // delete(_pipe2);
   // std::cerr << "ChildProcess " << std::to_string(_pid) << "deleted" << std::endl;
 }
 
