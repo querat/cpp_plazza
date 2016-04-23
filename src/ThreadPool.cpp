@@ -10,7 +10,8 @@
 
 #include "ThreadPool.hh"
 
-void            printLol(std::mutex &mutex) {
+void            printLol(std::mutex &mutex)
+{
 }
 
 void            ThreadPool::_threadCallBack()
@@ -19,21 +20,19 @@ void            ThreadPool::_threadCallBack()
 
   ++id;
   CERR(id << " starting");
-  while (_isAlive) {
-    _mutex.lock();
+  while (_isAlive)
+  {
+    //_mutex.lock();
+    std::unique_lock<std::mutex> guard(_mutex);
+    if (!_actionDeque.empty()) {
+     t_FileActionPair act = _actionDeque.front();
 
-    if (_actionDeque.empty()){
-      _mutex.unlock();
-      continue;
+      CERR("thread #" << id << "treating " << act.first);
+
+      _actionDeque.pop_front();
+      CERR(id << " looped");
+      //_mutex.unlock();
     }
-
-    t_FileActionPair    act = _actionDeque.front();
-
-    CERR("thread #" << id << "treating " << act.first);
-
-    _actionDeque.pop_front();
-    CERR(id << " looped");
-    _mutex.unlock();
   }
   CERR((id - 1) << " has ded");
 }
