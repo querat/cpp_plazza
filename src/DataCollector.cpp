@@ -1,17 +1,17 @@
 //
 // dataCollector.cpp for  in /home/schmou/cpp/cpp_plazza/src
-// 
+//
 // Made by schmou_a
 // Login   <schmou@epitech.net>
-// 
+//
 // Started on  Mon Apr 18 14:00:01 2016 schmou_a
-// Last update Fri Apr 22 13:28:17 2016 schmou_a
+// Last update Sat Apr 23 11:07:31 2016 querat_g
 //
 
 #include <sstream>
 #include <fstream>
 #include <iostream>
-#include "dataCollector.hh"
+#include "DataCollector.hh"
 
 dataCollector::dataCollector()
 {

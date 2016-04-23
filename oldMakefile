@@ -5,7 +5,7 @@
 ## Login   <lina@epitech.net>
 ## 
 ## Started on  Mon Apr 11 10:17:10 2016 lina
-## Last update Sat Apr 23 11:07:02 2016 querat_g
+## Last update Sat Apr 23 10:16:05 2016 querat_g
 ##
 
 CYAN		= 	"\e[1;36m"
@@ -37,7 +37,6 @@ SRCS		= 	src/main.cpp \
 			src/SubMain.cpp \
 			src/SafeDeque.cpp \
 			src/ThreadPool.cpp \
-			src/DataCollector.cpp \
 
 OBJS		= 	$(SRCS:.cpp=.o)
 
