@@ -5,7 +5,7 @@
 // Login   <querat_g@epitech.net>
 //
 // Started on  Sat Apr 23 09:53:14 2016 querat_g
-// Last update Sat Apr 23 15:19:53 2016 querat_g
+// Last update Sat Apr 23 16:53:56 2016 querat_g
 //
 
 #ifndef THREADPOOL_HH_
@@ -13,6 +13,7 @@
 
 # include <vector>
 
+# include <atomic>
 # include <mutex>
 # include <condition_variable>
 
@@ -32,13 +33,17 @@ private:
   t_SafeActionDeque &   _actionDeque;
   t_SafeAnswerDeque &   _answerDeque;
 
-  bool                  _isAlive;
+  std::atomic<bool>     _isAlive;
 
   t_CondVar             _cond;
   std::mutex            _mutex;
 
+  int                   _busy;
+
 private:
   void                  _threadCallBack();
+  void                  _incrementBusyThreadsNum();
+  void                  _decrementBusyThreadsNum();
 
 public:
 

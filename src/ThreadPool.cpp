@@ -5,7 +5,7 @@
 // Login   <querat_g@epitech.net>
 //
 // Started on  Sat Apr 23 09:54:29 2016 querat_g
-// Last update Sat Apr 23 15:56:48 2016 querat_g
+// Last update Sat Apr 23 16:47:26 2016 querat_g
 //
 
 #include "ThreadPool.hh"
@@ -53,7 +53,7 @@ ThreadPool::ThreadPool(int nbThreads, t_SafeActionDeque &act, t_SafeAnswerDeque 
 ThreadPool::~ThreadPool()
 {
   _isAlive = false;
-  for (auto it = _threads.begin(); it != _threads.end(); ++it) {
+  for (t_ThreadVector::iterator it = _threads.begin(); it != _threads.end(); ++it) {
     it->join();
   }
 }

@@ -5,7 +5,7 @@
 // Login   <querat_g@epitech.net>
 //
 // Started on  Tue Apr 19 09:50:04 2016 querat_g
-// Last update Sat Apr 23 14:12:07 2016 querat_g
+// Last update Sat Apr 23 17:22:42 2016 querat_g
 //
 
 #ifndef SUBMAIN_HH
@@ -14,16 +14,22 @@
 // std::*
 # include <mutex>
 # include <string>
+# include <chrono>
 
 // SysUnix
 # include <sys/types.h>
 # include <unistd.h>
 # include <poll.h>
 
+// C
+# include <ctime>
+
 # include "PlazzaNameSpace.hh"
 # include "NamedPipe.hh"
 # include "ThreadPool.hh"
 # include "SafeDeque.hpp"
+
+typedef     std::chrono::system_clock::time_point       t_TimePoint;
 
 namespace Plazza
 {
@@ -42,9 +48,16 @@ namespace Plazza
     t_SafeAnswerDeque   _answers;
     // t_ActionDeque _actionsToDo;
 
-    clock_t             _clock;
-    double              _timeSinceLastEvent;
+    // t_TimePoint         _clock;
+    // t_TimePoint         _timeSinceLastEvent;
 
+    time_t              _clock;
+    time_t              _timeSinceLastEvent;
+
+    // clock_t             _clock;
+    // double              _timeSinceLastEvent;
+
+    int                 _nbThreads;
     ThreadPool          _threads;
 
   private:              // Internal clock and exit status

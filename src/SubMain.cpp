@@ -5,7 +5,7 @@
 // Login   <querat_g@epitech.net>
 //
 // Started on  Tue Apr 19 09:58:24 2016 querat_g
-// Last update Sat Apr 23 15:50:23 2016 querat_g
+// Last update Sat Apr 23 17:25:16 2016 querat_g
 //
 
 #include "SubMain.hh"
@@ -15,8 +15,9 @@ Plazza::SubMain::SubMain(pid_t pid, NamedPipe *pipe1, NamedPipe *pipe2, int nbTh
   : _pid(pid)
   , _pipe1(pipe1)
   , _pipe2(pipe2)
-  , _clock(0)
+  , _clock(time(NULL))
   , _timeSinceLastEvent(0)
+  , _nbThreads(nbThreads)
   , _threads(nbThreads, _actionsToDo, _answers)
 {
   // std::cerr << "SubMain " << _pid << "created" << std::endl;
@@ -80,12 +81,10 @@ Plazza::SubMain::sendSolvedAction(std::string const & str)
 
 void
 Plazza::SubMain::_incrementTimeSinceLastEvent() {
-  clock_t       actual = clock();
+  time_t now = time(NULL);
 
-  _clock = (actual - _clock) * 100;
-
-  _timeSinceLastEvent += (((static_cast<double>(_clock)) / CLOCKS_PER_SEC));
-  _clock = actual;
+  _timeSinceLastEvent += (now - _clock);
+  _clock = now;
 }
 
 void
