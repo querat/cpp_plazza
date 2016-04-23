@@ -5,7 +5,7 @@
 // Login   <querat_g@epitech.net>
 //
 // Started on  Sun Apr 17 16:11:56 2016 querat_g
-// Last update Sat Apr 23 10:43:51 2016 querat_g
+// Last update Fri Apr 22 13:11:44 2016 querat_g
 //
 
 #include "PlazzaNameSpace.hh"
@@ -44,9 +44,9 @@ namespace Plazza
 
     t_ActionToRegexMap const    map({
         // TODO: write the true matching regexes instead of thoses debug ones
-        std::make_pair(Plazza::Action::Type::EMAIL_ADDRESS, Plazza::Regex::EMAIL_ADDRESS),
-        std::make_pair(Plazza::Action::Type::IP_ADDRESS,    Plazza::Regex::IP_ADDRESS),
-        std::make_pair(Plazza::Action::Type::PHONE_NUMBER,  Plazza::Regex::PHONE_NUMBER)
+        std::make_pair(Plazza::Action::Type::EMAIL_ADDRESS, EMAIL_ADDRESS),
+        std::make_pair(Plazza::Action::Type::IP_ADDRESS,    IP_ADDRESS),
+        std::make_pair(Plazza::Action::Type::PHONE_NUMBER,  PHONE_NUMBER)
     }); // !Plazza::Regex::map
   }    // !Plazza::Regex
 

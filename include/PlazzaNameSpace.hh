@@ -5,7 +5,7 @@
 // Login   <querat_g@epitech.net>
 //
 // Started on  Sun Apr 17 14:29:00 2016 querat_g
-// Last update Sat Apr 23 10:42:16 2016 querat_g
+// Last update Sat Apr 23 09:47:55 2016 querat_g
 //
 
 #ifndef PLAZZANAMESPACE_HH
@@ -59,13 +59,12 @@
 # define COMMAND_DELIMITERS     ";"
 # define WORDS_DELIMITERS       "\t "
 
-# define DEF_EMAIL_REGEX        "(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|\"(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21\\x23-\\x5b\\x5d-\\x7f]|\\\\[\
-\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])*\")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0\
--5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21-\\x5a\\x53-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])+)\\])"
-# define DEF_PHONE_REGEX        "(0[1-9][[:space:]]?)([[:digit:]]{2}[[:space:]]?){4}"
-# define DEF_IP_REGEX           "(?:(?:0|1[\\d]{0,2}|2(?:[0-4]\\d?|5[0-5]?|[6-9])?|[3-9]\\d?)\\.){3}(?:0|1[\\d]{0,2}|2(?:[0-4]\\d?|5[0-5]?|[6-9])?|[3-9]\\d?)"
+# define DEF_EMAIL_REGEX        "reg"
+# define DEF_PHONE_REGEX        "reg"
+# define DEF_IP_REGEX           "reg"
 
 # define DEF_POLL_TIMEOUT       10
+# define EOF_CHAR               4
 
 //
 // !! All variables declared here as extern MUST be declared in Plazza.cpp !!

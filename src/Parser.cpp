@@ -5,7 +5,7 @@
 // Login   <querat_g@epitech.net>
 //
 // Started on  Sun Apr 17 14:24:34 2016 querat_g
-// Last update Sun Apr 17 20:42:27 2016 querat_g
+// Last update Fri Apr 22 11:09:35 2016 querat_g
 //
 
 #include "Parser.hh"
@@ -70,10 +70,10 @@ Parser::_invalidActionsNumberErrorHandler(int nbActions, std::string const & lin
   _tokList.clear();
 
   if (nbActions < 1){
-    std::cerr << "No action detected in line \"" << line << "\"" << std::endl;
+    CERR("Plazza::Parser: No action detected in line \"" << line << "\"");
   }
   else if (nbActions > 1) {
-    std::cerr << "more than one action in line \"" << line << "\"" << std::endl;
+    CERR("Plazza::Parser: More than one action in line \"" << line << "\"");
   }
   return (false);
 }

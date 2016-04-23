@@ -5,7 +5,7 @@
 // Login   <querat_g@epitech.net>
 //
 // Started on  Tue Apr 12 17:46:41 2016 querat_g
-// Last update Tue Apr 19 09:30:49 2016 querat_g
+// Last update Fri Apr 22 15:35:30 2016 querat_g
 //
 
 #include "NamedPipe.hh"
@@ -35,7 +35,7 @@ NamedPipe::_tryCreatePipe()
   // Else we have to create it
   if ((mknod(this->_C_name, S_IFIFO | 0666, 0)) == -1)
     {
-      std::cerr << "named pipe creation failed" << std::endl;
+      CERR("named pipe creation failed");
       return (false);
     }
   return (true);
@@ -43,14 +43,14 @@ NamedPipe::_tryCreatePipe()
 
 bool
 NamedPipe::_open() {
-  this->_openWritingEnd();
-  this->_openReadingEnd();
+  this->openWritingEnd();
+  this->openReadingEnd();
   return ((IS_VALID_FD(this->_fdout)) &&
           (IS_VALID_FD(this->_fdin )) );
 }
 
 bool
-NamedPipe::_openWritingEnd()
+NamedPipe::openWritingEnd()
 {
   this->_tryCreatePipe();
   if (!(IS_VALID_FD(this->_fdout))) // Input side of the pipe
@@ -64,12 +64,12 @@ NamedPipe::_openWritingEnd()
 }
 
 bool
-NamedPipe::_openReadingEnd()
+NamedPipe::openReadingEnd()
 {
   this->_tryCreatePipe();
   if (!(IS_VALID_FD(this->_fdin))) // Input side of the pipe
     {
-      this->_fdin = open(this->_C_name, O_RDONLY); //  | O_NONBLOCK
+      this->_fdin = open(this->_C_name, O_RDWR); // | O_NONBLOCK
       if (this->_fdin == -1)
         std::cerr << "NamedPipe::open(): _fdin: "
                   << strerror(errno) << std::endl;
@@ -85,35 +85,128 @@ NamedPipe::_close() {
     close(this->_fdout);
   this->_fdin = (-1);
   this->_fdout = (-1);
-
-  unlink(this->_C_name);
-
   return (true);
 }
 
 void
-NamedPipe::writeTo(std::string const & data) {
-  this->_openWritingEnd();
-
-  std::cout <<  "writing " << data << std::endl;
-
-  write(this->_fdout, data.c_str(), (data.size() + 1));
-  this->_close();
+NamedPipe::writeTo(void const *data, size_t size) {
+  this->openWritingEnd();
+  write(this->_fdout, data, size);
 }
 
-#define RF_BUFSIZE      2048
-
-std::string
-NamedPipe::readFrom()
+bool
+NamedPipe::readFrom(void *buffer, size_t requestedReadSize)
 {
-  std::string   str("");
-  char          buffer[RF_BUFSIZE + 1];
+  if (!this->openReadingEnd())
+    return (false);
 
-  this->_openReadingEnd();
+  size_t actualReadSize = read(this->_fdin, buffer, requestedReadSize);
+  return (actualReadSize == requestedReadSize);
+}
 
-  while ((read(this->_fdin, buffer, RF_BUFSIZE)) > 0)
-    str += buffer;
+int
+NamedPipe::getFdIn() const {
+  return (_fdin);
+}
+int
+NamedPipe::getFdOut() const {
+  return (_fdin);
+}
 
-  this->_close();
-  return (str);
+NamedPipe &
+operator<<(NamedPipe &dis, t_FileActionPair const & fileActionPair)
+{
+  Plazza::Packet::Raw::Action   act;
+
+  // Fill the Header first ...
+  act.magic = Plazza::Packet::MAGIC;
+  act.size = sizeof(act);
+  // ... Then the raw data
+  act.type = fileActionPair.second;
+  std::strncpy(act.fileName, fileActionPair.first.c_str(), FILENAME_SIZE);
+  act.fileName[FILENAME_SIZE - 1] = '\0'; // better safe than sorry
+
+  // Finally, write it into the named pipe
+  dis.writeTo(&act, sizeof(act));
+
+  return (dis);
+}
+
+NamedPipe &
+operator>>(NamedPipe &dis, t_FileActionPair & pair)
+{
+  Plazza::Packet::Raw::Action action;
+
+  memset(&action, 0, sizeof(action));
+
+  if (!dis.readFrom(&action, sizeof(action))) {
+    return (dis);
+  }
+
+  if (action.magic != Plazza::Packet::MAGIC) {
+    return (dis);
+  }
+  pair.first = action.fileName;
+  pair.second = action.type;
+
+  DEBUG("op>> " << pair.first << " "<< pair.second);
+
+  return (dis);
+}
+
+
+NamedPipe &
+operator>>(NamedPipe &dis, Plazza::Packet::Raw::Action & action)
+{
+  std::memset(&action, 0, sizeof(action));
+
+  if (!dis.readFrom(&action, sizeof(action))) {
+    std::memset(&action, 0, sizeof(action));
+    return (dis);
+  }
+
+  if (action.magic != Plazza::Packet::MAGIC) {
+    std::memset(&action, 0, sizeof(action));
+    return (dis);
+  }
+
+  return (dis);
+}
+
+bool
+NamedPipe::isReadyToRead()
+{
+#define POLLFLAGS (POLLIN)
+
+  this->openReadingEnd();
+  int   ret = 0;
+  struct pollfd poll_ = {
+    .fd      = this->_fdin,
+    .events  = POLLFLAGS,
+    .revents = 0
+  };
+
+  if ((ret = poll(&poll_, 1, Plazza::POLL_TIMEOUT)) < 0) {
+    CERR(getpid() << " could not poll() !");
+    return (false);
+  }
+
+  return ((ret && (poll_.revents & POLLFLAGS)) ? true : false);
+}
+
+int
+NamedPipe::_readASync(void *buffer, size_t size)
+{
+
+  int           total = 0;
+  int           flags = fcntl(_fdin, F_GETFL, 0);
+
+  if (!buffer)
+    return (-1);
+
+  if ((fcntl(_fdin, F_SETFL, flags | O_NONBLOCK))) {
+    CERR("fcntl SETFL failed");
+    return (-1);
+  }
+  return (total);
 }

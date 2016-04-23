@@ -5,7 +5,7 @@
 ## Login   <lina@epitech.net>
 ## 
 ## Started on  Mon Apr 11 10:17:10 2016 lina
-## Last update Tue Apr 19 09:23:28 2016 querat_g
+## Last update Sat Apr 23 10:16:05 2016 querat_g
 ##
 
 CYAN		= 	"\e[1;36m"
@@ -34,7 +34,9 @@ SRCS		= 	src/main.cpp \
 			src/PlazzaNameSpace.cpp \
 			src/Plazza.cpp \
 			src/ChildProcess.cpp \
-			src/dataCollector.cpp
+			src/SubMain.cpp \
+			src/SafeDeque.cpp \
+			src/ThreadPool.cpp \
 
 OBJS		= 	$(SRCS:.cpp=.o)
 
@@ -46,16 +48,23 @@ $(NAME):		$(OBJS)
 
 .cpp.o:
 			@`which echo` -e $(CYAN)"[COMPILING] "$@$(WHITE)
-			@$(CXX) -c -o $@ $(CXXFLAGS) $<
+			@$(CXX) -c -o $@ $(CXXFLAGS) $< 2>&1 | head -n20
 
 clean:
 			@`which echo` -e $(RED)"[RM] "$(OBJS)$(WHITE)
 			@$(RM) $(OBJS)
+			@$(RM) ./fifo_*
 
 fclean:			clean
 			@`which echo` -e $(RED)"[RM] "$(NAME)$(WHITE)
 			@$(RM) $(NAME)
 
 re:			fclean all
+
+debug:			CXXFLAGS += -D_DEBUG_=1
+debug:			$(NAME)
+
+debugre:		CXXFLAGS += -D_DEBUG_=1
+debugre:		re
 
 .PHONY:			all clean fclean re .cpp.o
