@@ -70,7 +70,7 @@
 -5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21-\\x5a\\x53-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])+)\\])"
 # define DEF_PHONE_REGEX        "(0[1-9][[:space:]]?)([[:digit:]]{2}[[:space:]]?){4}"
 # define DEF_IP_REGEX           "(?:(?:0|1[\\d]{0,2}|2(?:[0-4]\\d?|5[0-5]?|[6-9])?|[3-9]\\d?)\\.){3}(?:0|1[\\d]{0,2}|2(?:[0-4]\\d?|5[0-5]?|[6-9])?|[3-9]\\d?)"
-
+# define DEF_UNDEFINED_REGEX    ""
 # define DEF_POLL_TIMEOUT       10
 # define EOF_CHAR               4
 

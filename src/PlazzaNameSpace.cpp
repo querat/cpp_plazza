@@ -40,13 +40,15 @@ namespace Plazza
   {
     std::regex                  EMAIL_ADDRESS(DEF_EMAIL_REGEX);
     std::regex                  IP_ADDRESS(DEF_IP_REGEX);
-    std::regex                  PHONE_NUMBER(DEF_PHONE_REGEX);
+      std::regex                  PHONE_NUMBER(DEF_PHONE_REGEX);
+      std::regex                  UNDEFINED(DEF_UNDEFINED_REGEX);
 
     t_ActionToRegexMap const    map({
         // TODO: write the true matching regexes instead of thoses debug ones
         std::make_pair(Plazza::Action::Type::EMAIL_ADDRESS, EMAIL_ADDRESS),
         std::make_pair(Plazza::Action::Type::IP_ADDRESS,    IP_ADDRESS),
-        std::make_pair(Plazza::Action::Type::PHONE_NUMBER,  PHONE_NUMBER)
+        std::make_pair(Plazza::Action::Type::PHONE_NUMBER,  PHONE_NUMBER),
+        std::make_pair(Plazza::Action::Type::UNDEFINED,  UNDEFINED)
     }); // !Plazza::Regex::map
   }    // !Plazza::Regex
 

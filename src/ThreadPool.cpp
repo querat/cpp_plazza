@@ -5,9 +5,10 @@
 // Login   <querat_g@epitech.net>
 //
 // Started on  Sat Apr 23 09:54:29 2016 querat_g
-// Last update Sat Apr 23 16:47:26 2016 querat_g
+// Last update Sat Apr 23 15:56:48 2016 querat_g
 //
 
+#include "DataCollector.hh"
 #include "ThreadPool.hh"
 
 void            printLol(std::mutex &mutex)
@@ -17,22 +18,24 @@ void            printLol(std::mutex &mutex)
 void            ThreadPool::_threadCallBack()
 {
   static int    id = 0;
+  dataCollector dataCollector1;
 
   ++id;
   CERR(id << " starting");
   while (_isAlive)
   {
-    //_mutex.lock();
-    std::unique_lock<std::mutex> guard(_mutex);
-    if (!_actionDeque.empty()) {
+    _mutex.lock();
+    if (!_actionDeque.empty())
+    {
      t_FileActionPair act = _actionDeque.front();
-
       CERR("thread #" << id << "treating " << act.first);
-
+      CERR("front = " << act.second);
       _actionDeque.pop_front();
+      _mutex.unlock();
       CERR(id << " looped");
-      //_mutex.unlock();
+      _answerDeque.push_back(dataCollector1.extract_data(act));
     }
+    _mutex.unlock();
   }
   CERR((id - 1) << " has ded");
 }
@@ -53,7 +56,14 @@ ThreadPool::ThreadPool(int nbThreads, t_SafeActionDeque &act, t_SafeAnswerDeque 
 ThreadPool::~ThreadPool()
 {
   _isAlive = false;
-  for (t_ThreadVector::iterator it = _threads.begin(); it != _threads.end(); ++it) {
-    it->join();
+  for (auto it = _threads.begin(); it != _threads.end(); ++it) {
+    try {
+      if (it->joinable())
+        it->join();
+    }
+    catch (const std::system_error &e)
+    {
+      std::cout <<"meaning "<< e.what() << std::endl;
+    }
   }
 }
