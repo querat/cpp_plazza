@@ -43,19 +43,11 @@ namespace Plazza
     pid_t               _pid;
     NamedPipe *         _pipe1;
     NamedPipe *         _pipe2;
-    std::mutex          _mutex;
     t_SafeActionDeque   _actionsToDo;
     t_SafeAnswerDeque   _answers;
-    // t_ActionDeque _actionsToDo;
-
-    // t_TimePoint         _clock;
-    // t_TimePoint         _timeSinceLastEvent;
 
     time_t              _clock;
     time_t              _timeSinceLastEvent;
-
-    // clock_t             _clock;
-    // double              _timeSinceLastEvent;
 
     int                 _nbThreads;
     ThreadPool          _threads;
