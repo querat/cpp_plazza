@@ -1,0 +1,190 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.7"/>
+<title>Plazza:  Fichier source de include/ThreadPool.hh</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Plazza
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.7 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="namespaces.html"><span>Espaces&#160;de&#160;nommage</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('ThreadPool_8hh_source.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Espaces de nommage</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Définitions de type</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Valeurs énumérées</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">ThreadPool.hh</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="ThreadPool_8hh.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">// ThreadPool.hh for  in /home/querat_g/tmp/cpp_plazza/querat_g/src</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">// Made by querat_g</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">// Login   &lt;querat_g@epitech.net&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">// Started on  Sat Apr 23 09:53:14 2016 querat_g</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">// Last update Sat Apr 23 16:53:56 2016 querat_g</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#ifndef THREADPOOL_HH_</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor"># define THREADPOOL_HH_</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor"># include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor"># include &lt;atomic&gt;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor"># include &lt;mutex&gt;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor"># include &lt;condition_variable&gt;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor"># include &quot;<a class="code" href="PlazzaNameSpace_8hh.html">PlazzaNameSpace.hh</a>&quot;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="ThreadPool_8hh.html#afebdc6688566f20bb88bb5214bb9b546">   22</a></span>&#160;<span class="keyword">typedef</span> std::condition_variable <a class="code" href="ThreadPool_8hh.html#afebdc6688566f20bb88bb5214bb9b546">t_CondVar</a>;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="classThreadPool.html">   24</a></span>&#160;<span class="keyword">class </span><a class="code" href="classThreadPool.html">ThreadPool</a></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;{</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <a class="code" href="classThreadPool.html#a0d59638b7f70091ca66405130e232aad">ThreadPool</a>(<span class="keywordtype">int</span> nbThreads, <a class="code" href="classSafeDeque.html">t_SafeActionDeque</a> &amp;act, <a class="code" href="classSafeDeque.html">t_SafeAnswerDeque</a> &amp;ans);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <a class="code" href="classThreadPool.html#a44d3d2ab618970605e684efc216655eb">~ThreadPool</a>();</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="classThreadPool.html#a6c09cff1770040cc5719256c2d804b36">   31</a></span>&#160;  <span class="keywordtype">int</span>                   <a class="code" href="classThreadPool.html#a6c09cff1770040cc5719256c2d804b36">_nbThreads</a>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="classThreadPool.html#aed66b4d2ddb560a53dd410b38a870c7c">   32</a></span>&#160;  <a class="code" href="PlazzaNameSpace_8hh.html#a9a30e47da961142c601ab387db287cf1">t_ThreadVector</a>        <a class="code" href="classThreadPool.html#aed66b4d2ddb560a53dd410b38a870c7c">_threads</a>;</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="classThreadPool.html#ab32ad56ddbb4dbfc15e3657c15436d17">   33</a></span>&#160;  <a class="code" href="classSafeDeque.html">t_SafeActionDeque</a> &amp;   <a class="code" href="classThreadPool.html#ab32ad56ddbb4dbfc15e3657c15436d17">_actionDeque</a>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="classThreadPool.html#a0c9916251c4383fe977f2fd2b04d0748">   34</a></span>&#160;  <a class="code" href="classSafeDeque.html">t_SafeAnswerDeque</a> &amp;   <a class="code" href="classThreadPool.html#a0c9916251c4383fe977f2fd2b04d0748">_answerDeque</a>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="classThreadPool.html#a61b85b76dfbf30a920b4d867027d287c">   36</a></span>&#160;  std::atomic&lt;bool&gt;     <a class="code" href="classThreadPool.html#a61b85b76dfbf30a920b4d867027d287c">_isAlive</a>;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="classThreadPool.html#aa7892519ec560a45eca1def3a6347cb0">   38</a></span>&#160;  <a class="code" href="ThreadPool_8hh.html#afebdc6688566f20bb88bb5214bb9b546">t_CondVar</a>             <a class="code" href="classThreadPool.html#aa7892519ec560a45eca1def3a6347cb0">_cond</a>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="classThreadPool.html#a7c03176f64716c5d218cd2c6d5f88b0f">   39</a></span>&#160;  std::mutex            <a class="code" href="classThreadPool.html#a7c03176f64716c5d218cd2c6d5f88b0f">_mutex</a>;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="classThreadPool.html#a9c608ba66c808e5cfc931b4f8875c7db">   41</a></span>&#160;  <span class="keywordtype">int</span>                   <a class="code" href="classThreadPool.html#a9c608ba66c808e5cfc931b4f8875c7db">_busy</a>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="keywordtype">void</span>                  <a class="code" href="classThreadPool.html#a800e8ef30b5c9ec61eb4551dee4d5189">_threadCallBack</a>();</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <span class="keywordtype">void</span>                  <a class="code" href="classThreadPool.html#a953a12ea2d4afed352f6a391b3287354">_incrementBusyThreadsNum</a>();</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="keywordtype">void</span>                  <a class="code" href="classThreadPool.html#aaab3abb627d921f8f5cd95146bfcec4c">_decrementBusyThreadsNum</a>();</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;};</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="PlazzaNameSpace_8hh_html"><div class="ttname"><a href="PlazzaNameSpace_8hh.html">PlazzaNameSpace.hh</a></div></div>
+<div class="ttc" id="classThreadPool_html_a6c09cff1770040cc5719256c2d804b36"><div class="ttname"><a href="classThreadPool.html#a6c09cff1770040cc5719256c2d804b36">ThreadPool::_nbThreads</a></div><div class="ttdeci">int _nbThreads</div><div class="ttdef"><b>Definition:</b> ThreadPool.hh:31</div></div>
+<div class="ttc" id="PlazzaNameSpace_8hh_html_a9a30e47da961142c601ab387db287cf1"><div class="ttname"><a href="PlazzaNameSpace_8hh.html#a9a30e47da961142c601ab387db287cf1">t_ThreadVector</a></div><div class="ttdeci">std::vector&lt; std::thread &gt; t_ThreadVector</div><div class="ttdef"><b>Definition:</b> PlazzaNameSpace.hh:165</div></div>
+<div class="ttc" id="classThreadPool_html_a61b85b76dfbf30a920b4d867027d287c"><div class="ttname"><a href="classThreadPool.html#a61b85b76dfbf30a920b4d867027d287c">ThreadPool::_isAlive</a></div><div class="ttdeci">std::atomic&lt; bool &gt; _isAlive</div><div class="ttdef"><b>Definition:</b> ThreadPool.hh:36</div></div>
+<div class="ttc" id="classThreadPool_html_aa7892519ec560a45eca1def3a6347cb0"><div class="ttname"><a href="classThreadPool.html#aa7892519ec560a45eca1def3a6347cb0">ThreadPool::_cond</a></div><div class="ttdeci">t_CondVar _cond</div><div class="ttdef"><b>Definition:</b> ThreadPool.hh:38</div></div>
+<div class="ttc" id="classThreadPool_html_ab32ad56ddbb4dbfc15e3657c15436d17"><div class="ttname"><a href="classThreadPool.html#ab32ad56ddbb4dbfc15e3657c15436d17">ThreadPool::_actionDeque</a></div><div class="ttdeci">t_SafeActionDeque &amp; _actionDeque</div><div class="ttdef"><b>Definition:</b> ThreadPool.hh:33</div></div>
+<div class="ttc" id="classThreadPool_html_a44d3d2ab618970605e684efc216655eb"><div class="ttname"><a href="classThreadPool.html#a44d3d2ab618970605e684efc216655eb">ThreadPool::~ThreadPool</a></div><div class="ttdeci">~ThreadPool()</div></div>
+<div class="ttc" id="classThreadPool_html_aed66b4d2ddb560a53dd410b38a870c7c"><div class="ttname"><a href="classThreadPool.html#aed66b4d2ddb560a53dd410b38a870c7c">ThreadPool::_threads</a></div><div class="ttdeci">t_ThreadVector _threads</div><div class="ttdef"><b>Definition:</b> ThreadPool.hh:32</div></div>
+<div class="ttc" id="classThreadPool_html_a953a12ea2d4afed352f6a391b3287354"><div class="ttname"><a href="classThreadPool.html#a953a12ea2d4afed352f6a391b3287354">ThreadPool::_incrementBusyThreadsNum</a></div><div class="ttdeci">void _incrementBusyThreadsNum()</div></div>
+<div class="ttc" id="classThreadPool_html_a0c9916251c4383fe977f2fd2b04d0748"><div class="ttname"><a href="classThreadPool.html#a0c9916251c4383fe977f2fd2b04d0748">ThreadPool::_answerDeque</a></div><div class="ttdeci">t_SafeAnswerDeque &amp; _answerDeque</div><div class="ttdef"><b>Definition:</b> ThreadPool.hh:34</div></div>
+<div class="ttc" id="classThreadPool_html_a7c03176f64716c5d218cd2c6d5f88b0f"><div class="ttname"><a href="classThreadPool.html#a7c03176f64716c5d218cd2c6d5f88b0f">ThreadPool::_mutex</a></div><div class="ttdeci">std::mutex _mutex</div><div class="ttdef"><b>Definition:</b> ThreadPool.hh:39</div></div>
+<div class="ttc" id="classThreadPool_html"><div class="ttname"><a href="classThreadPool.html">ThreadPool</a></div><div class="ttdef"><b>Definition:</b> ThreadPool.hh:24</div></div>
+<div class="ttc" id="classThreadPool_html_a9c608ba66c808e5cfc931b4f8875c7db"><div class="ttname"><a href="classThreadPool.html#a9c608ba66c808e5cfc931b4f8875c7db">ThreadPool::_busy</a></div><div class="ttdeci">int _busy</div><div class="ttdef"><b>Definition:</b> ThreadPool.hh:41</div></div>
+<div class="ttc" id="ThreadPool_8hh_html_afebdc6688566f20bb88bb5214bb9b546"><div class="ttname"><a href="ThreadPool_8hh.html#afebdc6688566f20bb88bb5214bb9b546">t_CondVar</a></div><div class="ttdeci">std::condition_variable t_CondVar</div><div class="ttdef"><b>Definition:</b> ThreadPool.hh:22</div></div>
+<div class="ttc" id="classThreadPool_html_a0d59638b7f70091ca66405130e232aad"><div class="ttname"><a href="classThreadPool.html#a0d59638b7f70091ca66405130e232aad">ThreadPool::ThreadPool</a></div><div class="ttdeci">ThreadPool(int nbThreads, t_SafeActionDeque &amp;act, t_SafeAnswerDeque &amp;ans)</div></div>
+<div class="ttc" id="classThreadPool_html_aaab3abb627d921f8f5cd95146bfcec4c"><div class="ttname"><a href="classThreadPool.html#aaab3abb627d921f8f5cd95146bfcec4c">ThreadPool::_decrementBusyThreadsNum</a></div><div class="ttdeci">void _decrementBusyThreadsNum()</div></div>
+<div class="ttc" id="classThreadPool_html_a800e8ef30b5c9ec61eb4551dee4d5189"><div class="ttname"><a href="classThreadPool.html#a800e8ef30b5c9ec61eb4551dee4d5189">ThreadPool::_threadCallBack</a></div><div class="ttdeci">void _threadCallBack()</div></div>
+<div class="ttc" id="classSafeDeque_html"><div class="ttname"><a href="classSafeDeque.html">SafeDeque</a></div><div class="ttdef"><b>Definition:</b> SafeDeque.hpp:21</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="ThreadPool_8hh.html">ThreadPool.hh</a></li>
+    <li class="footer">Généré le Samedi 23 Avril 2016 19:22:01 pour Plazza par
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
+  </ul>
+</div>
+</body>
+</html>

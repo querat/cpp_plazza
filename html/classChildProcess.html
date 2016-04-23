@@ -1,0 +1,521 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.7"/>
+<title>Plazza: Référence de la classe ChildProcess</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Plazza
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.7 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="namespaces.html"><span>Espaces&#160;de&#160;nommage</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Liste&#160;des&#160;classes</span></a></li>
+      <li><a href="classes.html"><span>Index&#160;des&#160;classes</span></a></li>
+      <li><a href="inherits.html"><span>Hiérarchie&#160;des&#160;classes</span></a></li>
+      <li><a href="functions.html"><span>Membres&#160;de&#160;classe</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('classChildProcess.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Espaces de nommage</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Définitions de type</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Valeurs énumérées</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Fonctions membres publiques</a> &#124;
+<a href="#pri-attribs">Attributs privés</a> &#124;
+<a href="classChildProcess-members.html">Liste de tous les membres</a>  </div>
+  <div class="headertitle">
+<div class="title">Référence de la classe ChildProcess</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="ChildProcess_8hh_source.html">ChildProcess.hh</a>&gt;</code></p>
+<div class="dynheader">
+Graphe de collaboration de ChildProcess:</div>
+<div class="dyncontent">
+<div class="center"><img src="classChildProcess__coll__graph.png" border="0" usemap="#ChildProcess_coll__map" alt="Collaboration graph"/></div>
+<map name="ChildProcess_coll__map" id="ChildProcess_coll__map">
+<area shape="rect" id="node2" href="classNamedPipe.html" title="NamedPipe" alt="" coords="5,189,96,216"/><area shape="rect" id="node3" title="STL class. " alt="" coords="67,99,145,125"/><area shape="rect" id="node4" title="STL class. " alt="" coords="43,6,169,47"/></map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">légende</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Fonctions membres publiques</h2></td></tr>
+<tr class="memitem:a932f796455086b51f3fcb008a7d2c9c1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChildProcess.html#a932f796455086b51f3fcb008a7d2c9c1">ChildProcess</a> (pid_t pid, <a class="el" href="classNamedPipe.html">NamedPipe</a> *pipe1, <a class="el" href="classNamedPipe.html">NamedPipe</a> *pipe2, int nbThreads)</td></tr>
+<tr class="separator:a932f796455086b51f3fcb008a7d2c9c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3749642d15c9fce912f9e7f9daaf52f0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChildProcess.html#a3749642d15c9fce912f9e7f9daaf52f0">~ChildProcess</a> ()</td></tr>
+<tr class="separator:a3749642d15c9fce912f9e7f9daaf52f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ae8a94995ff325b26985410468152f7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChildProcess.html#a6ae8a94995ff325b26985410468152f7">sendData</a> (void const *data, size_t size)</td></tr>
+<tr class="separator:a6ae8a94995ff325b26985410468152f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a834f51bc476a8e47b7645188a8e41ff0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChildProcess.html#a834f51bc476a8e47b7645188a8e41ff0">sendAction</a> (<a class="el" href="PlazzaNameSpace_8hh.html#a7d79dab2f398413e2e87f866f852dad1">t_FileActionPair</a> const &amp;fileActionPair)</td></tr>
+<tr class="separator:a834f51bc476a8e47b7645188a8e41ff0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5525ff36ff9d30ebc4c2256c77ad651a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChildProcess.html#a5525ff36ff9d30ebc4c2256c77ad651a">sendSignal</a> (int sig) const </td></tr>
+<tr class="separator:a5525ff36ff9d30ebc4c2256c77ad651a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac33b49843279d4ed8398e66d13e0e48a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChildProcess.html#ac33b49843279d4ed8398e66d13e0e48a">popPrintAnswers</a> ()</td></tr>
+<tr class="separator:ac33b49843279d4ed8398e66d13e0e48a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4087ac27357959d05eef25153f803175"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChildProcess.html#a4087ac27357959d05eef25153f803175">receiveAnswer</a> (std::deque&lt; std::string &gt; &amp;answerStack)</td></tr>
+<tr class="separator:a4087ac27357959d05eef25153f803175"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6264aec5bb89b5ed50619578cea76c86"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChildProcess.html#a6264aec5bb89b5ed50619578cea76c86">isBusy</a> () const </td></tr>
+<tr class="separator:a6264aec5bb89b5ed50619578cea76c86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30dc612c12105206786c278ce64f4861"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChildProcess.html#a30dc612c12105206786c278ce64f4861">reachedMaxCharge</a> () const </td></tr>
+<tr class="separator:a30dc612c12105206786c278ce64f4861"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5070e2e4ec2237490f4c7050c9044e02"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChildProcess.html#a5070e2e4ec2237490f4c7050c9044e02">hasAnswerReady</a> () const </td></tr>
+<tr class="separator:a5070e2e4ec2237490f4c7050c9044e02"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afadd1afeed844836d2f39e0550eb0b75"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChildProcess.html#afadd1afeed844836d2f39e0550eb0b75">isAlive</a> () const </td></tr>
+<tr class="separator:afadd1afeed844836d2f39e0550eb0b75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26f79ef0e8615d187938ce6c74039950"><td class="memItemLeft" align="right" valign="top">pid_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChildProcess.html#a26f79ef0e8615d187938ce6c74039950">getPid</a> () const </td></tr>
+<tr class="separator:a26f79ef0e8615d187938ce6c74039950"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Attributs privés</h2></td></tr>
+<tr class="memitem:abe4162bb49943ff2677424b17ca538dc"><td class="memItemLeft" align="right" valign="top">pid_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChildProcess.html#abe4162bb49943ff2677424b17ca538dc">_pid</a></td></tr>
+<tr class="separator:abe4162bb49943ff2677424b17ca538dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a39ee1e1e1d3af394074a71cfa25cdb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classNamedPipe.html">NamedPipe</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChildProcess.html#a5a39ee1e1e1d3af394074a71cfa25cdb">_pipe1</a></td></tr>
+<tr class="separator:a5a39ee1e1e1d3af394074a71cfa25cdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9003a2f5fc9c032b3d0336436eda3980"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classNamedPipe.html">NamedPipe</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChildProcess.html#a9003a2f5fc9c032b3d0336436eda3980">_pipe2</a></td></tr>
+<tr class="separator:a9003a2f5fc9c032b3d0336436eda3980"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae5515c294dcebaf8a65b1c7dc394f07"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChildProcess.html#aae5515c294dcebaf8a65b1c7dc394f07">_nbCurrentActions</a></td></tr>
+<tr class="separator:aae5515c294dcebaf8a65b1c7dc394f07"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99b7663e60dcfd7a570c485d16df9c8c"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChildProcess.html#a99b7663e60dcfd7a570c485d16df9c8c">_maxActions</a></td></tr>
+<tr class="separator:a99b7663e60dcfd7a570c485d16df9c8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a324b478ef5c3de7bd7c3a90659f1df99"><td class="memItemLeft" align="right" valign="top">std::deque&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChildProcess.html#a324b478ef5c3de7bd7c3a90659f1df99">_answerStack</a></td></tr>
+<tr class="separator:a324b478ef5c3de7bd7c3a90659f1df99"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Documentation des constructeurs et destructeur</h2>
+<a class="anchor" id="a932f796455086b51f3fcb008a7d2c9c1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ChildProcess::ChildProcess </td>
+          <td>(</td>
+          <td class="paramtype">pid_t&#160;</td>
+          <td class="paramname"><em>pid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classNamedPipe.html">NamedPipe</a> *&#160;</td>
+          <td class="paramname"><em>pipe1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classNamedPipe.html">NamedPipe</a> *&#160;</td>
+          <td class="paramname"><em>pipe2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>nbThreads</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a3749642d15c9fce912f9e7f9daaf52f0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ChildProcess::~ChildProcess </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Documentation des fonctions membres</h2>
+<a class="anchor" id="a26f79ef0e8615d187938ce6c74039950"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">pid_t ChildProcess::getPid </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a5070e2e4ec2237490f4c7050c9044e02"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ChildProcess::hasAnswerReady </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="afadd1afeed844836d2f39e0550eb0b75"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ChildProcess::isAlive </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a6264aec5bb89b5ed50619578cea76c86"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ChildProcess::isBusy </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ac33b49843279d4ed8398e66d13e0e48a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ChildProcess::popPrintAnswers </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a30dc612c12105206786c278ce64f4861"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ChildProcess::reachedMaxCharge </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a4087ac27357959d05eef25153f803175"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ChildProcess::receiveAnswer </td>
+          <td>(</td>
+          <td class="paramtype">std::deque&lt; std::string &gt; &amp;&#160;</td>
+          <td class="paramname"><em>answerStack</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a834f51bc476a8e47b7645188a8e41ff0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ChildProcess::sendAction </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="PlazzaNameSpace_8hh.html#a7d79dab2f398413e2e87f866f852dad1">t_FileActionPair</a> const &amp;&#160;</td>
+          <td class="paramname"><em>fileActionPair</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a6ae8a94995ff325b26985410468152f7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ChildProcess::sendData </td>
+          <td>(</td>
+          <td class="paramtype">void const *&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a5525ff36ff9d30ebc4c2256c77ad651a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ChildProcess::sendSignal </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>sig</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Documentation des données membres</h2>
+<a class="anchor" id="a324b478ef5c3de7bd7c3a90659f1df99"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::deque&lt;std::string&gt; ChildProcess::_answerStack</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a99b7663e60dcfd7a570c485d16df9c8c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t ChildProcess::_maxActions</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aae5515c294dcebaf8a65b1c7dc394f07"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t ChildProcess::_nbCurrentActions</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="abe4162bb49943ff2677424b17ca538dc"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">pid_t ChildProcess::_pid</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a5a39ee1e1e1d3af394074a71cfa25cdb"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classNamedPipe.html">NamedPipe</a>* ChildProcess::_pipe1</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a9003a2f5fc9c032b3d0336436eda3980"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classNamedPipe.html">NamedPipe</a>* ChildProcess::_pipe2</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>La documentation de cette classe a été générée à partir du fichier suivant :<ul>
+<li>include/<a class="el" href="ChildProcess_8hh_source.html">ChildProcess.hh</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="classChildProcess.html">ChildProcess</a></li>
+    <li class="footer">Généré le Samedi 23 Avril 2016 19:22:01 pour Plazza par
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
+  </ul>
+</div>
+</body>
+</html>

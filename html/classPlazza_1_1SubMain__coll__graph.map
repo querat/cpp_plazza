@@ -1,0 +1,10 @@
+<map id="Plazza::SubMain" name="Plazza::SubMain">
+<area shape="rect" id="node2" href="$classSafeDeque.html" title="SafeDeque\&lt; std::string \&gt;" alt="" coords="689,5,858,32"/>
+<area shape="rect" id="node4" title="STL class. " alt="" coords="187,44,267,71"/>
+<area shape="rect" id="node8" href="$classNamedPipe.html" title="NamedPipe" alt="" coords="572,71,663,97"/>
+<area shape="rect" id="node5" title="STL class. " alt="" coords="6,37,133,78"/>
+<area shape="rect" id="node6" href="$classSafeDeque.html" title="SafeDeque\&lt; std::pair\l\&lt; std::string, Plazza\l::Action::Type \&gt; \&gt;" alt="" coords="700,133,847,189"/>
+<area shape="rect" id="node9" href="$classThreadPool.html" title="ThreadPool" alt="" coords="729,213,817,240"/>
+<area shape="rect" id="node11" title="STL class. " alt="" coords="185,213,269,240"/>
+<area shape="rect" id="node12" href="$classSafeDeque.html" title="SafeDeque\&lt; T \&gt;" alt="" coords="402,273,521,300"/>
+</map>

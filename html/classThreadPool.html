@@ -1,0 +1,454 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.7"/>
+<title>Plazza: Référence de la classe ThreadPool</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Plazza
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.7 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="namespaces.html"><span>Espaces&#160;de&#160;nommage</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Liste&#160;des&#160;classes</span></a></li>
+      <li><a href="classes.html"><span>Index&#160;des&#160;classes</span></a></li>
+      <li><a href="inherits.html"><span>Hiérarchie&#160;des&#160;classes</span></a></li>
+      <li><a href="functions.html"><span>Membres&#160;de&#160;classe</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('classThreadPool.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Espaces de nommage</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Définitions de type</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Valeurs énumérées</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Fonctions membres publiques</a> &#124;
+<a href="#pri-methods">Fonctions membres privées</a> &#124;
+<a href="#pri-attribs">Attributs privés</a> &#124;
+<a href="classThreadPool-members.html">Liste de tous les membres</a>  </div>
+  <div class="headertitle">
+<div class="title">Référence de la classe ThreadPool</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="ThreadPool_8hh_source.html">ThreadPool.hh</a>&gt;</code></p>
+<div class="dynheader">
+Graphe de collaboration de ThreadPool:</div>
+<div class="dyncontent">
+<div class="center"><img src="classThreadPool__coll__graph.png" border="0" usemap="#ThreadPool_coll__map" alt="Collaboration graph"/></div>
+<map name="ThreadPool_coll__map" id="ThreadPool_coll__map">
+<area shape="rect" id="node3" title="STL class. " alt="" coords="49,5,132,32"/><area shape="rect" id="node4" href="classSafeDeque.html" title="SafeDeque\&lt; T \&gt;" alt="" coords="201,96,319,123"/></map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">légende</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Fonctions membres publiques</h2></td></tr>
+<tr class="memitem:a0d59638b7f70091ca66405130e232aad"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classThreadPool.html#a0d59638b7f70091ca66405130e232aad">ThreadPool</a> (int nbThreads, <a class="el" href="PlazzaNameSpace_8hh.html#a45c8d56a618c8feaaecef414e4cb4998">t_SafeActionDeque</a> &amp;act, <a class="el" href="PlazzaNameSpace_8hh.html#ab93305e673c7f51215e885e6946376c0">t_SafeAnswerDeque</a> &amp;ans)</td></tr>
+<tr class="separator:a0d59638b7f70091ca66405130e232aad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a44d3d2ab618970605e684efc216655eb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classThreadPool.html#a44d3d2ab618970605e684efc216655eb">~ThreadPool</a> ()</td></tr>
+<tr class="separator:a44d3d2ab618970605e684efc216655eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Fonctions membres privées</h2></td></tr>
+<tr class="memitem:a800e8ef30b5c9ec61eb4551dee4d5189"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classThreadPool.html#a800e8ef30b5c9ec61eb4551dee4d5189">_threadCallBack</a> ()</td></tr>
+<tr class="separator:a800e8ef30b5c9ec61eb4551dee4d5189"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a953a12ea2d4afed352f6a391b3287354"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classThreadPool.html#a953a12ea2d4afed352f6a391b3287354">_incrementBusyThreadsNum</a> ()</td></tr>
+<tr class="separator:a953a12ea2d4afed352f6a391b3287354"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaab3abb627d921f8f5cd95146bfcec4c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classThreadPool.html#aaab3abb627d921f8f5cd95146bfcec4c">_decrementBusyThreadsNum</a> ()</td></tr>
+<tr class="separator:aaab3abb627d921f8f5cd95146bfcec4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Attributs privés</h2></td></tr>
+<tr class="memitem:a6c09cff1770040cc5719256c2d804b36"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classThreadPool.html#a6c09cff1770040cc5719256c2d804b36">_nbThreads</a></td></tr>
+<tr class="separator:a6c09cff1770040cc5719256c2d804b36"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed66b4d2ddb560a53dd410b38a870c7c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="PlazzaNameSpace_8hh.html#a9a30e47da961142c601ab387db287cf1">t_ThreadVector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classThreadPool.html#aed66b4d2ddb560a53dd410b38a870c7c">_threads</a></td></tr>
+<tr class="separator:aed66b4d2ddb560a53dd410b38a870c7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab32ad56ddbb4dbfc15e3657c15436d17"><td class="memItemLeft" align="right" valign="top"><a class="el" href="PlazzaNameSpace_8hh.html#a45c8d56a618c8feaaecef414e4cb4998">t_SafeActionDeque</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classThreadPool.html#ab32ad56ddbb4dbfc15e3657c15436d17">_actionDeque</a></td></tr>
+<tr class="separator:ab32ad56ddbb4dbfc15e3657c15436d17"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c9916251c4383fe977f2fd2b04d0748"><td class="memItemLeft" align="right" valign="top"><a class="el" href="PlazzaNameSpace_8hh.html#ab93305e673c7f51215e885e6946376c0">t_SafeAnswerDeque</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classThreadPool.html#a0c9916251c4383fe977f2fd2b04d0748">_answerDeque</a></td></tr>
+<tr class="separator:a0c9916251c4383fe977f2fd2b04d0748"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61b85b76dfbf30a920b4d867027d287c"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classThreadPool.html#a61b85b76dfbf30a920b4d867027d287c">_isAlive</a></td></tr>
+<tr class="separator:a61b85b76dfbf30a920b4d867027d287c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7892519ec560a45eca1def3a6347cb0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ThreadPool_8hh.html#afebdc6688566f20bb88bb5214bb9b546">t_CondVar</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classThreadPool.html#aa7892519ec560a45eca1def3a6347cb0">_cond</a></td></tr>
+<tr class="separator:aa7892519ec560a45eca1def3a6347cb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c03176f64716c5d218cd2c6d5f88b0f"><td class="memItemLeft" align="right" valign="top">std::mutex&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classThreadPool.html#a7c03176f64716c5d218cd2c6d5f88b0f">_mutex</a></td></tr>
+<tr class="separator:a7c03176f64716c5d218cd2c6d5f88b0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c608ba66c808e5cfc931b4f8875c7db"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classThreadPool.html#a9c608ba66c808e5cfc931b4f8875c7db">_busy</a></td></tr>
+<tr class="separator:a9c608ba66c808e5cfc931b4f8875c7db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Documentation des constructeurs et destructeur</h2>
+<a class="anchor" id="a0d59638b7f70091ca66405130e232aad"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ThreadPool::ThreadPool </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>nbThreads</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="PlazzaNameSpace_8hh.html#a45c8d56a618c8feaaecef414e4cb4998">t_SafeActionDeque</a> &amp;&#160;</td>
+          <td class="paramname"><em>act</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="PlazzaNameSpace_8hh.html#ab93305e673c7f51215e885e6946376c0">t_SafeAnswerDeque</a> &amp;&#160;</td>
+          <td class="paramname"><em>ans</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a44d3d2ab618970605e684efc216655eb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ThreadPool::~ThreadPool </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Documentation des fonctions membres</h2>
+<a class="anchor" id="aaab3abb627d921f8f5cd95146bfcec4c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ThreadPool::_decrementBusyThreadsNum </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a953a12ea2d4afed352f6a391b3287354"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ThreadPool::_incrementBusyThreadsNum </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a800e8ef30b5c9ec61eb4551dee4d5189"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ThreadPool::_threadCallBack </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Documentation des données membres</h2>
+<a class="anchor" id="ab32ad56ddbb4dbfc15e3657c15436d17"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="PlazzaNameSpace_8hh.html#a45c8d56a618c8feaaecef414e4cb4998">t_SafeActionDeque</a>&amp; ThreadPool::_actionDeque</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a0c9916251c4383fe977f2fd2b04d0748"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="PlazzaNameSpace_8hh.html#ab93305e673c7f51215e885e6946376c0">t_SafeAnswerDeque</a>&amp; ThreadPool::_answerDeque</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a9c608ba66c808e5cfc931b4f8875c7db"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ThreadPool::_busy</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aa7892519ec560a45eca1def3a6347cb0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="ThreadPool_8hh.html#afebdc6688566f20bb88bb5214bb9b546">t_CondVar</a> ThreadPool::_cond</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a61b85b76dfbf30a920b4d867027d287c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::atomic&lt;bool&gt; ThreadPool::_isAlive</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a7c03176f64716c5d218cd2c6d5f88b0f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::mutex ThreadPool::_mutex</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a6c09cff1770040cc5719256c2d804b36"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ThreadPool::_nbThreads</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aed66b4d2ddb560a53dd410b38a870c7c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="PlazzaNameSpace_8hh.html#a9a30e47da961142c601ab387db287cf1">t_ThreadVector</a> ThreadPool::_threads</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>La documentation de cette classe a été générée à partir du fichier suivant :<ul>
+<li>include/<a class="el" href="ThreadPool_8hh_source.html">ThreadPool.hh</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="classThreadPool.html">ThreadPool</a></li>
+    <li class="footer">Généré le Samedi 23 Avril 2016 19:22:01 pour Plazza par
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
+  </ul>
+</div>
+</body>
+</html>
