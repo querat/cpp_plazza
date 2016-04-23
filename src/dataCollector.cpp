@@ -13,22 +13,8 @@
 #include <iostream>
 #include "dataCollector.hh"
 
-dataCollector::dataCollector(t_FileActionPair &file_info, std::regex reg)
+dataCollector::dataCollector()
 {
-  std::ifstream	file(file_info.first.c_str(), std::ios::in);
-  std::stringstream stream;
-
-  if (file)
-    {
-      stream << file.rdbuf();
-      _raw_data = stream.str();
-      _reg = reg;
-      _to_get = file_info.second;
-      _processed_data = "";
-      file.close();
-    }
-  else
-    _processed_data.assign("Error while constructing the data collector. (No such file or directory)");
 }
 
 dataCollector::~dataCollector() {}
@@ -139,12 +125,39 @@ std::string   dataCollector::caesarBruteForce(const std::string &to_uncipher)
   return _processed_data;
 }
 
-std::string	dataCollector::extract_data()
+std::string	dataCollector::extract_data(t_FileActionPair &file_info)
 {
   std::string	tmp = _raw_data;
   std::smatch	checker;
   const std::sregex_token_iterator End;
+  std::ifstream	file(file_info.first.c_str(), std::ios::in);
+  std::stringstream stream;
 
+  if (file)
+  {
+    stream << file.rdbuf();
+    _raw_data = stream.str();
+    _to_get = file_info.second;
+    _processed_data = "";
+    file.close();
+  }
+  else
+    _processed_data.assign("Error while constructing the data collector. (No such file or directory)");
+  switch (_to_get)
+  {
+    case Plazza::Action::EMAIL_ADDRESS:
+      _reg.assign(DEF_EMAIL_REGEX);
+          break;
+    case Plazza::Action::IP_ADDRESS:
+      _reg.assign(DEF_IP_REGEX);
+          break;
+    case Plazza::Action::PHONE_NUMBER:
+      _reg.assign(DEF_PHONE_REGEX);
+          break;
+    default:
+      _reg.assign("");
+          break;
+  }
   if (std::regex_search(tmp, checker, _reg))
   {
     for (std::sregex_token_iterator it(tmp.begin(), tmp.end(), _reg); it != End; ++it)

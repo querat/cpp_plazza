@@ -15,6 +15,9 @@
 #include <string>
 #include <regex>
 
+/// Class dataCollector
+/// Permet de recuperer le contenu d'un fichier
+/// Crypté ou pas.
 class dataCollector
 {
 
@@ -24,7 +27,7 @@ public:
   /// Construit un objet de type DataCollector
   /// file_info : paire contenant le chemin du fichier et le type de données à extraire
   /// reg : regex à injecter dans le fichier
-  dataCollector(t_FileActionPair &file_info, std::regex reg);
+  dataCollector();
 
   /// Destructeur Datacollector
   /// Detruit un objet de type Datacollector
@@ -32,7 +35,7 @@ public:
 
   /// Extracteur de données
   /// Récupère les données contenue dans le fichier et effectue un bruteforce si nécessaire
-  std::string	extract_data();
+  std::string	extract_data(t_FileActionPair &file_info);
 
   /// Déchiffrement César
   /// Déchiffe le fichier donné avec la clé donnée
