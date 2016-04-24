@@ -129,7 +129,7 @@ std::string   dataCollector::caesarBruteForce(const std::string &to_uncipher)
 
 std::string	dataCollector::extract_data(t_FileActionPair &file_info)
 {
-  std::string	tmp = _raw_data;
+  std::string	tmp;
   std::smatch	checker;
   const std::sregex_token_iterator End;
   std::ifstream	file(file_info.first.c_str(), std::ios::in);
@@ -141,11 +141,12 @@ std::string	dataCollector::extract_data(t_FileActionPair &file_info)
     _raw_data = stream.str();
     _to_get = file_info.second;
     _processed_data = "";
+    tmp = _raw_data;
     file.close();
   }
   else
     _processed_data.assign("Error while constructing the data collector. (No such file or directory)");
-  switch (_to_get)
+  switch (file_info.second)
   {
     case Plazza::Action::EMAIL_ADDRESS:
       _reg.assign(Plazza::Regex::map.at(Plazza::Action::Type::EMAIL_ADDRESS));
