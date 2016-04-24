@@ -1,4 +1,4 @@
 <map id="Plazza::Packet::Header" name="Plazza::Packet::Header">
 <area shape="rect" id="node2" href="$structPlazza_1_1Packet_1_1Raw_1_1Action.html" title="Plazza::Packet::Raw\l::Action" alt="" coords="5,81,152,122"/>
-<area shape="rect" id="node3" href="$structPlazza_1_1Packet_1_1Raw_1_1Answer.html" title="Plazza::Packet::Raw\l::Answer" alt="" coords="176,81,323,122"/>
+<area shape="rect" id="node3" href="$structPlazza_1_1Packet_1_1Raw_1_1Answer.html" title="Sent from the child to the main process. " alt="" coords="176,81,323,122"/>
 </map>

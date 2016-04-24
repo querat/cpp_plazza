@@ -14,8 +14,5 @@ var dir_d44c64559bbebec7f509842c48db8b23 =
       [ "SafeDeque", "classSafeDeque.html", "classSafeDeque" ]
     ] ],
     [ "SubMain.hh", "SubMain_8hh.html", "SubMain_8hh" ],
-    [ "Thread.hh", "Thread_8hh.html", [
-      [ "Thread", "classThread.html", null ]
-    ] ],
     [ "ThreadPool.hh", "ThreadPool_8hh.html", "ThreadPool_8hh" ]
 ];

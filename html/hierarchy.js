@@ -13,6 +13,5 @@ var hierarchy =
     [ "SafeDeque< std::pair< std::string, Plazza::Action::Type > >", "classSafeDeque.html", null ],
     [ "SafeDeque< std::string >", "classSafeDeque.html", null ],
     [ "Plazza::SubMain", "classPlazza_1_1SubMain.html", null ],
-    [ "Thread", "classThread.html", null ],
     [ "ThreadPool", "classThreadPool.html", null ]
 ];

@@ -132,14 +132,17 @@ Classes</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Fonctions</h2></td></tr>
 <tr class="memitem:a5a2230f932643602d64cc7eb992ea566"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacePlazza.html#a5a2230f932643602d64cc7eb992ea566">isAnAction</a> (std::string const &amp;action)</td></tr>
+<tr class="memdesc:a5a2230f932643602d64cc7eb992ea566"><td class="mdescLeft">&#160;</td><td class="mdescRight">checks if the string can be translated to a <a class="el" href="namespacePlazza_1_1Action.html#ae8f3d1b6f4ab015d51342382c1c1218a">Plazza::Action::Type</a>  <a href="#a5a2230f932643602d64cc7eb992ea566">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a5a2230f932643602d64cc7eb992ea566"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afef6f86c718078d4d1ffc64bdd0f840f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacePlazza_1_1Action.html#ae8f3d1b6f4ab015d51342382c1c1218a">Plazza::Action::Type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacePlazza.html#afef6f86c718078d4d1ffc64bdd0f840f">stringToAction</a> (std::string const &amp;str)</td></tr>
+<tr class="memdesc:afef6f86c718078d4d1ffc64bdd0f840f"><td class="mdescLeft">&#160;</td><td class="mdescRight">translates a std::string to a <a class="el" href="namespacePlazza_1_1Action.html#ae8f3d1b6f4ab015d51342382c1c1218a">Plazza::Action::Type</a>  <a href="#afef6f86c718078d4d1ffc64bdd0f840f">Plus de détails...</a><br /></td></tr>
 <tr class="separator:afef6f86c718078d4d1ffc64bdd0f840f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ace77ff55d92cbb01e0b94599bfae6c67"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacePlazza.html#ace77ff55d92cbb01e0b94599bfae6c67">makeFifoNameFromPid</a> (pid_t pid, bool toMain)</td></tr>
 <tr class="separator:ace77ff55d92cbb01e0b94599bfae6c67"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad5b5361e24e3b6e48522fb72f4d08de9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacePlazza.html#ad5b5361e24e3b6e48522fb72f4d08de9">printAction</a> (<a class="el" href="namespacePlazza_1_1Action.html#ae8f3d1b6f4ab015d51342382c1c1218a">Plazza::Action::Type</a> act, bool toErr=false)</td></tr>
 <tr class="separator:ad5b5361e24e3b6e48522fb72f4d08de9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3b49d60f338a01857600b55a1bf5e58c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacePlazza.html#a3b49d60f338a01857600b55a1bf5e58c">pollFd</a> (int fd)</td></tr>
+<tr class="memdesc:a3b49d60f338a01857600b55a1bf5e58c"><td class="mdescLeft">&#160;</td><td class="mdescRight">checks if data is ready to read from a file descriptor, then returns true or false  <a href="#a3b49d60f338a01857600b55a1bf5e58c">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a3b49d60f338a01857600b55a1bf5e58c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
@@ -161,6 +164,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>checks if the string can be translated to a <a class="el" href="namespacePlazza_1_1Action.html#ae8f3d1b6f4ab015d51342382c1c1218a">Plazza::Action::Type</a> </p>
 
 </div>
 </div>
@@ -187,6 +192,7 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>creates a default path for NamedPipes in/out pid : pid of the targeted process toMain : true if going from child to parent, false otherwise </p>
 
 </div>
 </div>
@@ -203,6 +209,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>checks if data is ready to read from a file descriptor, then returns true or false </p>
 
 </div>
 </div>
@@ -229,6 +237,7 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>dumps the name of the <a class="el" href="namespacePlazza_1_1Action.html#ae8f3d1b6f4ab015d51342382c1c1218a">Plazza::Action::Type</a> to stdout or stderr, depending on toErr </p>
 
 </div>
 </div>
@@ -245,6 +254,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>translates a std::string to a <a class="el" href="namespacePlazza_1_1Action.html#ae8f3d1b6f4ab015d51342382c1c1218a">Plazza::Action::Type</a> </p>
 
 </div>
 </div>
@@ -267,7 +278,7 @@ Variables</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacePlazza.html">Plazza</a></li>
-    <li class="footer">Généré le Samedi 23 Avril 2016 19:22:01 pour Plazza par
+    <li class="footer">Généré le Dimanche 24 Avril 2016 14:50:03 pour Plazza par
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>

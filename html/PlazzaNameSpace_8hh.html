@@ -132,7 +132,7 @@ Graphe des dépendances par inclusion de PlazzaNameSpace.hh:</div>
 <div class="dyncontent">
 <div class="center"><img src="PlazzaNameSpace_8hh__incl.png" border="0" usemap="#include_2PlazzaNameSpace_8hh" alt=""/></div>
 <map name="include_2PlazzaNameSpace_8hh" id="include_2PlazzaNameSpace_8hh">
-<area shape="rect" id="node15" href="SafeDeque_8hpp.html" title="SafeDeque.hpp" alt="" coords="488,80,599,107"/></map>
+<area shape="rect" id="node15" href="SafeDeque_8hpp.html" title="SafeDeque.hpp" alt="" coords="325,80,436,107"/></map>
 </div>
 </div><div class="textblock"><div class="dynheader">
 Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier :</div>
@@ -147,10 +147,12 @@ Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structPlazza_1_1Packet_1_1Header.html">Plazza::Packet::Header</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">sent to fifo before the actual packet  <a href="structPlazza_1_1Packet_1_1Header.html#details">Plus de détails...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structPlazza_1_1Packet_1_1Raw_1_1Action.html">Plazza::Packet::Raw::Action</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structPlazza_1_1Packet_1_1Raw_1_1Answer.html">Plazza::Packet::Raw::Answer</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sent from the child to the main process.  <a href="structPlazza_1_1Packet_1_1Raw_1_1Answer.html#details">Plus de détails...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
@@ -234,12 +236,15 @@ std::regex &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el"
 <tr class="separator:a32b21958980cf6cf42ca3ada7a14631e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7d79dab2f398413e2e87f866f852dad1"><td class="memItemLeft" align="right" valign="top">typedef std::pair&lt; std::string, <br class="typebreak" />
 <a class="el" href="namespacePlazza_1_1Action.html#ae8f3d1b6f4ab015d51342382c1c1218a">Plazza::Action::Type</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PlazzaNameSpace_8hh.html#a7d79dab2f398413e2e87f866f852dad1">t_FileActionPair</a></td></tr>
+<tr class="memdesc:a7d79dab2f398413e2e87f866f852dad1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pair that contains a filename and the action to execute on this file.  <a href="#a7d79dab2f398413e2e87f866f852dad1">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a7d79dab2f398413e2e87f866f852dad1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a64d6f82b0d79590b53c4ba9b962bd60a"><td class="memItemLeft" align="right" valign="top">typedef std::deque<br class="typebreak" />
 &lt; <a class="el" href="PlazzaNameSpace_8hh.html#a7d79dab2f398413e2e87f866f852dad1">t_FileActionPair</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PlazzaNameSpace_8hh.html#a64d6f82b0d79590b53c4ba9b962bd60a">t_ActionDeque</a></td></tr>
+<tr class="memdesc:a64d6f82b0d79590b53c4ba9b962bd60a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stack that will be sent from the main process to the subProcesses.  <a href="#a64d6f82b0d79590b53c4ba9b962bd60a">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a64d6f82b0d79590b53c4ba9b962bd60a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa273a6d0c8179e2a6bbd7eb382c08efc"><td class="memItemLeft" align="right" valign="top">typedef std::map&lt; std::string, <br class="typebreak" />
 <a class="el" href="namespacePlazza_1_1Action.html#ae8f3d1b6f4ab015d51342382c1c1218a">Plazza::Action::Type</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PlazzaNameSpace_8hh.html#aa273a6d0c8179e2a6bbd7eb382c08efc">t_StringToTypeMap</a></td></tr>
+<tr class="memdesc:aa273a6d0c8179e2a6bbd7eb382c08efc"><td class="mdescLeft">&#160;</td><td class="mdescRight">used by the parser to associate a string to a <a class="el" href="namespacePlazza_1_1Action.html#ae8f3d1b6f4ab015d51342382c1c1218a">Plazza::Action::Type</a>  <a href="#aa273a6d0c8179e2a6bbd7eb382c08efc">Plus de détails...</a><br /></td></tr>
 <tr class="separator:aa273a6d0c8179e2a6bbd7eb382c08efc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a01d4ea97e4685932becc5fe1011b21ef"><td class="memItemLeft" align="right" valign="top">typedef std::deque&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PlazzaNameSpace_8hh.html#a01d4ea97e4685932becc5fe1011b21ef">t_AnswerDeque</a></td></tr>
 <tr class="separator:a01d4ea97e4685932becc5fe1011b21ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -264,14 +269,17 @@ std::regex &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el"
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Fonctions</h2></td></tr>
 <tr class="memitem:a5a2230f932643602d64cc7eb992ea566"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacePlazza.html#a5a2230f932643602d64cc7eb992ea566">Plazza::isAnAction</a> (std::string const &amp;action)</td></tr>
+<tr class="memdesc:a5a2230f932643602d64cc7eb992ea566"><td class="mdescLeft">&#160;</td><td class="mdescRight">checks if the string can be translated to a <a class="el" href="namespacePlazza_1_1Action.html#ae8f3d1b6f4ab015d51342382c1c1218a">Plazza::Action::Type</a>  <a href="#a5a2230f932643602d64cc7eb992ea566">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a5a2230f932643602d64cc7eb992ea566"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afef6f86c718078d4d1ffc64bdd0f840f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacePlazza_1_1Action.html#ae8f3d1b6f4ab015d51342382c1c1218a">Plazza::Action::Type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacePlazza.html#afef6f86c718078d4d1ffc64bdd0f840f">Plazza::stringToAction</a> (std::string const &amp;str)</td></tr>
+<tr class="memdesc:afef6f86c718078d4d1ffc64bdd0f840f"><td class="mdescLeft">&#160;</td><td class="mdescRight">translates a std::string to a <a class="el" href="namespacePlazza_1_1Action.html#ae8f3d1b6f4ab015d51342382c1c1218a">Plazza::Action::Type</a>  <a href="#afef6f86c718078d4d1ffc64bdd0f840f">Plus de détails...</a><br /></td></tr>
 <tr class="separator:afef6f86c718078d4d1ffc64bdd0f840f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ace77ff55d92cbb01e0b94599bfae6c67"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacePlazza.html#ace77ff55d92cbb01e0b94599bfae6c67">Plazza::makeFifoNameFromPid</a> (pid_t pid, bool toMain)</td></tr>
 <tr class="separator:ace77ff55d92cbb01e0b94599bfae6c67"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad5b5361e24e3b6e48522fb72f4d08de9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacePlazza.html#ad5b5361e24e3b6e48522fb72f4d08de9">Plazza::printAction</a> (<a class="el" href="namespacePlazza_1_1Action.html#ae8f3d1b6f4ab015d51342382c1c1218a">Plazza::Action::Type</a> act, bool toErr=false)</td></tr>
 <tr class="separator:ad5b5361e24e3b6e48522fb72f4d08de9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3b49d60f338a01857600b55a1bf5e58c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacePlazza.html#a3b49d60f338a01857600b55a1bf5e58c">Plazza::pollFd</a> (int fd)</td></tr>
+<tr class="memdesc:a3b49d60f338a01857600b55a1bf5e58c"><td class="mdescLeft">&#160;</td><td class="mdescRight">checks if data is ready to read from a file descriptor, then returns true or false  <a href="#a3b49d60f338a01857600b55a1bf5e58c">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a3b49d60f338a01857600b55a1bf5e58c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac718197e455998012458056d1d46185c"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PlazzaNameSpace_8hh.html#ac718197e455998012458056d1d46185c">operator&lt;&lt;</a> (std::ostream &amp;os, <a class="el" href="namespacePlazza_1_1Action.html#ae8f3d1b6f4ab015d51342382c1c1218a">Plazza::Action::Type</a> act)</td></tr>
 <tr class="separator:ac718197e455998012458056d1d46185c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -287,6 +295,7 @@ Variables</h2></td></tr>
 <tr class="memitem:a709100406d5db18e84c1526c9f3caa8f"><td class="memItemLeft" align="right" valign="top">t_ActionToRegexMap const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacePlazza_1_1Regex.html#a709100406d5db18e84c1526c9f3caa8f">Plazza::Regex::map</a></td></tr>
 <tr class="separator:a709100406d5db18e84c1526c9f3caa8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5618f6a5a763ed876e7f0dc80d19dd18"><td class="memItemLeft" align="right" valign="top">uint32_t const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacePlazza_1_1Packet.html#a5618f6a5a763ed876e7f0dc80d19dd18">Plazza::Packet::MAGIC</a></td></tr>
+<tr class="memdesc:a5618f6a5a763ed876e7f0dc80d19dd18"><td class="mdescLeft">&#160;</td><td class="mdescRight">we all need some 0xC0FFEE, even for named pipes  <a href="#a5618f6a5a763ed876e7f0dc80d19dd18">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a5618f6a5a763ed876e7f0dc80d19dd18"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Documentation des macros</h2>
@@ -605,6 +614,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Stack that will be sent from the main process to the subProcesses. </p>
+
 </div>
 </div>
 <a class="anchor" id="a01d4ea97e4685932becc5fe1011b21ef"></a>
@@ -628,6 +639,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Pair that contains a filename and the action to execute on this file. </p>
 
 </div>
 </div>
@@ -664,6 +677,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>used by the parser to associate a string to a <a class="el" href="namespacePlazza_1_1Action.html#ae8f3d1b6f4ab015d51342382c1c1218a">Plazza::Action::Type</a> </p>
 
 </div>
 </div>
@@ -712,7 +727,7 @@ Variables</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="PlazzaNameSpace_8hh.html">PlazzaNameSpace.hh</a></li>
-    <li class="footer">Généré le Samedi 23 Avril 2016 19:22:01 pour Plazza par
+    <li class="footer">Généré le Dimanche 24 Avril 2016 14:50:03 pour Plazza par
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>

@@ -15,9 +15,439 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bd6a7a28-8437-4fb2-8b4f-bd56fea3c63c" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/ChildProcess_8hh.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/ChildProcess_8hh__dep__incl.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/ChildProcess_8hh__dep__incl.md5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/ChildProcess_8hh__dep__incl.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/ChildProcess_8hh__incl.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/ChildProcess_8hh__incl.md5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/ChildProcess_8hh__incl.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/ChildProcess_8hh_source.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/DataCollector_8hh.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/DataCollector_8hh__incl.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/DataCollector_8hh__incl.md5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/DataCollector_8hh__incl.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/DataCollector_8hh_source.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/NamedPipe_8hh.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/NamedPipe_8hh.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/NamedPipe_8hh__dep__incl.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/NamedPipe_8hh__dep__incl.md5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/NamedPipe_8hh__dep__incl.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/NamedPipe_8hh__incl.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/NamedPipe_8hh__incl.md5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/NamedPipe_8hh__incl.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/NamedPipe_8hh_source.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/Parser_8hh.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/Parser_8hh.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/Parser_8hh__dep__incl.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/Parser_8hh__dep__incl.md5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/Parser_8hh__dep__incl.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/Parser_8hh__incl.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/Parser_8hh__incl.md5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/Parser_8hh__incl.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/Parser_8hh_source.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/PlazzaNameSpace_8hh.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/PlazzaNameSpace_8hh.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/PlazzaNameSpace_8hh__dep__incl.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/PlazzaNameSpace_8hh__dep__incl.md5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/PlazzaNameSpace_8hh__dep__incl.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/PlazzaNameSpace_8hh__incl.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/PlazzaNameSpace_8hh__incl.md5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/PlazzaNameSpace_8hh__incl.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/PlazzaNameSpace_8hh_source.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/Plazza_8hh.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/Plazza_8hh.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/Plazza_8hh__incl.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/Plazza_8hh__incl.md5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/Plazza_8hh__incl.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/Plazza_8hh_source.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/SafeDeque_8hpp.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/SafeDeque_8hpp__dep__incl.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/SafeDeque_8hpp__dep__incl.md5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/SafeDeque_8hpp__dep__incl.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/SafeDeque_8hpp__incl.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/SafeDeque_8hpp__incl.md5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/SafeDeque_8hpp__incl.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/SafeDeque_8hpp_source.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/SubMain_8hh.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/SubMain_8hh.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/SubMain_8hh__incl.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/SubMain_8hh__incl.md5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/SubMain_8hh__incl.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/SubMain_8hh_source.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/ThreadPool_8hh.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/ThreadPool_8hh.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/ThreadPool_8hh__dep__incl.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/ThreadPool_8hh__dep__incl.md5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/ThreadPool_8hh__dep__incl.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/ThreadPool_8hh__incl.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/ThreadPool_8hh__incl.md5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/ThreadPool_8hh__incl.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/ThreadPool_8hh_source.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/Thread_8hh.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/Thread_8hh__incl.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/Thread_8hh__incl.md5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/Thread_8hh__incl.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/Thread_8hh_source.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/annotated.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/annotated.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/bc_s.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/bdwn.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/classChildProcess-members.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/classChildProcess.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/classChildProcess.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/classChildProcess__coll__graph.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/classChildProcess__coll__graph.md5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/classChildProcess__coll__graph.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/classNamedPipe-members.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/classNamedPipe.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/classNamedPipe.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/classNamedPipe__coll__graph.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/classNamedPipe__coll__graph.md5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/classNamedPipe__coll__graph.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/classParser-members.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/classParser.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/classParser.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/classParser__coll__graph.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/classParser__coll__graph.md5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/classParser__coll__graph.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/classPlazza_1_1Main-members.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/classPlazza_1_1Main.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/classPlazza_1_1Main.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/classPlazza_1_1Main__coll__graph.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/classPlazza_1_1Main__coll__graph.md5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/classPlazza_1_1Main__coll__graph.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/classPlazza_1_1SubMain-members.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/classPlazza_1_1SubMain.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/classPlazza_1_1SubMain.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/classPlazza_1_1SubMain__coll__graph.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/classPlazza_1_1SubMain__coll__graph.md5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/classPlazza_1_1SubMain__coll__graph.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/classSafeDeque-members.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/classSafeDeque.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/classSafeDeque.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/classThread.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/classThreadPool-members.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/classThreadPool.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/classThreadPool.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/classThreadPool__coll__graph.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/classThreadPool__coll__graph.md5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/classThreadPool__coll__graph.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/classdataCollector-members.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/classdataCollector.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/classdataCollector.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/classdataCollector__coll__graph.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/classdataCollector__coll__graph.md5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/classdataCollector__coll__graph.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/classes.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/closed.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/dir_d44c64559bbebec7f509842c48db8b23.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/dir_d44c64559bbebec7f509842c48db8b23.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/dir_d44c64559bbebec7f509842c48db8b23_dep.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/dir_d44c64559bbebec7f509842c48db8b23_dep.md5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/dir_d44c64559bbebec7f509842c48db8b23_dep.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/doxygen.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/doxygen.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/dynsections.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/files.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/files.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/ftv2blank.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/ftv2doc.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/ftv2folderclosed.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/ftv2folderopen.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/ftv2lastnode.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/ftv2link.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/ftv2mlastnode.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/ftv2mnode.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/ftv2node.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/ftv2plastnode.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/ftv2pnode.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/ftv2splitbar.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/ftv2vertline.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/functions.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/functions_func.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/functions_vars.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/globals.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/globals_defs.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/globals_func.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/globals_type.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/graph_legend.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/graph_legend.md5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/graph_legend.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/hierarchy.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/hierarchy.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/inherit_graph_0.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/inherit_graph_0.md5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/inherit_graph_0.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/inherit_graph_1.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/inherit_graph_1.md5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/inherit_graph_1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/inherit_graph_10.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/inherit_graph_10.md5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/inherit_graph_10.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/inherit_graph_11.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/inherit_graph_11.md5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/inherit_graph_11.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/inherit_graph_2.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/inherit_graph_2.md5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/inherit_graph_2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/inherit_graph_3.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/inherit_graph_3.md5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/inherit_graph_3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/inherit_graph_4.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/inherit_graph_4.md5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/inherit_graph_4.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/inherit_graph_5.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/inherit_graph_5.md5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/inherit_graph_5.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/inherit_graph_6.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/inherit_graph_6.md5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/inherit_graph_6.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/inherit_graph_7.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/inherit_graph_7.md5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/inherit_graph_7.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/inherit_graph_8.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/inherit_graph_8.md5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/inherit_graph_8.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/inherit_graph_9.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/inherit_graph_9.md5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/inherit_graph_9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/inherits.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/jquery.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/namespacePlazza.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/namespacePlazza.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/namespacePlazza_1_1Action.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/namespacePlazza_1_1Packet.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/namespacePlazza_1_1Packet.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/namespacePlazza_1_1Packet_1_1Raw.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/namespacePlazza_1_1Packet_1_1Raw.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/namespacePlazza_1_1Regex.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/namespacePlazza_1_1String.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/namespacemembers.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/namespacemembers_enum.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/namespacemembers_eval.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/namespacemembers_func.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/namespacemembers_type.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/namespacemembers_vars.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/namespaces.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/namespaces.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/nav_f.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/nav_g.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/nav_h.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/navtree.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/navtree.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/navtreeindex0.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/open.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/resize.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/all_0.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/all_0.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/all_1.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/all_1.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/all_10.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/all_10.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/all_11.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/all_11.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/all_12.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/all_12.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/all_13.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/all_13.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/all_14.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/all_14.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/all_15.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/all_15.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/all_16.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/all_16.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/all_2.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/all_2.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/all_3.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/all_3.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/all_4.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/all_4.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/all_5.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/all_5.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/all_6.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/all_6.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/all_7.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/all_7.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/all_8.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/all_8.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/all_9.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/all_9.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/all_a.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/all_a.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/all_b.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/all_b.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/all_c.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/all_c.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/all_d.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/all_d.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/all_e.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/all_e.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/all_f.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/all_f.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/classes_0.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/classes_0.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/classes_1.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/classes_1.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/classes_2.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/classes_2.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/classes_3.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/classes_3.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/classes_4.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/classes_4.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/classes_5.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/classes_5.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/classes_6.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/classes_6.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/classes_7.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/classes_7.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/classes_8.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/classes_8.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/close.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/defines_0.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/defines_0.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/defines_1.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/defines_1.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/defines_2.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/defines_2.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/defines_3.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/defines_3.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/defines_4.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/defines_4.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/defines_5.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/defines_5.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/defines_6.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/defines_6.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/defines_7.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/defines_7.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/defines_8.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/defines_8.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/defines_9.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/defines_9.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/defines_a.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/defines_a.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/enums_0.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/enums_0.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/enumvalues_0.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/enumvalues_0.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/enumvalues_1.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/enumvalues_1.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/enumvalues_2.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/enumvalues_2.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/enumvalues_3.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/enumvalues_3.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/files_0.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/files_0.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/files_1.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/files_1.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/files_2.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/files_2.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/files_3.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/files_3.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/files_4.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/files_4.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/files_5.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/files_5.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/functions_0.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/functions_0.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/functions_1.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/functions_1.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/functions_10.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/functions_10.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/functions_11.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/functions_11.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/functions_12.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/functions_12.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/functions_13.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/functions_13.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/functions_2.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/functions_2.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/functions_3.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/functions_3.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/functions_4.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/functions_4.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/functions_5.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/functions_5.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/functions_6.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/functions_6.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/functions_7.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/functions_7.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/functions_8.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/functions_8.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/functions_9.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/functions_9.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/functions_a.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/functions_a.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/functions_b.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/functions_b.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/functions_c.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/functions_c.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/functions_d.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/functions_d.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/functions_e.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/functions_e.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/functions_f.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/functions_f.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/mag_sel.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/namespaces_0.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/namespaces_0.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/nomatches.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/search.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/search.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/search_l.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/search_m.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/search_r.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/typedefs_0.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/typedefs_0.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/variables_0.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/variables_0.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/variables_1.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/variables_1.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/variables_2.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/variables_2.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/variables_3.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/variables_3.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/variables_4.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/variables_4.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/variables_5.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/variables_5.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/variables_6.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/search/variables_6.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/structPlazza_1_1Packet_1_1Header-members.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/structPlazza_1_1Packet_1_1Header.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/structPlazza_1_1Packet_1_1Header.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/structPlazza_1_1Packet_1_1Header__inherit__graph.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/structPlazza_1_1Packet_1_1Header__inherit__graph.md5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/structPlazza_1_1Packet_1_1Header__inherit__graph.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/structPlazza_1_1Packet_1_1Raw_1_1Action-members.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/structPlazza_1_1Packet_1_1Raw_1_1Action.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/structPlazza_1_1Packet_1_1Raw_1_1Action.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/structPlazza_1_1Packet_1_1Raw_1_1Action__coll__graph.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/structPlazza_1_1Packet_1_1Raw_1_1Action__coll__graph.md5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/structPlazza_1_1Packet_1_1Raw_1_1Action__coll__graph.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/structPlazza_1_1Packet_1_1Raw_1_1Action__inherit__graph.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/structPlazza_1_1Packet_1_1Raw_1_1Action__inherit__graph.md5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/structPlazza_1_1Packet_1_1Raw_1_1Action__inherit__graph.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/structPlazza_1_1Packet_1_1Raw_1_1Answer-members.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/structPlazza_1_1Packet_1_1Raw_1_1Answer.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/structPlazza_1_1Packet_1_1Raw_1_1Answer.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/structPlazza_1_1Packet_1_1Raw_1_1Answer__coll__graph.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/structPlazza_1_1Packet_1_1Raw_1_1Answer__coll__graph.md5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/structPlazza_1_1Packet_1_1Raw_1_1Answer__coll__graph.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/structPlazza_1_1Packet_1_1Raw_1_1Answer__inherit__graph.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/structPlazza_1_1Packet_1_1Raw_1_1Answer__inherit__graph.md5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/structPlazza_1_1Packet_1_1Raw_1_1Answer__inherit__graph.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/sync_off.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/sync_on.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/tab_a.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/tab_b.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/tab_h.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/tab_s.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/tabs.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/include/Thread.hh" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Makefile" afterPath="$PROJECT_DIR$/Makefile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/include/SubMain.hh" afterPath="$PROJECT_DIR$/include/SubMain.hh" />
     </list>
     <ignored path="cpp_plazza.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -43,8 +473,8 @@
           <file leaf-file-name="SubMain.cpp" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/SubMain.cpp">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1566">
-                  <caret line="87" column="27" selection-start-line="87" selection-start-column="27" selection-end-line="87" selection-end-column="27" />
+                <state relative-caret-position="1548">
+                  <caret line="86" column="27" selection-start-line="86" selection-start-column="27" selection-end-line="86" selection-end-column="27" />
                   <folding />
                 </state>
               </provider>
@@ -63,7 +493,7 @@
           <file leaf-file-name="Makefile" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/Makefile">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="108">
+                <state relative-caret-position="-186">
                   <caret line="25" column="41" selection-start-line="25" selection-start-column="41" selection-end-line="25" selection-end-column="41" />
                   <folding />
                 </state>
@@ -77,13 +507,82 @@
           <file leaf-file-name="SubMain.hh" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/include/SubMain.hh">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-10">
-                  <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+                <state relative-caret-position="-180">
+                  <caret line="14" column="17" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
                   <folding>
-                    <element signature="e#280#297#0" expanded="true" />
                     <element signature="e#348#371#0" expanded="true" />
                     <element signature="e#418#435#0" expanded="true" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="ChildProcess.hh" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/include/ChildProcess.hh">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="422">
+                  <caret line="43" column="44" selection-start-line="43" selection-start-column="44" selection-end-line="43" selection-end-column="44" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="DataCollector.hh" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/include/DataCollector.hh">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-928">
+                  <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="NamedPipe.hh" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/include/NamedPipe.hh">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-78">
+                  <caret line="55" column="30" selection-start-line="55" selection-start-column="30" selection-end-line="55" selection-end-column="30" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Parser.hh" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/include/Parser.hh">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="368">
+                  <caret line="45" column="75" selection-start-line="45" selection-start-column="75" selection-end-line="45" selection-end-column="75" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Plazza.hh" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/include/Plazza.hh">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-136">
+                  <caret line="61" column="38" selection-start-line="61" selection-start-column="38" selection-end-line="61" selection-end-column="38" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="PlazzaNameSpace.hh" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/include/PlazzaNameSpace.hh">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-244">
+                  <caret line="157" column="39" selection-start-line="157" selection-start-column="39" selection-end-line="157" selection-end-column="39" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="SafeDeque.hpp" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/include/SafeDeque.hpp">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-540">
+                  <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -137,8 +636,8 @@
   </component>
   <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="1920" />
-    <option name="width" value="1440" />
+    <option name="x" value="1919" />
+    <option name="width" value="1442" />
     <option name="height" value="900" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -194,7 +693,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
+              <option name="myItemId" value="include" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -209,6 +708,119 @@
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/include" />
     </key>
+  </component>
+  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
+    <UpdatedFiles>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Updated from server" />
+        <option name="myStatusName" value="Changed on server" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="CHANGED_ON_SERVER" />
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Updated" />
+          <option name="myStatusName" value="Changed" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="UPDATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/include/SafeDeque.hpp</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/include/SubMain.hh</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/include/ThreadPool.hh</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/SubMain.cpp</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Created" />
+          <option name="myStatusName" value="Created" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="CREATED" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Deleted" />
+          <option name="myStatusName" value="Deleted" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="true" />
+          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Restored" />
+          <option name="myStatusName" value="Will be restored" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="RESTORED" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Modified" />
+        <option name="myStatusName" value="Modified" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MODIFIED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Skipped" />
+        <option name="myStatusName" value="Skipped" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SKIPPED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with conflicts" />
+        <option name="myStatusName" value="Will be merged with conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_CONFLICTS" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with tree conflicts" />
+        <option name="myStatusName" value="Merged with tree conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with property conflicts" />
+        <option name="myStatusName" value="Will be merged with property conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged" />
+        <option name="myStatusName" value="Will be merged" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Not in repository" />
+        <option name="myStatusName" value="Not in repository" />
+        <option name="mySupportsDeletion" value="true" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="UNKNOWN" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally added" />
+        <option name="myStatusName" value="Locally added" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_ADDED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally removed" />
+        <option name="myStatusName" value="Locally removed" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_REMOVED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Switched" />
+        <option name="myStatusName" value="Switched" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SWITCHED" />
+      </FILE-GROUP>
+    </UpdatedFiles>
   </component>
   <component name="RunManager" selected="Application.Build All">
     <configuration default="true" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" PASS_PARENT_ENVS_2="true" PROJECT_NAME="cpp_plazza" TARGET_NAME="cpp_plazza" CONFIG_NAME="Debug" TEST_MODE="SUITE_TEST">
@@ -567,8 +1179,8 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1920" y="0" width="1440" height="900" extended-state="6" />
-    <editor active="true" />
+    <frame x="1919" y="0" width="1442" height="900" extended-state="6" />
+    <editor active="false" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15878616" sideWeight="0.49340865" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32976446" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -576,7 +1188,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.46726573" sideWeight="0.50741005" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32862645" sideWeight="0.4932957" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24982357" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37483954" sideWeight="0.49258998" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37483954" sideWeight="0.49258998" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15878616" sideWeight="0.5065913" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32862645" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -644,13 +1256,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file:///usr/include/c++/4.9/bits/stl_iterator_base_types.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="146">
-          <caret line="201" column="0" selection-start-line="201" selection-start-column="0" selection-end-line="201" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/include/c++/4.9/bits/stl_iterator_base_funcs.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="146">
@@ -810,9 +1415,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-114">
           <caret line="33" column="3" selection-start-line="33" selection-start-column="3" selection-end-line="33" selection-end-column="3" />
-          <folding>
-            <marker date="1461409917446" expanded="true" signature="736:740" placeholder="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -820,9 +1423,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-162">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1461425230366" expanded="true" signature="1019:1022" placeholder="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -849,14 +1450,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/include/ChildProcess.hh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="43" column="44" selection-start-line="43" selection-start-column="44" selection-end-line="43" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ChildProcess.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="558">
@@ -865,24 +1458,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/include/DataCollector.hh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-594">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/DataCollector.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="984">
           <caret line="159" column="63" selection-start-line="159" selection-start-column="63" selection-end-line="159" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/include/NamedPipe.hh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="55" column="62" selection-start-line="55" selection-start-column="62" selection-end-line="55" selection-end-column="62" />
         </state>
       </provider>
     </entry>
@@ -900,21 +1479,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/include/Parser.hh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="498">
-          <caret line="45" column="75" selection-start-line="45" selection-start-column="75" selection-end-line="45" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/include/Plazza.hh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="61" column="38" selection-start-line="61" selection-start-column="38" selection-end-line="61" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Plazza.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-668">
@@ -923,26 +1487,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/include/PlazzaNameSpace.hh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="581">
-          <caret line="157" column="81" selection-start-line="157" selection-start-column="81" selection-end-line="157" selection-end-column="81" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/include/SafeDeque.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-996">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/SubMain.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1566">
-          <caret line="87" column="27" selection-start-line="87" selection-start-column="27" selection-end-line="87" selection-end-column="27" />
+        <state relative-caret-position="1548">
+          <caret line="86" column="27" selection-start-line="86" selection-start-column="27" selection-end-line="86" selection-end-column="27" />
           <folding />
         </state>
       </provider>
@@ -957,18 +1505,81 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Makefile">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
+        <state relative-caret-position="-186">
           <caret line="25" column="41" selection-start-line="25" selection-start-column="41" selection-end-line="25" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/ChildProcess.hh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="422">
+          <caret line="43" column="44" selection-start-line="43" selection-start-column="44" selection-end-line="43" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/DataCollector.hh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-928">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/NamedPipe.hh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-78">
+          <caret line="55" column="30" selection-start-line="55" selection-start-column="30" selection-end-line="55" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/Parser.hh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="45" column="75" selection-start-line="45" selection-start-column="75" selection-end-line="45" selection-end-column="75" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/Plazza.hh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-136">
+          <caret line="61" column="38" selection-start-line="61" selection-start-column="38" selection-end-line="61" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/PlazzaNameSpace.hh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-244">
+          <caret line="157" column="39" selection-start-line="157" selection-start-column="39" selection-end-line="157" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/SafeDeque.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-540">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/Thread.hh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-154">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/include/SubMain.hh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-10">
-          <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+        <state relative-caret-position="-180">
+          <caret line="14" column="17" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
           <folding>
-            <element signature="e#280#297#0" expanded="true" />
             <element signature="e#348#371#0" expanded="true" />
             <element signature="e#418#435#0" expanded="true" />
           </folding>

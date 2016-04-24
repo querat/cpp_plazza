@@ -1,3 +1,3 @@
 <map id="Plazza::Packet::Raw::Answer" name="Plazza::Packet::Raw::Answer">
-<area shape="rect" id="node2" href="$structPlazza_1_1Packet_1_1Header.html" title="Plazza::Packet::Header" alt="" coords="5,5,165,32"/>
+<area shape="rect" id="node2" href="$structPlazza_1_1Packet_1_1Header.html" title="sent to fifo before the actual packet " alt="" coords="5,5,165,32"/>
 </map>

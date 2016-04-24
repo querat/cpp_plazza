@@ -6,6 +6,5 @@ var annotated =
     [ "NamedPipe", "classNamedPipe.html", "classNamedPipe" ],
     [ "Parser", "classParser.html", "classParser" ],
     [ "SafeDeque", "classSafeDeque.html", "classSafeDeque" ],
-    [ "Thread", "classThread.html", null ],
     [ "ThreadPool", "classThreadPool.html", "classThreadPool" ]
 ];

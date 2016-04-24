@@ -112,7 +112,7 @@ $(document).ready(function(){initNavTree('NamedPipe_8hh_source.html','');});
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">// Login   &lt;querat_g@epitech.net&gt;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">//</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">// Started on  Tue Apr 12 17:53:29 2016 querat_g</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">// Last update Thu Apr 21 11:02:52 2016 querat_g</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">// Last update Sun Apr 24 14:11:06 2016 querat_g</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">//</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#ifndef NAMEDPIPE_HH_</span></div>
@@ -141,64 +141,72 @@ $(document).ready(function(){initNavTree('NamedPipe_8hh_source.html','');});
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
 <div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="NamedPipe_8hh.html#a87cf177c5e54b641146be5e59df9ef33">   35</a></span>&#160;<span class="preprocessor"># define IS_VALID_FD(fd) ((fd != (-1)))</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
-<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="classNamedPipe.html">   37</a></span>&#160;<span class="keyword">class    </span><a class="code" href="classNamedPipe.html">NamedPipe</a></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;{</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">public</span>:                <span class="comment">// Ctor Dtor</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <a class="code" href="classNamedPipe.html#a22326fb1a345975b0bc1d10654e19e06">NamedPipe</a>(std::string <span class="keyword">const</span> &amp; name);</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <a class="code" href="classNamedPipe.html#a24ff787de22c7abe0ad7b556296d3b0b">~NamedPipe</a>();</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="classNamedPipe.html">   39</a></span>&#160;<span class="keyword">class    </span><a class="code" href="classNamedPipe.html">NamedPipe</a></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;{</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">public</span>:                <span class="comment">// Ctor Dtor</span></div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">private</span>:               <span class="comment">// Attributes</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="classNamedPipe.html#a7e3cdc321d897c322e25640a761cf57d">   44</a></span>&#160;  std::string <span class="keyword">const</span>     <a class="code" href="classNamedPipe.html#a7e3cdc321d897c322e25640a761cf57d">_name</a>;</div>
-<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="classNamedPipe.html#a8f77b2893df8d681f0c0301116f3a8d4">   45</a></span>&#160;  <span class="keywordtype">char</span> <span class="keyword">const</span> *          <a class="code" href="classNamedPipe.html#a8f77b2893df8d681f0c0301116f3a8d4">_C_name</a>;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
-<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="classNamedPipe.html#afe4f4a168f15a64eb8e52245506f6a67">   47</a></span>&#160;  <span class="keywordtype">int</span>                   <a class="code" href="classNamedPipe.html#afe4f4a168f15a64eb8e52245506f6a67">_fdin</a>;</div>
-<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="classNamedPipe.html#a5a1c01f905ab28717bba306be19a23c2">   48</a></span>&#160;  <span class="keywordtype">int</span>                   <a class="code" href="classNamedPipe.html#a5a1c01f905ab28717bba306be19a23c2">_fdout</a>;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="keywordtype">bool</span>                  <a class="code" href="classNamedPipe.html#ad949cf3d8b0e7bf2209239f4f0c1f1ff">_close</a>();</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="keywordtype">bool</span>                  <a class="code" href="classNamedPipe.html#a5a3dd0b55c35f926d966ab4e6dba31b4">_tryCreatePipe</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="keyword">public</span>:                 <span class="comment">// I/O operations</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="keywordtype">bool</span>                  <a class="code" href="classNamedPipe.html#a9e1bcb80bad95695ce708b8408150c74">openWritingEnd</a>();</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <span class="keywordtype">bool</span>                  <a class="code" href="classNamedPipe.html#a6dbd4e0d69c4b0d8886bf6054ce3b9cf">openReadingEnd</a>();</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="keywordtype">void</span>                  <a class="code" href="classNamedPipe.html#a0b87661bf6d0da5e32bf25e6fe26bac7">writeTo</a>(<span class="keywordtype">void</span> <span class="keyword">const</span> *data, <span class="keywordtype">size_t</span> size);</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="keywordtype">bool</span>                  <a class="code" href="classNamedPipe.html#aabf42235dace20efc8ec3f8c36647e34">readFrom</a>(<span class="keywordtype">void</span> *buffer, <span class="keywordtype">size_t</span> size);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <a class="code" href="classNamedPipe.html#a22326fb1a345975b0bc1d10654e19e06">NamedPipe</a>(std::string <span class="keyword">const</span> &amp; name);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <a class="code" href="classNamedPipe.html#a24ff787de22c7abe0ad7b556296d3b0b">~NamedPipe</a>();</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keyword">private</span>:               <span class="comment">// Attributes</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="classNamedPipe.html#a7e3cdc321d897c322e25640a761cf57d">   53</a></span>&#160;  std::string <span class="keyword">const</span>     <a class="code" href="classNamedPipe.html#a7e3cdc321d897c322e25640a761cf57d">_name</a>;</div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="classNamedPipe.html#a8f77b2893df8d681f0c0301116f3a8d4">   54</a></span>&#160;  <span class="keywordtype">char</span> <span class="keyword">const</span> *          <a class="code" href="classNamedPipe.html#a8f77b2893df8d681f0c0301116f3a8d4">_C_name</a>;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="classNamedPipe.html#afe4f4a168f15a64eb8e52245506f6a67">   56</a></span>&#160;  <span class="keywordtype">int</span>                   <a class="code" href="classNamedPipe.html#afe4f4a168f15a64eb8e52245506f6a67">_fdin</a>;</div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="classNamedPipe.html#a5a1c01f905ab28717bba306be19a23c2">   57</a></span>&#160;  <span class="keywordtype">int</span>                   <a class="code" href="classNamedPipe.html#a5a1c01f905ab28717bba306be19a23c2">_fdout</a>;</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="keyword">public</span>:                 <span class="comment">// Bool</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="keywordtype">bool</span>                  <a class="code" href="classNamedPipe.html#aa87725893a6c9eb9b948e19ba721fd59">isReadyToRead</a>();</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;};</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<a class="code" href="classNamedPipe.html">NamedPipe</a> &amp;             <a class="code" href="NamedPipe_8hh.html#a402dbe94c544e589452700a542d334c5">operator&lt;&lt;</a>(<a class="code" href="classNamedPipe.html">NamedPipe</a> &amp;dis, <a class="code" href="PlazzaNameSpace_8hh.html#a7d79dab2f398413e2e87f866f852dad1">t_FileActionPair</a> <span class="keyword">const</span> &amp; pair);</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<a class="code" href="classNamedPipe.html">NamedPipe</a> &amp;             <a class="code" href="NamedPipe_8hh.html#a5effed656a2eccca9f67b02601125c6c">operator&gt;&gt;</a>(<a class="code" href="classNamedPipe.html">NamedPipe</a> &amp;dis, <a class="code" href="PlazzaNameSpace_8hh.html#a7d79dab2f398413e2e87f866f852dad1">t_FileActionPair</a> &amp; pair);</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<a class="code" href="classNamedPipe.html">NamedPipe</a> &amp;             <a class="code" href="NamedPipe_8hh.html#a5effed656a2eccca9f67b02601125c6c">operator&gt;&gt;</a>(<a class="code" href="classNamedPipe.html">NamedPipe</a> &amp;dis, <a class="code" href="structPlazza_1_1Packet_1_1Raw_1_1Action.html">Plazza::Packet::Raw::Action</a> &amp; act);</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="preprocessor">#endif // NAMEDPIPE_HH_</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="keyword">private</span>:                <span class="comment">// private member functions</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="keywordtype">bool</span>                  <a class="code" href="classNamedPipe.html#ad949cf3d8b0e7bf2209239f4f0c1f1ff">_close</a>();</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <span class="keywordtype">bool</span>                  <a class="code" href="classNamedPipe.html#a5a3dd0b55c35f926d966ab4e6dba31b4">_tryCreatePipe</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="keyword">public</span>:                 <span class="comment">// I/O operations</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="keywordtype">bool</span>                  <a class="code" href="classNamedPipe.html#a9e1bcb80bad95695ce708b8408150c74">openWritingEnd</a>();</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <span class="keywordtype">bool</span>                  <a class="code" href="classNamedPipe.html#a6dbd4e0d69c4b0d8886bf6054ce3b9cf">openReadingEnd</a>();</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  <span class="keywordtype">void</span>                  <a class="code" href="classNamedPipe.html#a0b87661bf6d0da5e32bf25e6fe26bac7">writeTo</a>(<span class="keywordtype">void</span> <span class="keyword">const</span> *data, <span class="keywordtype">size_t</span> size);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  <span class="keywordtype">bool</span>                  <a class="code" href="classNamedPipe.html#aabf42235dace20efc8ec3f8c36647e34">readFrom</a>(<span class="keywordtype">void</span> *buffer, <span class="keywordtype">size_t</span> size);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="keyword">public</span>:                 <span class="comment">// Boolean operations</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  <span class="keywordtype">bool</span>                  <a class="code" href="classNamedPipe.html#aa87725893a6c9eb9b948e19ba721fd59">isReadyToRead</a>();</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;};</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<a class="code" href="classNamedPipe.html">NamedPipe</a> &amp;             <a class="code" href="NamedPipe_8hh.html#a402dbe94c544e589452700a542d334c5">operator&lt;&lt;</a>(<a class="code" href="classNamedPipe.html">NamedPipe</a> &amp;dis, <a class="code" href="PlazzaNameSpace_8hh.html#a7d79dab2f398413e2e87f866f852dad1">t_FileActionPair</a> <span class="keyword">const</span> &amp; pair);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<a class="code" href="classNamedPipe.html">NamedPipe</a> &amp;             <a class="code" href="NamedPipe_8hh.html#a5effed656a2eccca9f67b02601125c6c">operator&gt;&gt;</a>(<a class="code" href="classNamedPipe.html">NamedPipe</a> &amp;dis, <a class="code" href="PlazzaNameSpace_8hh.html#a7d79dab2f398413e2e87f866f852dad1">t_FileActionPair</a> &amp; pair);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<a class="code" href="classNamedPipe.html">NamedPipe</a> &amp;             <a class="code" href="NamedPipe_8hh.html#a5effed656a2eccca9f67b02601125c6c">operator&gt;&gt;</a>(<a class="code" href="classNamedPipe.html">NamedPipe</a> &amp;dis, <a class="code" href="structPlazza_1_1Packet_1_1Raw_1_1Action.html">Plazza::Packet::Raw::Action</a> &amp; act);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="preprocessor">#endif // NAMEDPIPE_HH_</span></div>
 <div class="ttc" id="PlazzaNameSpace_8hh_html"><div class="ttname"><a href="PlazzaNameSpace_8hh.html">PlazzaNameSpace.hh</a></div></div>
 <div class="ttc" id="classNamedPipe_html_a6dbd4e0d69c4b0d8886bf6054ce3b9cf"><div class="ttname"><a href="classNamedPipe.html#a6dbd4e0d69c4b0d8886bf6054ce3b9cf">NamedPipe::openReadingEnd</a></div><div class="ttdeci">bool openReadingEnd()</div></div>
 <div class="ttc" id="classNamedPipe_html_a22326fb1a345975b0bc1d10654e19e06"><div class="ttname"><a href="classNamedPipe.html#a22326fb1a345975b0bc1d10654e19e06">NamedPipe::NamedPipe</a></div><div class="ttdeci">NamedPipe(std::string const &amp;name)</div></div>
 <div class="ttc" id="classNamedPipe_html_a24ff787de22c7abe0ad7b556296d3b0b"><div class="ttname"><a href="classNamedPipe.html#a24ff787de22c7abe0ad7b556296d3b0b">NamedPipe::~NamedPipe</a></div><div class="ttdeci">~NamedPipe()</div></div>
 <div class="ttc" id="classNamedPipe_html_aabf42235dace20efc8ec3f8c36647e34"><div class="ttname"><a href="classNamedPipe.html#aabf42235dace20efc8ec3f8c36647e34">NamedPipe::readFrom</a></div><div class="ttdeci">bool readFrom(void *buffer, size_t size)</div></div>
-<div class="ttc" id="classNamedPipe_html"><div class="ttname"><a href="classNamedPipe.html">NamedPipe</a></div><div class="ttdef"><b>Definition:</b> NamedPipe.hh:37</div></div>
+<div class="ttc" id="classNamedPipe_html"><div class="ttname"><a href="classNamedPipe.html">NamedPipe</a></div><div class="ttdef"><b>Definition:</b> NamedPipe.hh:39</div></div>
 <div class="ttc" id="NamedPipe_8hh_html_a402dbe94c544e589452700a542d334c5"><div class="ttname"><a href="NamedPipe_8hh.html#a402dbe94c544e589452700a542d334c5">operator&lt;&lt;</a></div><div class="ttdeci">NamedPipe &amp; operator&lt;&lt;(NamedPipe &amp;dis, t_FileActionPair const &amp;pair)</div></div>
-<div class="ttc" id="classNamedPipe_html_a7e3cdc321d897c322e25640a761cf57d"><div class="ttname"><a href="classNamedPipe.html#a7e3cdc321d897c322e25640a761cf57d">NamedPipe::_name</a></div><div class="ttdeci">std::string const _name</div><div class="ttdef"><b>Definition:</b> NamedPipe.hh:44</div></div>
+<div class="ttc" id="classNamedPipe_html_a7e3cdc321d897c322e25640a761cf57d"><div class="ttname"><a href="classNamedPipe.html#a7e3cdc321d897c322e25640a761cf57d">NamedPipe::_name</a></div><div class="ttdeci">std::string const _name</div><div class="ttdef"><b>Definition:</b> NamedPipe.hh:53</div></div>
 <div class="ttc" id="classNamedPipe_html_a5a3dd0b55c35f926d966ab4e6dba31b4"><div class="ttname"><a href="classNamedPipe.html#a5a3dd0b55c35f926d966ab4e6dba31b4">NamedPipe::_tryCreatePipe</a></div><div class="ttdeci">bool _tryCreatePipe() const </div></div>
 <div class="ttc" id="classNamedPipe_html_a9e1bcb80bad95695ce708b8408150c74"><div class="ttname"><a href="classNamedPipe.html#a9e1bcb80bad95695ce708b8408150c74">NamedPipe::openWritingEnd</a></div><div class="ttdeci">bool openWritingEnd()</div></div>
 <div class="ttc" id="classNamedPipe_html_ad949cf3d8b0e7bf2209239f4f0c1f1ff"><div class="ttname"><a href="classNamedPipe.html#ad949cf3d8b0e7bf2209239f4f0c1f1ff">NamedPipe::_close</a></div><div class="ttdeci">bool _close()</div></div>
-<div class="ttc" id="classNamedPipe_html_a8f77b2893df8d681f0c0301116f3a8d4"><div class="ttname"><a href="classNamedPipe.html#a8f77b2893df8d681f0c0301116f3a8d4">NamedPipe::_C_name</a></div><div class="ttdeci">char const * _C_name</div><div class="ttdef"><b>Definition:</b> NamedPipe.hh:45</div></div>
+<div class="ttc" id="classNamedPipe_html_a8f77b2893df8d681f0c0301116f3a8d4"><div class="ttname"><a href="classNamedPipe.html#a8f77b2893df8d681f0c0301116f3a8d4">NamedPipe::_C_name</a></div><div class="ttdeci">char const * _C_name</div><div class="ttdef"><b>Definition:</b> NamedPipe.hh:54</div></div>
 <div class="ttc" id="classNamedPipe_html_a0b87661bf6d0da5e32bf25e6fe26bac7"><div class="ttname"><a href="classNamedPipe.html#a0b87661bf6d0da5e32bf25e6fe26bac7">NamedPipe::writeTo</a></div><div class="ttdeci">void writeTo(void const *data, size_t size)</div></div>
 <div class="ttc" id="NamedPipe_8hh_html_a5effed656a2eccca9f67b02601125c6c"><div class="ttname"><a href="NamedPipe_8hh.html#a5effed656a2eccca9f67b02601125c6c">operator&gt;&gt;</a></div><div class="ttdeci">NamedPipe &amp; operator&gt;&gt;(NamedPipe &amp;dis, t_FileActionPair &amp;pair)</div></div>
-<div class="ttc" id="classNamedPipe_html_a5a1c01f905ab28717bba306be19a23c2"><div class="ttname"><a href="classNamedPipe.html#a5a1c01f905ab28717bba306be19a23c2">NamedPipe::_fdout</a></div><div class="ttdeci">int _fdout</div><div class="ttdef"><b>Definition:</b> NamedPipe.hh:48</div></div>
-<div class="ttc" id="classNamedPipe_html_afe4f4a168f15a64eb8e52245506f6a67"><div class="ttname"><a href="classNamedPipe.html#afe4f4a168f15a64eb8e52245506f6a67">NamedPipe::_fdin</a></div><div class="ttdeci">int _fdin</div><div class="ttdef"><b>Definition:</b> NamedPipe.hh:47</div></div>
-<div class="ttc" id="PlazzaNameSpace_8hh_html_a7d79dab2f398413e2e87f866f852dad1"><div class="ttname"><a href="PlazzaNameSpace_8hh.html#a7d79dab2f398413e2e87f866f852dad1">t_FileActionPair</a></div><div class="ttdeci">std::pair&lt; std::string, Plazza::Action::Type &gt; t_FileActionPair</div><div class="ttdef"><b>Definition:</b> PlazzaNameSpace.hh:110</div></div>
+<div class="ttc" id="classNamedPipe_html_a5a1c01f905ab28717bba306be19a23c2"><div class="ttname"><a href="classNamedPipe.html#a5a1c01f905ab28717bba306be19a23c2">NamedPipe::_fdout</a></div><div class="ttdeci">int _fdout</div><div class="ttdef"><b>Definition:</b> NamedPipe.hh:57</div></div>
+<div class="ttc" id="classNamedPipe_html_afe4f4a168f15a64eb8e52245506f6a67"><div class="ttname"><a href="classNamedPipe.html#afe4f4a168f15a64eb8e52245506f6a67">NamedPipe::_fdin</a></div><div class="ttdeci">int _fdin</div><div class="ttdef"><b>Definition:</b> NamedPipe.hh:56</div></div>
+<div class="ttc" id="PlazzaNameSpace_8hh_html_a7d79dab2f398413e2e87f866f852dad1"><div class="ttname"><a href="PlazzaNameSpace_8hh.html#a7d79dab2f398413e2e87f866f852dad1">t_FileActionPair</a></div><div class="ttdeci">std::pair&lt; std::string, Plazza::Action::Type &gt; t_FileActionPair</div><div class="ttdoc">Pair that contains a filename and the action to execute on this file. </div><div class="ttdef"><b>Definition:</b> PlazzaNameSpace.hh:119</div></div>
 <div class="ttc" id="classNamedPipe_html_aa87725893a6c9eb9b948e19ba721fd59"><div class="ttname"><a href="classNamedPipe.html#aa87725893a6c9eb9b948e19ba721fd59">NamedPipe::isReadyToRead</a></div><div class="ttdeci">bool isReadyToRead()</div></div>
-<div class="ttc" id="structPlazza_1_1Packet_1_1Raw_1_1Action_html"><div class="ttname"><a href="structPlazza_1_1Packet_1_1Raw_1_1Action.html">Plazza::Packet::Raw::Action</a></div><div class="ttdef"><b>Definition:</b> PlazzaNameSpace.hh:136</div></div>
+<div class="ttc" id="structPlazza_1_1Packet_1_1Raw_1_1Action_html"><div class="ttname"><a href="structPlazza_1_1Packet_1_1Raw_1_1Action.html">Plazza::Packet::Raw::Action</a></div><div class="ttdef"><b>Definition:</b> PlazzaNameSpace.hh:149</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="NamedPipe_8hh.html">NamedPipe.hh</a></li>
-    <li class="footer">Généré le Samedi 23 Avril 2016 19:22:01 pour Plazza par
+    <li class="footer">Généré le Dimanche 24 Avril 2016 14:50:03 pour Plazza par
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>

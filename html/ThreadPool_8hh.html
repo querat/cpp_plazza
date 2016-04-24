@@ -103,6 +103,7 @@ $(document).ready(function(){initNavTree('ThreadPool_8hh.html','');});
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
+<a href="#define-members">Macros</a> &#124;
 <a href="#typedef-members">Définitions de type</a>  </div>
   <div class="headertitle">
 <div class="title">Référence du fichier ThreadPool.hh</div>  </div>
@@ -112,13 +113,16 @@ $(document).ready(function(){initNavTree('ThreadPool_8hh.html','');});
 <code>#include &lt;atomic&gt;</code><br />
 <code>#include &lt;mutex&gt;</code><br />
 <code>#include &lt;condition_variable&gt;</code><br />
+<code>#include &lt;unistd.h&gt;</code><br />
+<code>#include &lt;sys/types.h&gt;</code><br />
+<code>#include &lt;pthread.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="PlazzaNameSpace_8hh_source.html">PlazzaNameSpace.hh</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Graphe des dépendances par inclusion de ThreadPool.hh:</div>
 <div class="dyncontent">
 <div class="center"><img src="ThreadPool_8hh__incl.png" border="0" usemap="#include_2ThreadPool_8hh" alt=""/></div>
 <map name="include_2ThreadPool_8hh" id="include_2ThreadPool_8hh">
-<area shape="rect" id="node6" href="PlazzaNameSpace_8hh.html" title="PlazzaNameSpace.hh" alt="" coords="509,80,661,107"/><area shape="rect" id="node18" href="SafeDeque_8hpp.html" title="SafeDeque.hpp" alt="" coords="392,155,503,181"/></map>
+<area shape="rect" id="node9" href="PlazzaNameSpace_8hh.html" title="PlazzaNameSpace.hh" alt="" coords="594,80,746,107"/><area shape="rect" id="node20" href="SafeDeque_8hpp.html" title="SafeDeque.hpp" alt="" coords="354,155,464,181"/></map>
 </div>
 </div><div class="textblock"><div class="dynheader">
 Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier :</div>
@@ -133,13 +137,35 @@ Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classThreadPool.html">ThreadPool</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates and manage threads.  <a href="classThreadPool.html#details">Plus de détails...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a0f11b3d4d80f9720a4a9d94c6441d73b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ThreadPool_8hh.html#a0f11b3d4d80f9720a4a9d94c6441d73b">GETTID</a>()&#160;&#160;&#160;std::this_thread::get_id()</td></tr>
+<tr class="separator:a0f11b3d4d80f9720a4a9d94c6441d73b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Définitions de type</h2></td></tr>
 <tr class="memitem:afebdc6688566f20bb88bb5214bb9b546"><td class="memItemLeft" align="right" valign="top">typedef std::condition_variable&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ThreadPool_8hh.html#afebdc6688566f20bb88bb5214bb9b546">t_CondVar</a></td></tr>
 <tr class="separator:afebdc6688566f20bb88bb5214bb9b546"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Documentation des macros</h2>
+<a class="anchor" id="a0f11b3d4d80f9720a4a9d94c6441d73b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define GETTID</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;std::this_thread::get_id()</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <h2 class="groupheader">Documentation des définitions de type</h2>
 <a class="anchor" id="afebdc6688566f20bb88bb5214bb9b546"></a>
 <div class="memitem">
@@ -159,7 +185,7 @@ Définitions de type</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="ThreadPool_8hh.html">ThreadPool.hh</a></li>
-    <li class="footer">Généré le Samedi 23 Avril 2016 19:22:01 pour Plazza par
+    <li class="footer">Généré le Dimanche 24 Avril 2016 14:50:03 pour Plazza par
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>

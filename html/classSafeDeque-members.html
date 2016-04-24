@@ -110,12 +110,14 @@ $(document).ready(function(){initNavTree('classSafeDeque.html','');});
 
 <p>Liste complète des membres de <a class="el" href="classSafeDeque.html">SafeDeque&lt; T &gt;</a>, y compris les membres hérités :</p>
 <table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="classSafeDeque.html#a5fa80a692fb8564112a3e67c137483f5">_deque</a></td><td class="entry"><a class="el" href="classSafeDeque.html">SafeDeque&lt; T &gt;</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classSafeDeque.html#acc94713f93ba1d4508624b9d1223a5c1">_mutex</a></td><td class="entry"><a class="el" href="classSafeDeque.html">SafeDeque&lt; T &gt;</a></td><td class="entry"><span class="mlabel">mutable</span><span class="mlabel">private</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classSafeDeque.html#a11661e893684b72aa6b769c8445d4366">begin</a>() const </td><td class="entry"><a class="el" href="classSafeDeque.html">SafeDeque&lt; T &gt;</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classSafeDeque.html#a279c796a094733adfe593442dcf4dada">empty</a>() const </td><td class="entry"><a class="el" href="classSafeDeque.html">SafeDeque&lt; T &gt;</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classSafeDeque.html#ab048b8040294bfe90a27ca29618e7f06">end</a>() const </td><td class="entry"><a class="el" href="classSafeDeque.html">SafeDeque&lt; T &gt;</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classSafeDeque.html#a7d05c51704ab063ce5d19108e5fb67e8">front</a>()</td><td class="entry"><a class="el" href="classSafeDeque.html">SafeDeque&lt; T &gt;</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classSafeDeque.html#a2fbb64c968ce625a91830c9aca83b47a">_cond</a></td><td class="entry"><a class="el" href="classSafeDeque.html">SafeDeque&lt; T &gt;</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classSafeDeque.html#a5fa80a692fb8564112a3e67c137483f5">_deque</a></td><td class="entry"><a class="el" href="classSafeDeque.html">SafeDeque&lt; T &gt;</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classSafeDeque.html#acc94713f93ba1d4508624b9d1223a5c1">_mutex</a></td><td class="entry"><a class="el" href="classSafeDeque.html">SafeDeque&lt; T &gt;</a></td><td class="entry"><span class="mlabel">mutable</span><span class="mlabel">private</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classSafeDeque.html#a11661e893684b72aa6b769c8445d4366">begin</a>() const </td><td class="entry"><a class="el" href="classSafeDeque.html">SafeDeque&lt; T &gt;</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classSafeDeque.html#a279c796a094733adfe593442dcf4dada">empty</a>() const </td><td class="entry"><a class="el" href="classSafeDeque.html">SafeDeque&lt; T &gt;</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classSafeDeque.html#ab048b8040294bfe90a27ca29618e7f06">end</a>() const </td><td class="entry"><a class="el" href="classSafeDeque.html">SafeDeque&lt; T &gt;</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classSafeDeque.html#a7d05c51704ab063ce5d19108e5fb67e8">front</a>()</td><td class="entry"><a class="el" href="classSafeDeque.html">SafeDeque&lt; T &gt;</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classSafeDeque.html#a674c9c270c39764cd5a3e6ce1eda03d1">getCondVar</a>()</td><td class="entry"><a class="el" href="classSafeDeque.html">SafeDeque&lt; T &gt;</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classSafeDeque.html#a87910749e4f439c806a9f286e35eb572">pop_front</a>()</td><td class="entry"><a class="el" href="classSafeDeque.html">SafeDeque&lt; T &gt;</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="classSafeDeque.html#a0f9326ee50f49e3aadb314bb971afb33">push_back</a>(const T &amp;data)</td><td class="entry"><a class="el" href="classSafeDeque.html">SafeDeque&lt; T &gt;</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classSafeDeque.html#ac69b3bf113086a8db9f0ac013c040a4e">SafeDeque</a>()</td><td class="entry"><a class="el" href="classSafeDeque.html">SafeDeque&lt; T &gt;</a></td><td class="entry"></td></tr>
@@ -125,7 +127,7 @@ $(document).ready(function(){initNavTree('classSafeDeque.html','');});
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Généré le Samedi 23 Avril 2016 19:22:01 pour Plazza par
+    <li class="footer">Généré le Dimanche 24 Avril 2016 14:50:03 pour Plazza par
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>

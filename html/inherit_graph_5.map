@@ -1,5 +1,5 @@
 <map id="Graphe hiérarchique des classes" name="Graphe hiérarchique des classes">
-<area shape="rect" id="node1" href="$structPlazza_1_1Packet_1_1Header.html" title="Plazza::Packet::Header" alt="" coords="6,45,167,72"/>
+<area shape="rect" id="node1" href="$structPlazza_1_1Packet_1_1Header.html" title="sent to fifo before the actual packet " alt="" coords="6,45,167,72"/>
 <area shape="rect" id="node2" href="$structPlazza_1_1Packet_1_1Raw_1_1Action.html" title="Plazza::Packet::Raw\l::Action" alt="" coords="216,5,363,46"/>
-<area shape="rect" id="node3" href="$structPlazza_1_1Packet_1_1Raw_1_1Answer.html" title="Plazza::Packet::Raw\l::Answer" alt="" coords="216,70,363,111"/>
+<area shape="rect" id="node3" href="$structPlazza_1_1Packet_1_1Raw_1_1Answer.html" title="Sent from the child to the main process. " alt="" coords="216,70,363,111"/>
 </map>
