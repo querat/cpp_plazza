@@ -5,7 +5,7 @@
 // Login   <querat_g@epitech.net>
 //
 // Started on  Sun Apr 17 14:21:53 2016 querat_g
-// Last update Mon Apr 18 13:41:57 2016 querat_g
+// Last update Sun Apr 24 14:13:21 2016 querat_g
 //
 
 #ifndef PARSER_HH
@@ -47,6 +47,9 @@ private:
   Plazza::Action::Type  _getCommandType();
 
 public:
+
+  /// parse
+  /// Parse str et stocke les données extraites dans la deque d'actions target
   bool          parse(std::string const & str, t_ActionDeque &target);
 };
 

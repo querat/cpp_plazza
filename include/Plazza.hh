@@ -5,7 +5,7 @@
 // Login   <querat_g@epitech.net>
 //
 // Started on Sun Apr 17 14:29:00 2016 querat_g
-// Last update Fri Apr 22 17:33:02 2016 querat_g
+// Last update Sun Apr 24 14:19:18 2016 querat_g
 //
 
 #ifndef PLAZZA_HH
@@ -68,13 +68,28 @@ namespace Plazza
     void                _cleanDeadChildren();
 
   public:               // Boolean operations
+    /// isBusy()
+    /// retourne true si l'objet est en train de traiter des tâches,
+    /// et false sinon
     bool                isBusy() const;
 
   public:
+    /// setForcedExitState()
+    /// set l'attribut _forcedExit à true, ce qui force la sortie
+    /// de mainLoop()
     void                setForcedExitState();
 
   public:               // misc
+    /// killProcesses()
+    /// envoie un signal qui termine les processus fils
+    /// et vide l'attribut _childrens
     void                killProcesses();
+
+    /// mainLoop()
+    /// boucle principale du plazza
+    /// lit STDIN_FILENO, parse les commandes et les répartit
+    /// entre les processus childs (ou créée ces derniers si ils
+    /// n'existent pas).
     int                 mainLoop();
   };
 }

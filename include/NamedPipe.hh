@@ -5,7 +5,7 @@
 // Login   <querat_g@epitech.net>
 //
 // Started on  Tue Apr 12 17:53:29 2016 querat_g
-// Last update Thu Apr 21 11:02:52 2016 querat_g
+// Last update Sun Apr 24 14:11:06 2016 querat_g
 //
 
 #ifndef NAMEDPIPE_HH_
@@ -34,10 +34,19 @@
 
 # define IS_VALID_FD(fd) ((fd != (-1)))
 
+/// Class NamedPipe
+/// Permet de transmettre des données entre deux processus
 class    NamedPipe
 {
 public:                // Ctor Dtor
+
+  /// Constructeur de NamedPipe
+  /// Construit un objet de type NamedPipe et son fichier fifo
+  /// name : chemin du fichier fifo qui sera créé
   NamedPipe(std::string const & name);
+
+  /// Destructeur de NamedPipe
+  /// libère les ressources allouées et unlink le fifo du NamedPipe
   ~NamedPipe();
 
 private:               // Attributes
@@ -47,16 +56,36 @@ private:               // Attributes
   int                   _fdin;
   int                   _fdout;
 
+private:                // private member functions
   bool                  _close();
   bool                  _tryCreatePipe() const;
 
 public:                 // I/O operations
+
+  /// openWritingEnd()
+  /// Ouvre le côté écriture du named pipe
   bool                  openWritingEnd();
+
+  /// openReadingEnd()
+  /// Ouvre le côté lecture du named pipe
   bool                  openReadingEnd();
+
+  /// writeTo()
+  /// écrit des données dans l'entrée du pipe
+  /// data : pointeur sur la mémoire à transmettre
+  /// size : taille de la mémoire envoyée dans le pipe
   void                  writeTo(void const *data, size_t size);
+
+  /// readFrom()
+  /// lit "size" sur la sortie du pipe et le stocke dans
+  /// la mémoire pointée par "buffer"
   bool                  readFrom(void *buffer, size_t size);
 
-public:                 // Bool
+public:                 // Boolean operations
+
+  /// isReadyToRead()
+  /// Retourne true ou false en fonction de si des données
+  /// sont prêtes ou non à être lues
   bool                  isReadyToRead();
 
 };

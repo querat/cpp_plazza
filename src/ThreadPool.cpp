@@ -5,7 +5,7 @@
 // Login   <querat_g@epitech.net>
 //
 // Started on  Sat Apr 23 09:54:29 2016 querat_g
-// Last update Sat Apr 23 19:04:54 2016 querat_g
+// Last update Sun Apr 24 11:36:44 2016 querat_g
 //
 
 #include "DataCollector.hh"
@@ -13,19 +13,17 @@
 
 void            ThreadPool::_threadCallBack()
 {
-  static int    id = 0;
   dataCollector dataCollector1;
   t_FileActionPair act = std::make_pair("", Plazza::Action::Type::UNDEFINED);
 
-  ++id;
-  DEBUG(id << " starting");
+  DEBUG("Thread " << std::hex << GETTID() << " starting" << std::dec);
   while (_isAlive)
   {
     _mutex.lock();
     if (!_actionDeque.empty())
     {
       act = _actionDeque.front();
-      DEBUG("thread treating " << act.first);
+      DEBUG(std::hex << GETTID() << " thread treating " << act.first << std::dec);
       DEBUG("front = " << act.second);
       _actionDeque.pop_front();
     }
@@ -36,7 +34,7 @@ void            ThreadPool::_threadCallBack()
       act = std::make_pair("", Plazza::Action::Type::UNDEFINED);
     }
   }
-  DEBUG("has ded");
+  DEBUG(std::hex << GETTID() << " has ded" << std::dec);
 }
 
 ThreadPool::ThreadPool(int nbThreads, t_SafeActionDeque &act, t_SafeAnswerDeque &ans)
@@ -47,7 +45,9 @@ ThreadPool::ThreadPool(int nbThreads, t_SafeActionDeque &act, t_SafeAnswerDeque 
 {
 
   for (int i = 0; i < _nbThreads; i++) {
-    _threads.push_back(std::thread([this](){this->_threadCallBack();}));
+    _threads.push_back(std::thread([this](){
+          this->_threadCallBack();
+    }));
   }
 
 }

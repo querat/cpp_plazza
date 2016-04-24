@@ -5,19 +5,29 @@
 // Login   <querat_g@epitech.net>
 //
 // Started on  Sat Apr 23 09:53:14 2016 querat_g
-// Last update Sat Apr 23 16:53:56 2016 querat_g
+// Last update Sun Apr 24 10:58:37 2016 querat_g
 //
 
 #ifndef THREADPOOL_HH_
 # define THREADPOOL_HH_
 
+// STL
 # include <vector>
 
+// std::thread
 # include <atomic>
 # include <mutex>
 # include <condition_variable>
 
+// SysUnix
+# include <unistd.h>
+# include <sys/types.h>
+# include <pthread.h>
+
+// Plazza
 # include "PlazzaNameSpace.hh"
+
+# define GETTID()       std::this_thread::get_id()
 
 typedef std::condition_variable t_CondVar;
 

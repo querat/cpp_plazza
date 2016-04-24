@@ -5,7 +5,7 @@
 // Login   <querat_g@epitech.net>
 //
 // Started on  Sun Apr 17 14:29:00 2016 querat_g
-// Last update Sat Apr 23 14:13:21 2016 querat_g
+// Last update Sun Apr 24 14:31:25 2016 querat_g
 //
 
 #ifndef PLAZZANAMESPACE_HH
@@ -84,6 +84,8 @@ namespace Plazza
 
   namespace Action
   {
+    /// enum Plazza::Action::Type
+    /// utilisé comme référence pour le type d'action par le programme
     enum Type
       {
         UNDEFINED = 0,
@@ -92,25 +94,32 @@ namespace Plazza
         IP_ADDRESS
       };
     typedef std::map<Plazza::Action::Type, std::string> t_ActionToStringMap;
+
+    /// mapToString
+    /// utilisée pour convertir un Plazza::Action::Type en std::string
     extern t_ActionToStringMap const                    mapToString;
   } // !Plazza::Action
 
   namespace String {
     typedef std::map<std::string, Plazza::Action::Type> t_StringToActionMap;
+    /// mapToEnum
+    /// utilisée pour convertir une std::string en Plazza::Action::Type
     extern t_StringToActionMap const                    mapToEnum;
   } // !Plazza::String
 
   namespace Regex {
     typedef std::map<Plazza::Action::Type, std::regex>  t_ActionToRegexMap;
+    /// Plazza::Regex::map
+    /// Utilisée pour convertir un Plazza::Action::Type en std::regex
     extern t_ActionToRegexMap const                     map;
   } // !Plazza::Regex
 }  // !Plazza
 
-// Pair that contains a filename and the action to execute on this file
+/// Pair that contains a filename and the action to execute on this file
 typedef std::pair<std::string, Plazza::Action::Type>    t_FileActionPair;
-// Stack that will be sent from the main process to the subProcesses
+/// Stack that will be sent from the main process to the subProcesses
 typedef std::deque<t_FileActionPair>                    t_ActionDeque;
-// used by the parser to associate a string to a Plazza::Action::Type
+/// used by the parser to associate a string to a Plazza::Action::Type
 typedef std::map<std::string, Plazza::Action::Type>     t_StringToTypeMap;
 
   //
@@ -120,25 +129,29 @@ namespace Plazza
 {
   namespace Packet
   {
-    // we all need some 0xC0FFEE, even for named pipes
+    /// we all need some 0xC0FFEE, even for named pipes
     extern uint32_t const MAGIC;
 
-    // sent to fifo before the actual packet
+    /// sent to fifo before the actual packet
     struct      Header
     {
       size_t    magic;
       size_t    size;
     }; // !struct Header
 
-    // All the stuff defined here is meant to
+    /// All the stuff defined here is meant to
+    /// be transmitted through pipes
     namespace Raw
     {
+      /// sent through the NamedPipe as an action + fileName pair
+      /// type : type of action
+      /// fileName : path to file
       struct      Action : public Plazza::Packet::Header
       {
         Plazza::Action::Type    type;
         char                    fileName[FILENAME_SIZE];
       };// !Plazza::Packet::Raw::Action
-      // Sent from the child to the main process
+      /// Sent from the child to the main process
       struct      Answer : public Plazza::Packet::Header
       {
         char                    data[0];
@@ -152,10 +165,18 @@ namespace Plazza
 //
 namespace Plazza
 {
+  /// checks if the string can be translated to a Plazza::Action::Type
   bool                  isAnAction(std::string const &action) ;
+  /// translates a std::string to a Plazza::Action::Type
   Plazza::Action::Type  stringToAction(std::string const & str);
+  /// creates a default path for NamedPipes in/out
+  /// pid : pid of the targeted process
+  /// toMain : true if going from child to parent, false otherwise
   std::string           makeFifoNameFromPid(pid_t pid, bool toMain);
+  /// dumps the name of the Plazza::Action::Type to stdout or stderr,
+  /// depending on toErr
   void                  printAction(Plazza::Action::Type act, bool toErr = false);
+  /// checks if data is ready to read from a file descriptor, then returns true or false
   bool                  pollFd(int fd);
 }
 
