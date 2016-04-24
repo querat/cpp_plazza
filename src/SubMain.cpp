@@ -5,7 +5,7 @@
 // Login   <querat_g@epitech.net>
 //
 // Started on  Tue Apr 19 09:58:24 2016 querat_g
-// Last update Sat Apr 23 17:57:48 2016 querat_g
+// Last update Sun Apr 24 14:49:07 2016 querat_g
 //
 
 #include "SubMain.hh"
@@ -25,6 +25,7 @@ Plazza::SubMain::SubMain(pid_t pid, NamedPipe *pipe1, NamedPipe *pipe2, int nbTh
 
 Plazza::SubMain::~SubMain()
 {
+  (void)_nbThreads;
   delete (_pipe1);
   delete (_pipe2);
   DEBUG(_pid << " Plazza::SubMain::~SubMain(): no tasks for 5 seconds, exiting");
@@ -61,8 +62,6 @@ Plazza::SubMain::sendSolvedAction(std::string const & str)
   _pipe2->writeTo(&head, sizeof(head));
   _pipe2->writeTo(str.c_str(), str.size() + 1);
   DEBUG("Answer sent !");
-
-  // sleep(2);
 
   return (true);
 }

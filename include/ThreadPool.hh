@@ -5,7 +5,7 @@
 // Login   <querat_g@epitech.net>
 //
 // Started on  Sat Apr 23 09:53:14 2016 querat_g
-// Last update Sun Apr 24 10:58:37 2016 querat_g
+// Last update Sun Apr 24 14:47:42 2016 querat_g
 //
 
 #ifndef THREADPOOL_HH_
@@ -31,10 +31,16 @@
 
 typedef std::condition_variable t_CondVar;
 
+/// Creates and manage threads
 class ThreadPool
 {
 public:
+  /// Constructor
+  /// nbThreads : number of desired threads
+  /// act : thread safe actions deque reference
+  /// ans : thread safe answer deque reference
   ThreadPool(int nbThreads, t_SafeActionDeque &act, t_SafeAnswerDeque &ans);
+  /// destructor
   ~ThreadPool();
 
 private:
