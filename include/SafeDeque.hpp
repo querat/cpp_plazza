@@ -5,7 +5,7 @@
 // Login   <querat_g@epitech.net>
 //
 // Started on  Thu Apr 21 14:02:34 2016 querat_g
-// Last update Sun Apr 24 13:51:19 2016 querat_g
+// Last update Sun Apr 24 14:38:45 2016 querat_g
 //
 
 #ifndef SAFEDEQUE_HPP_
@@ -15,9 +15,9 @@
 # include <mutex>
 # include <condition_variable>
 
-//
-// Thread-safe limited encapsulation of std::deque
-//
+///
+/// Thread-safe limited encapsulation of std::deque
+///
 template<typename T>
 class SafeDeque
 {
@@ -40,21 +40,25 @@ public:
   std::condition_variable &              getCondVar();
 };
 
+/// Returns a reference to the condition variable of the SafeDeque
 template<typename T>
 std::condition_variable &
 SafeDeque<T>::getCondVar() {
   return (_cond);
 }
 
+/// default constructor
 template<typename T>
 SafeDeque<T>::SafeDeque(){}
 
+/// default destructor
 template<typename T>
 SafeDeque<T>::~SafeDeque() {
   std::lock_guard<std::mutex> lock(_mutex);
   _deque.clear();
 }
 
+/// Thread-safe std::deque::push_back()
 template<typename T>
 void
 SafeDeque<T>::push_back(const T & data) {
@@ -63,6 +67,7 @@ SafeDeque<T>::push_back(const T & data) {
   _cond.notify_one();
 }
 
+/// Thread-safe std::deque::pop_front()
 template<typename T>
 void
 SafeDeque<T>::pop_front() {
@@ -70,6 +75,7 @@ SafeDeque<T>::pop_front() {
   return (_deque.pop_front());
 }
 
+/// Thread-safe std::deque::front()
 template<typename T>
 T &
 SafeDeque<T>::front() {
@@ -77,6 +83,7 @@ SafeDeque<T>::front() {
   return (_deque.front());
 }
 
+/// Thread-safe std::deque::begin()
 template<typename T>
 typename std::deque<T>::const_iterator
 SafeDeque<T>::begin() const {
@@ -84,6 +91,7 @@ SafeDeque<T>::begin() const {
   return (_deque.begin());
 }
 
+/// Thread-safe std::deque::end()
 template<typename T>
 typename std::deque<T>::const_iterator
 SafeDeque<T>::end() const {
@@ -91,6 +99,7 @@ SafeDeque<T>::end() const {
   return (_deque.end());
 }
 
+/// Thread-safe std::deque::empty()
 template<typename T>
 bool
 SafeDeque<T>::empty() const {
